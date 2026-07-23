@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 /// <summary>
 /// Items that are created as EvidenceData are
@@ -8,13 +9,22 @@ using UnityEngine.UI;
 /// Carousel controller will control the not reset of eveidence found
 /// </summary>
 [RequireComponent(typeof(Button))]
-public class EvidenceSlotUI : MonoBehaviour
+public class EvidenceSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
+    [Header("Selected Hover")]
+    [SerializeField, Min(1f)] private float hoverScaleMultiplier = 1.08f;
+    [SerializeField, Min(0.01f)] private float hoverSpeed = 14f;
     [SerializeField] private Image evidenceIcon;
     [SerializeField] private Outline selectedOutline;
+    
     private Button _button;
     private EvidenceData _evidenceData;
-
+    
+    private Vector3 _restingScale;
+    private bool _isSelected;
+    private bool _pointerOver;
+    private bool _hasStarted;
+    
     public EvidenceData EvidenceData => _evidenceData;
     public event Action<EvidenceSlotUI> Clicked;
 
@@ -22,6 +32,43 @@ public class EvidenceSlotUI : MonoBehaviour
     {
         _button = GetComponent<Button>();
         _button.onClick.AddListener(HandleClick);
+    }
+    
+    private void Start()
+    {
+        _restingScale = transform.localScale;
+        _hasStarted = true;
+    }
+
+    private void Update()
+    {
+        if (!_hasStarted) return;
+        Vector3 targetScale = _restingScale;
+
+        if (_isSelected && _pointerOver && _evidenceData != null) targetScale *= hoverScaleMultiplier;
+        float smoothing = 1f - Mathf.Exp(-hoverSpeed * Time.unscaledDeltaTime);
+
+        transform.localScale = Vector3.Lerp(
+            transform.localScale,
+            targetScale,
+            smoothing);
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        _pointerOver = true;
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        _pointerOver = false;
+    }
+
+    private void OnDisable()
+    {
+        _pointerOver = false;
+        if (_hasStarted) transform.localScale = _restingScale;
+        
     }
 
     private void OnDestroy()
@@ -33,12 +80,14 @@ public class EvidenceSlotUI : MonoBehaviour
     {
         _evidenceData = evidenceData;
         bool hasEvidence = evidenceData != null;
-
+        _isSelected = hasEvidence && isSelected;
+        if (!_isSelected) _pointerOver = false;
         evidenceIcon.sprite = hasEvidence ? evidenceData.EvidenceImage : null;
         evidenceIcon.enabled = hasEvidence;
         _button.interactable = hasEvidence;
 
-        if (selectedOutline != null) selectedOutline.enabled = hasEvidence && isSelected;
+        if (selectedOutline != null)
+            selectedOutline.enabled = _isSelected;
         
     }
 
@@ -46,7 +95,7 @@ public class EvidenceSlotUI : MonoBehaviour
     {
         Display(null, false);
     }
-
+    
     private void HandleClick()
     {
         if (_evidenceData == null) return;

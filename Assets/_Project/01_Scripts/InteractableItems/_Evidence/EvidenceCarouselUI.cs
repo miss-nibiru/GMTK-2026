@@ -29,6 +29,7 @@ public class EvidenceCarouselUI : MonoBehaviour
             : _tracker.DiscoveredEvidence[_selectedEvidenceIndex];
 
     public event Action<EvidenceData> SelectionChanged;
+    public event Action<EvidenceData> EvidenceOpened;
 
     private void Awake()
     {
@@ -115,6 +116,13 @@ public class EvidenceCarouselUI : MonoBehaviour
     private void HandleSlotClicked(EvidenceSlotUI clickedSlot)
     {
         if (_tracker == null || clickedSlot.EvidenceData == null) return;
+        
+        if (clickedSlot.EvidenceData == SelectedEvidence)
+        {
+            EvidenceOpened?.Invoke(SelectedEvidence);
+            return;
+        }
+        
         IReadOnlyList<EvidenceData> evidence = _tracker.DiscoveredEvidence;
 
         for (int i = 0; i < evidence.Count; i++)
