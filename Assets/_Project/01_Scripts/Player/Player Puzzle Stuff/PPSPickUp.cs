@@ -4,6 +4,7 @@ public class PPSPickUp : MonoBehaviour, IPlayerPuzzleStates
 {
     [SerializeField] private PlayerInteraction interactor;
     [SerializeField] private Transform holdPosition;
+    [SerializeField] private PlayerPuzzleController puzzleController;
     
     private PickUpItems currentItem;
     
@@ -14,8 +15,27 @@ public class PPSPickUp : MonoBehaviour, IPlayerPuzzleStates
 
     public void Execute()
     {
-        if (interactor.interactObject == null) return;
+        if (interactor.interactObject == null || !interactor.interactObject.GetComponent<BaseInteractable>()) return;
+
+        if (interactor.interactObject.GetComponent<PickUpItems>())
+        {
+            PickUp();
+            return;
+        }
+
+        if (currentItem == null) return;
         
+        Destroy(currentItem.gameObject);
+    }
+
+    public void Exit()
+    {
+        interactor.enabled = false;
+        currentItem = null;
+    }
+
+    private void PickUp()
+    {
         currentItem = interactor.interactObject.GetComponent<PickUpItems>();
         
         switch (currentItem.pickUpToggle)
@@ -24,13 +44,8 @@ public class PPSPickUp : MonoBehaviour, IPlayerPuzzleStates
                 interactor.interactObject.transform.position = holdPosition.position;
                 break;
             case false:
-                
+                currentItem = null;
                 break;
         }
-    }
-
-    public void Exit()
-    {
-        interactor.enabled = false;
     }
 }
