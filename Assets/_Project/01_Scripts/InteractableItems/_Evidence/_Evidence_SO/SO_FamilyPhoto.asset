@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 29d1fddd189524fb8adc5a32ce42aab2, type: 3}
-  m_Name: SuicideNote
+  m_Name: SO_FamilyPhoto
   m_EditorClassIdentifier: Assembly-CSharp::EvidenceData
-  evidenceId: suicide_note
-  displayName: And Old Forgotten Note
-  evidenceImage: {fileID: 21300000, guid: f632b0d9ac7de419685b3327f89a615e, type: 3}
-  description: Roberta's note did she kill herself?
+  evidenceId: family_photo
+  displayName: Roberta, Santiago and their 2 kids
+  evidenceImage: {fileID: 21300000, guid: 747218beda456470faf4915bad12bc56, type: 3}
+  description: 'Seems like a nice happy family. '

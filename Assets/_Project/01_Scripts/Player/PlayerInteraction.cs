@@ -10,13 +10,16 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeField] private Camera playerCamera;
     [SerializeField] private float interactionDistance = 3f;
     [SerializeField] private LayerMask interactionLayers = ~0;
-
-    public GameObject interactObject { get; private set; }
+    
+    [Header("Raycast Debug")]
+    [SerializeField] private GameObject raycastHitMarker;
+    [SerializeField, Min(0f)] private float markerSurfaceOffset = 0.02f;
     
     [Header("UI")]
     [SerializeField] private GameObject interactionPrompt;
 
     private IInteractable _currentInteractable;
+    public GameObject interactObject { get; private set; }
 
     private void OnEnable()
     {
@@ -26,47 +29,50 @@ public class PlayerInteraction : MonoBehaviour
     private void OnDisable()
     {
         interactAction.action.Disable();
-
-        if (interactionPrompt != null)
-        {
-            interactionPrompt.SetActive(false);
-        }
+        if (interactionPrompt != null) interactionPrompt.SetActive(false);
+        
     }
 
     private void Update()
     {
         FindInteractable();
 
-        if (interactAction.action.WasPressedThisFrame() &&
-            _currentInteractable != null)
-        {
+        if (interactAction.action.WasPressedThisFrame() && _currentInteractable != null) 
             _currentInteractable.Interact();
-        }
+        
     }
 
     private void FindInteractable()
     {
         _currentInteractable = null;
+        interactObject = null;
 
-        Ray ray = playerCamera.ViewportPointToRay(
-            new Vector3(0.5f, 0.5f, 0f)
+        Ray ray = playerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
+
+        bool didHit = Physics.Raycast(
+            ray,
+            out RaycastHit hit,
+            interactionDistance,
+            interactionLayers,
+            QueryTriggerInteraction.Collide
         );
 
-        if (Physics.Raycast(
-                ray,
-                out RaycastHit hit,
-                interactionDistance,
-                interactionLayers,
-                QueryTriggerInteraction.Collide))
+        if (didHit)
         {
-            _currentInteractable =
-                hit.collider.GetComponentInParent<IInteractable>();
+            _currentInteractable = hit.collider.GetComponentInParent<IInteractable>();
             interactObject = hit.collider.gameObject;
         }
 
-        if (interactionPrompt != null)
+        if (raycastHitMarker != null)
         {
-            interactionPrompt.SetActive(_currentInteractable != null);
+            raycastHitMarker.SetActive(didHit);
+
+            if (didHit)
+                raycastHitMarker.transform.position =
+                    hit.point + hit.normal * markerSurfaceOffset;
         }
+
+        if (interactionPrompt != null)
+            interactionPrompt.SetActive(_currentInteractable != null);
     }
 }
