@@ -1,7 +1,6 @@
 using UnityEngine;
 
 /// <summary>
-/// as you are creating things and puzzles, make sure they are SO
 /// these will hold all the data and will already be connected
 /// to actions and events
 /// </summary>
