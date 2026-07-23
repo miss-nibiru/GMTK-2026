@@ -8,7 +8,7 @@ using UnityEngine;
 /// minutes reseted?
 /// </summary>
 
-public class DayEndSignal : MonoBehaviour
+public class DayEndBeep : MonoBehaviour
 {
     [SerializeField] private GameTimeManager timeManager;
     [SerializeField] private GameObject dayEndThought;
