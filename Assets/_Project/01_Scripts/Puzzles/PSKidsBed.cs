@@ -14,9 +14,4 @@ public class PSKidsBed : MonoBehaviour, IPuzzleStates
     {
         
     }
-    
-    public void OnTriggerEnter(Collider col)
-    {
-        
-    }
 }

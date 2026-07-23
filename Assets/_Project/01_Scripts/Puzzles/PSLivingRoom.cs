@@ -14,9 +14,4 @@ public class PSLivingRoom : MonoBehaviour, IPuzzleStates
     {
         
     }
-    
-    public void OnTriggerEnter(Collider col)
-    {
-        
-    }
 }
