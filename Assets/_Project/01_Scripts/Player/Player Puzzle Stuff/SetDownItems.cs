@@ -7,7 +7,7 @@ public class SetDownItems : BaseInteractable
     
     public override void Interact()
     {
-        if (!puzzleController.currentlyHeldItem) return;
+        if (puzzleController.currentlyHeldItem) return;
         
         Destroy(puzzleController.currentlyHeldItem);
         puzzleManager.psm.currentPuzzle.UpdateProgress();
