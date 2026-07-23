@@ -12,7 +12,6 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeField] private LayerMask interactionLayers = ~0;
 
     public GameObject interactObject { get; private set; }
-    public bool pickUpToggle { get; private set; }
     
     [Header("UI")]
     [SerializeField] private GameObject interactionPrompt;
@@ -63,7 +62,6 @@ public class PlayerInteraction : MonoBehaviour
             _currentInteractable =
                 hit.collider.GetComponentInParent<IInteractable>();
             interactObject = hit.collider.gameObject;
-            pickUpToggle = !pickUpToggle;
         }
 
         if (interactionPrompt != null)
