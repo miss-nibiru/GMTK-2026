@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class PlayerPuzzleController : MonoBehaviour
 {
-
     private PlayerPuzzleStateMachine ppsm;
     
     void Start()

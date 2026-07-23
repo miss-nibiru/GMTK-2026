@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public class PickUpItems : MonoBehaviour, IInteractable
+public class PickUpItems : BaseInteractable
 {
     public bool pickUpToggle { get; private set; }
     
-    public void Interact()
+    public override void Interact()
     {
         pickUpToggle = !pickUpToggle;
     }
