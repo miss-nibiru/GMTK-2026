@@ -6,7 +6,7 @@ public class PPSPickUp : MonoBehaviour, IPlayerPuzzleStates
     [SerializeField] private Transform holdPosition;
     [SerializeField] private PlayerPuzzleController puzzleController;
     
-    private PickUpItems currentItem;
+    public PickUpItems currentItem { get; private set; }
     
     public void Enter()
     {
@@ -20,18 +20,12 @@ public class PPSPickUp : MonoBehaviour, IPlayerPuzzleStates
         if (interactor.interactObject.GetComponent<PickUpItems>())
         {
             PickUp();
-            return;
         }
-
-        if (currentItem == null) return;
-        
-        Destroy(currentItem.gameObject);
     }
 
     public void Exit()
     {
         interactor.enabled = false;
-        currentItem = null;
     }
 
     private void PickUp()
@@ -41,11 +35,13 @@ public class PPSPickUp : MonoBehaviour, IPlayerPuzzleStates
         switch (currentItem.pickUpToggle)
         {
             case true:
-                interactor.interactObject.transform.position = holdPosition.position;
+                currentItem.gameObject.transform.position = holdPosition.position;
                 break;
             case false:
                 currentItem = null;
                 break;
         }
+
+        puzzleController.currentlyHeldItem = currentItem.gameObject;
     }
 }

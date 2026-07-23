@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class PlayerPuzzleController : MonoBehaviour
 {
+    public GameObject currentlyHeldItem;
+    
     private PlayerPuzzleStateMachine ppsm;
     
     void Start()
