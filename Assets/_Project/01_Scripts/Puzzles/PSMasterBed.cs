@@ -15,4 +15,9 @@ public class PSMasterBed : MonoBehaviour, IPuzzleStates
     {
         
     }
+
+    public void OnTriggerEnter(Collider col)
+    {
+        
+    }
 }
