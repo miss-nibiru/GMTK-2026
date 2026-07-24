@@ -1,5 +1,30 @@
 {
   "dependencies": {
+    "com.autodesk.fbx": {
+      "version": "5.1.3",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.seanzo.postprocess-effects": {
+      "version": "https://github.com/theseanzo/seanzo-unity-packages.git?path=/com.seanzo.postprocess-effects",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.render-pipelines.universal": "17.3.0"
+      },
+      "hash": "f07e89eb46dc4c68ae033ae45fc075151c6c7e78"
+    },
+    "com.seanzo.postprocess-player": {
+      "version": "https://github.com/theseanzo/seanzo-unity-packages.git?path=/com.seanzo.postprocess-player",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.render-pipelines.universal": "17.3.0"
+      },
+      "hash": "f07e89eb46dc4c68ae033ae45fc075151c6c7e78"
+    },
     "com.unity.2d.sprite": {
       "version": "1.0.0",
       "depth": 1,
@@ -89,6 +114,16 @@
       "depth": 1,
       "source": "builtin",
       "dependencies": {}
+    },
+    "com.unity.formats.fbx": {
+      "version": "5.1.6",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.autodesk.fbx": "5.1.3",
+        "com.unity.timeline": "1.7.1"
+      },
+      "url": "https://packages.unity.com"
     },
     "com.unity.ide.rider": {
       "version": "3.0.27",

@@ -14,4 +14,14 @@ public class PSKidsBed : MonoBehaviour, IPuzzleStates
     {
         
     }
+
+    public void UpdateProgress()
+    {
+        progressCheck++;
+
+        if (progressCheck >= 6)
+        {
+            Debug.Log("Finished Puzzle");
+        }
+    }
 }
