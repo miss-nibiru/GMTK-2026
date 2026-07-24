@@ -48,7 +48,11 @@ public class PlayerInteractionInput : MonoBehaviour
                 interactionDistance,
                 interactionLayers,
                 QueryTriggerInteraction.Collide))
+        {
+            currentInteractable = null;
+            currentObject = null;
             return;
+        }
         
         currentObject = hit.collider.gameObject;
 
