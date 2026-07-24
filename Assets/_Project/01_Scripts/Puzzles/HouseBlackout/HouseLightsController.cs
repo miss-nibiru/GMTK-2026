@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class HouseLightsController : MonoBehaviour
 {
-    [SerializeField] private Light[] houseLights;
-
     public void TurnOffLights()
     {
+        Light[] houseLights = GetComponentsInChildren<Light>(true);
+
         foreach (Light houseLight in houseLights)
-            if (houseLight != null) houseLight.enabled = false;
+            houseLight.enabled = false;
     }
-    
 }
+

@@ -57,12 +57,16 @@ public class ClockTimeEvent : MonoBehaviour
 
     private void CheckTime(int currentHour, int currentMinute)
     {
-        
         if (_hasTriggered) return;
-        if (currentHour != hour || currentMinute != minute) return;
-        
+
+        int currentTime = currentHour * 60 + currentMinute;
+        int triggerTime = hour * 60 + minute;
+
+        if (currentTime < triggerTime) return;
+
         _hasTriggered = true;
         onTimeReached?.Invoke();
         
     }
+    
 }

@@ -10,18 +10,17 @@ using UnityEngine.Events;
 
 public class BlackoutController : MonoBehaviour
 {
+    
     [SerializeField] private UnityEvent onPowerOff;
-    public static BlackoutController Instance { get; private set; }
-    public bool IsPowerOn { get; private set; }
-    private void Awake() => Instance = this;
+
+    public bool IsPowerOn { get; private set; } = true;
 
     public void BeginPowerOff()
     {
-        if(!IsPowerOn) return;
+
+        if (!IsPowerOn) return;
         IsPowerOn = false;
         onPowerOff?.Invoke();
     }
-    
-    
     
 }
