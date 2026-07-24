@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PPSPickUp : MonoBehaviour, IPlayerPuzzleStates
 {
-    [SerializeField] private PlayerInteraction interactor;
+    [SerializeField] private PlayerInteractionInput interactor;
     [SerializeField] private Transform holdPosition;
     [SerializeField] private PlayerPuzzleController puzzleController;
 
@@ -15,9 +15,9 @@ public class PPSPickUp : MonoBehaviour, IPlayerPuzzleStates
 
     public void Execute()
     {
-        if (interactor.interactObject == null || !interactor.interactObject.GetComponent<BaseInteractable>()) return;
+        if (interactor.currentObject == null || !interactor.currentObject.GetComponent<BaseInteractable>()) return;
 
-        if (interactor.interactObject.GetComponent<PickUpItems>())
+        if (interactor.currentObject.GetComponent<PickUpItems>())
         {
             PickUp();
         }
@@ -30,7 +30,7 @@ public class PPSPickUp : MonoBehaviour, IPlayerPuzzleStates
 
     private void PickUp()
     {
-        currentItem = interactor.interactObject.GetComponent<PickUpItems>();
+        currentItem = interactor.currentObject.GetComponent<PickUpItems>();
         
         switch (currentItem.pickUpToggle)
         {

@@ -9,7 +9,7 @@ public class PickUpItems : BaseInteractable
     {
         puzzleController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerPuzzleController>();
         
-        puzzleController.currentlyHeldItem = gameObject;
         pickUpToggle = !pickUpToggle;
+        puzzleController.currentlyHeldItem = gameObject;
     }
 }
