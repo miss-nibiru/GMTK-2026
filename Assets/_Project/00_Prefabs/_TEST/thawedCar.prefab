@@ -125,3 +125,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7fb71cb1544a9447bd4db81474862fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickUpItems
+  puzzleIndexNum: 6
