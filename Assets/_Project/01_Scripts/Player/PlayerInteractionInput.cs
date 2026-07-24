@@ -14,6 +14,7 @@ public class PlayerInteractionInput : MonoBehaviour
     private BaseInteractable currentInteractable;
 
     public GameObject currentObject {get; private set;}
+    private GameObject tempObject;
     
     private void OnEnable()
     {
@@ -54,10 +55,14 @@ public class PlayerInteractionInput : MonoBehaviour
             return;
         }
         
-        currentObject = hit.collider.gameObject;
+        tempObject = hit.collider.gameObject;
 
-        if (!currentObject.GetComponent<BaseInteractable>()) return;
+        if (!tempObject.GetComponent<BaseInteractable>()) return;
 
-        currentInteractable = currentObject.GetComponent<BaseInteractable>();
+        currentInteractable = tempObject.GetComponent<BaseInteractable>();
+
+        if (!tempObject.GetComponent<PickUpItems>()) return;
+        
+        currentObject = tempObject;
     }
 }
