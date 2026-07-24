@@ -2,15 +2,22 @@ using UnityEngine;
 
 public class KnobManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private TurnKnob[] knobs;
+    private int correctKnobs;
+    
+    public void CheckKnobs()
     {
+        correctKnobs = 0;
         
-    }
+        foreach (var knob in knobs)
+        {
+            if (!knob.inRightSpot) continue;
 
-    // Update is called once per frame
-    void Update()
-    {
+            correctKnobs++;
+        }
+
+        if (correctKnobs < knobs.Length) return;
         
+        Debug.Log("solved puzzle!");
     }
 }
