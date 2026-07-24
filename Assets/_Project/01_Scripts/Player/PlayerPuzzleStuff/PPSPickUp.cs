@@ -5,12 +5,18 @@ public class PPSPickUp : MonoBehaviour, IPlayerPuzzleStates
     [SerializeField] private PlayerInteractionInput interactor;
     [SerializeField] private Transform holdPosition;
     [SerializeField] private PlayerPuzzleController puzzleController;
+    
+    [SerializeField] private PlayerController controller;
+    [SerializeField] private FirstPersonCamera fpCam;
 
     private PickUpItems currentItem;
     
     public void Enter()
     {
-        interactor.enabled = true;
+        controller.enabled = true;
+        fpCam.enabled = true;
+        
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void Execute()
@@ -25,7 +31,8 @@ public class PPSPickUp : MonoBehaviour, IPlayerPuzzleStates
 
     public void Exit()
     {
-        interactor.enabled = false;
+        controller.enabled = false;
+        fpCam.enabled = false;
     }
 
     private void PickUp()

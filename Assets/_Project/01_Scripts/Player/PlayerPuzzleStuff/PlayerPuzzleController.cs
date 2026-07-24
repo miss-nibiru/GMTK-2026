@@ -4,7 +4,7 @@ public class PlayerPuzzleController : MonoBehaviour
 {
     public GameObject currentlyHeldItem;
     
-    private PlayerPuzzleStateMachine ppsm;
+    public PlayerPuzzleStateMachine ppsm { get; private set; }
     
     void Start()
     {
