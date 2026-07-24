@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class PickUpItems : BaseInteractable
 {
+    public int puzzleIndexNum;
+    
     public bool pickUpToggle { get; private set; }
     private PlayerPuzzleController puzzleController;
     
