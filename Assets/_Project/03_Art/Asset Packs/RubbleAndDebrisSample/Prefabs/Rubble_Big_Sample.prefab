@@ -99,7 +99,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4802584468170832}
-  - component: {fileID: 205912947399114846}
   m_Layer: 0
   m_Name: Rubble_Big_Sample
   m_TagString: Untagged
@@ -126,37 +125,6 @@ Transform:
   - {fileID: 4046741782381898}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!205 &205912947399114846
-LODGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1278830948007620}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0.08228445, y: 0.50836533, z: 0.13676548}
-  m_Size: 4.6125393
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LastLODIsBillboard: 0
-  m_LODs:
-  - screenRelativeHeight: 0.7538216
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23999648286657582}
-  - screenRelativeHeight: 0.5009082
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23490367529123922}
-  - screenRelativeHeight: 0.107534714
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23809812321474448}
-  - screenRelativeHeight: 0.01
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23725533679437818}
-  m_Enabled: 1
 --- !u!1 &1574302351328626
 GameObject:
   m_ObjectHideFlags: 0
