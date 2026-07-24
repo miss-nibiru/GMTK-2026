@@ -14,7 +14,6 @@ public class PlayerInteractionInput : MonoBehaviour
     private BaseInteractable currentInteractable;
 
     public GameObject currentObject {get; private set;}
-    private GameObject tempObject;
     
     private void OnEnable()
     {
@@ -49,20 +48,12 @@ public class PlayerInteractionInput : MonoBehaviour
                 interactionDistance,
                 interactionLayers,
                 QueryTriggerInteraction.Collide))
-        {
-            currentInteractable = null;
-            currentObject = null;
             return;
-        }
         
-        tempObject = hit.collider.gameObject;
+        currentObject = hit.collider.gameObject;
 
-        if (!tempObject.GetComponent<BaseInteractable>()) return;
+        if (!currentObject.GetComponent<BaseInteractable>()) return;
 
-        currentInteractable = tempObject.GetComponent<BaseInteractable>();
-
-        if (!tempObject.GetComponent<PickUpItems>()) return;
-        
-        currentObject = tempObject;
+        currentInteractable = currentObject.GetComponent<BaseInteractable>();
     }
 }
