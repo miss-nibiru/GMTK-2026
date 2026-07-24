@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 4074973211489126583}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.1, z: 0.14394253}
+  m_LocalPosition: {x: 0.95380366, y: 0.1, z: 0.29394254}
   m_LocalScale: {x: 0.1, y: 0.2, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -157,7 +157,7 @@ Transform:
   m_GameObject: {fileID: 7945856053262237748}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.3, z: 0.34394255}
+  m_LocalPosition: {x: 0.95380366, y: 0.3, z: 0.49394256}
   m_LocalScale: {x: 0.1, y: 0.6, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -288,7 +288,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1909003695883439181, guid: e8128b14f914cb0479fd1a4688966e5f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -19.87885
+      value: -4.878851
       objectReference: {fileID: 0}
     - target: {fileID: 1909003695883439181, guid: e8128b14f914cb0479fd1a4688966e5f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -327,28 +327,8 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1909003695883439181, guid: e8128b14f914cb0479fd1a4688966e5f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2234553437750882385}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1278490377951663969, guid: e8128b14f914cb0479fd1a4688966e5f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1899208489719413681}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8128b14f914cb0479fd1a4688966e5f, type: 3}
---- !u!1 &6036531911232361089 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1278490377951663969, guid: e8128b14f914cb0479fd1a4688966e5f, type: 3}
-  m_PrefabInstance: {fileID: 4789593544505476576}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1899208489719413681
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6036531911232361089}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0e82771d4a2fe64d8cb29eadc1a6072, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PSKitchen
 --- !u!4 &6342802533987813805 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1909003695883439181, guid: e8128b14f914cb0479fd1a4688966e5f, type: 3}
