@@ -2,10 +2,12 @@ using UnityEngine;
 
 public class PPSTurningKnobs : MonoBehaviour, IPlayerPuzzleStates
 {
+    [SerializeField] private GameObject knobScreen;
+    
     public void Enter()
     {
         Cursor.lockState = CursorLockMode.None;
-        Debug.Log("enter");
+        knobScreen.SetActive(true);
     }
 
     public void Execute()
@@ -15,6 +17,6 @@ public class PPSTurningKnobs : MonoBehaviour, IPlayerPuzzleStates
 
     public void Exit()
     {
-        Debug.Log("exit");
+        knobScreen.SetActive(false);
     }
 }
