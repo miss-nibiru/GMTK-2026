@@ -1,16 +1,20 @@
 using UnityEngine;
 
-public class PPSTurningKnobs : MonoBehaviour
+public class PPSTurningKnobs : MonoBehaviour, IPlayerPuzzleStates
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void Enter()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Debug.Log("enter");
+    }
+
+    public void Execute()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Exit()
     {
-        
+        Debug.Log("exit");
     }
 }
