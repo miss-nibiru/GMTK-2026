@@ -168,6 +168,11 @@ GameObject:
   - component: {fileID: 1566673682856557072}
   - component: {fileID: 2964879996464138966}
   - component: {fileID: 1451453046761615093}
+  - component: {fileID: 8706825880253155212}
+  - component: {fileID: 3399322227150675724}
+  - component: {fileID: 8974895144825001263}
+  - component: {fileID: 163569350333578638}
+  - component: {fileID: 793473907585484146}
   - component: {fileID: 2283830420038601776}
   - component: {fileID: 104559843044080514}
   m_Layer: 0
@@ -187,7 +192,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -15, y: 0.04, z: -4}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4235197785826162819}
@@ -289,6 +294,80 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   interactionPrompt: {fileID: 0}
+--- !u!114 &8706825880253155212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4280125533775278335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02ae7f05c6223cf4192cf30a088dee98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInteractionInput
+  interactAction: {fileID: 1781555164194001046, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  playerCamera: {fileID: 0}
+  interactionDistance: 10
+  interactionLayers:
+    serializedVersion: 2
+    m_Bits: 128
+--- !u!114 &3399322227150675724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4280125533775278335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2c74b0e1787b064085e08ace31a1227, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerPuzzleController
+  currentlyHeldItem: {fileID: 0}
+--- !u!114 &8974895144825001263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4280125533775278335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dd0caa0c1c06f042b03dff72f5719c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PPSPickUp
+  interactor: {fileID: 0}
+  holdPosition: {fileID: 0}
+  puzzleController: {fileID: 0}
+  controller: {fileID: 0}
+  fpCam: {fileID: 0}
+--- !u!114 &163569350333578638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4280125533775278335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01c902db38ae91b40b620e13ce2e81c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PPSTurningKnobs
+  knobScreen: {fileID: 0}
+--- !u!114 &793473907585484146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4280125533775278335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a96e738145797aa4facca8028f9b9ff6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PPSOpenSafe
+  safeScreen: {fileID: 0}
 --- !u!143 &2283830420038601776
 CharacterController:
   m_ObjectHideFlags: 0

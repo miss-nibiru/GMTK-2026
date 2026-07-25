@@ -17,10 +17,11 @@ public class BlackoutController : MonoBehaviour
 
     public void BeginPowerOff()
     {
-
         if (!IsPowerOn) return;
+
         IsPowerOn = false;
         onPowerOff?.Invoke();
     }
-    
+
 }
+    
