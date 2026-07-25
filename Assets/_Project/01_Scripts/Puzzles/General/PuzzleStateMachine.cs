@@ -13,6 +13,6 @@ public class PuzzleStateMachine
     {
         currentPuzzle?.Exit();
         currentPuzzle = state;
-        currentPuzzle.Enter(pm);
+        currentPuzzle?.Enter(pm);
     }
 }
