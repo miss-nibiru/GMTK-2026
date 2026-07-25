@@ -206,7 +206,6 @@ GameObject:
   - component: {fileID: 163569350333578638}
   - component: {fileID: 793473907585484146}
   - component: {fileID: 2283830420038601776}
-  - component: {fileID: 104559843044080514}
   m_Layer: 0
   m_Name: Player_Root
   m_TagString: Player
@@ -357,6 +356,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerPuzzleController
   currentlyHeldItem: {fileID: 0}
+  previouslyHeldItem: {fileID: 0}
 --- !u!114 &8974895144825001263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -424,29 +424,6 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.03
   m_MinMoveDistance: 0
-  m_Center: {x: 0, y: 1, z: 0}
---- !u!136 &104559843044080514
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4280125533775278335}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
 --- !u!1001 &6413174083097683987
 PrefabInstance:
