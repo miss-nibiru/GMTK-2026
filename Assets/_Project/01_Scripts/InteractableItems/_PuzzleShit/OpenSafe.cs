@@ -17,5 +17,7 @@ public class OpenSafe : BaseInteractable
                 puzzleControl.ppsm.SwitchStates(puzzleControl.ppsm.pickUpState);
                 break;
         }
+
+        toggleState = !toggleState;
     }
 }

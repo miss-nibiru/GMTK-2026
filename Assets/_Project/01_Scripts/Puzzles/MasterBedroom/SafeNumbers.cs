@@ -2,5 +2,7 @@ using UnityEngine;
 
 public class SafeNumbers : MonoBehaviour
 {
-    [SerializeField] private int targetNum;
+    public int targetNum;
+
+    public int currentNum;
 }

@@ -3,24 +3,28 @@ using TMPro;
 
 public class SafeInput : MonoBehaviour
 {
+    [SerializeField] private SafeManager safeManager;
+    
+    [SerializeField] private SafeNumbers numbers;
+    
     [SerializeField] private TextMeshProUGUI currentNum;
     [SerializeField] private int adder;
-
-    private int num;
     
     public void OnClick()
     {
-        num += adder;
+        numbers.currentNum += adder;
         
-        if (num < 0)
+        if (numbers.currentNum < 0)
         {
-            num = 9;
+            numbers.currentNum = 9;
         }
-        else if (num >= 10)
+        else if (numbers.currentNum >= 10)
         {
-            num = 0;
+            numbers.currentNum = 0;
         }
         
-        currentNum.text = num.ToString();
+        currentNum.text = numbers.currentNum.ToString();
+        
+        safeManager.CheckNumbers();
     }
 }
