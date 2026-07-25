@@ -3680,6 +3680,7 @@ GameObject:
   - component: {fileID: 5024842063743392685}
   - component: {fileID: 4506153839742236533}
   - component: {fileID: 8223576660146515580}
+  - component: {fileID: 2960120305949730841}
   m_Layer: 0
   m_Name: Fridge_01
   m_TagString: Untagged
@@ -3697,8 +3698,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.08, y: 0.08, z: 0.08}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5734649120786468221}
   - {fileID: 8269956999650990030}
@@ -3787,6 +3788,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -3380468233735203785, guid: 2a83511a782a6aa4dafed1f5a2bd3803, type: 3}
+--- !u!114 &2960120305949730841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8865368439672749607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24a1a207276f8844b96c7918e94068f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OpenFridge
+  frozenCar: {fileID: 6338676228601813418, guid: 20bfb7c8ea2ef9146b7c782d1c0de526, type: 3}
 --- !u!1 &8962339747848354774
 GameObject:
   m_ObjectHideFlags: 0
