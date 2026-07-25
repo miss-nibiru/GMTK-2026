@@ -9,9 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8555768636231666550}
-  - component: {fileID: 8143120887484088175}
   - component: {fileID: 8933744494468887822}
-  - component: {fileID: 208085167509284207}
   m_Layer: 0
   m_Name: KitchenPuzzle_Root
   m_TagString: Untagged
@@ -35,18 +33,6 @@ Transform:
   - {fileID: 3049244573598514963}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8143120887484088175
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7946366063499855107}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dfe99dbcbe52fda4fbb3f702974b3211, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PSLivingRoom
 --- !u!114 &8933744494468887822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59,18 +45,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0e82771d4a2fe64d8cb29eadc1a6072, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PSKitchen
---- !u!114 &208085167509284207
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7946366063499855107}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb4eeb7fb3eebea46b2972639678978f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PSKidsBed
 --- !u!1001 &482533789943863850
 PrefabInstance:
   m_ObjectHideFlags: 0

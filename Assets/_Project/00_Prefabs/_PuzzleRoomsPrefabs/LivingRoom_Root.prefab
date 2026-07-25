@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1120927935080268730}
   - component: {fileID: 5495823541002839482}
   - component: {fileID: 646094467473762697}
-  - component: {fileID: 6704943919911786774}
   - component: {fileID: 4187986822246613816}
   m_Layer: 0
   m_Name: LivingRoom_Root
@@ -82,18 +81,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 20, y: 7, z: 12}
   m_Center: {x: -5, y: 3, z: 0}
---- !u!114 &6704943919911786774
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4011827252665369140}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb4eeb7fb3eebea46b2972639678978f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PSKidsBed
 --- !u!114 &4187986822246613816
 MonoBehaviour:
   m_ObjectHideFlags: 0
