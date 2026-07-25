@@ -4,6 +4,8 @@ public class KnobManager : MonoBehaviour
 {
     [SerializeField] private TurnKnob[] knobs;
     private int correctKnobs;
+
+    public bool fixedKnobs { get; private set; }
     
     public void CheckKnobs()
     {
@@ -18,6 +20,6 @@ public class KnobManager : MonoBehaviour
 
         if (correctKnobs < knobs.Length) return;
         
-        Debug.Log("solved puzzle!");
+        fixedKnobs = true;
     }
 }
