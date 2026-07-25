@@ -84,11 +84,12 @@ public class EvidenceSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitH
         if (!_isSelected) _pointerOver = false;
         evidenceIcon.sprite = hasEvidence ? evidenceData.EvidenceImage : null;
         evidenceIcon.enabled = hasEvidence;
-        _button.interactable = hasEvidence;
 
         if (selectedOutline != null)
             selectedOutline.enabled = _isSelected;
         
+        if (!_button) return;
+        _button.interactable = hasEvidence;
     }
 
     public void Clear()
