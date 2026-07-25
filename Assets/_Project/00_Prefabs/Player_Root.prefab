@@ -209,7 +209,7 @@ GameObject:
   - component: {fileID: 104559843044080514}
   m_Layer: 0
   m_Name: Player_Root
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -340,7 +340,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInteractionInput
   interactAction: {fileID: 1781555164194001046, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   playerCamera: {fileID: 4681111270948082506}
-  interactionDistance: 10
+  interactionDistance: 5
   interactionLayers:
     serializedVersion: 2
     m_Bits: 128

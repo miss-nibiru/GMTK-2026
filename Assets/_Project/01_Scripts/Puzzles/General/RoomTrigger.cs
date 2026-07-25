@@ -2,13 +2,15 @@ using UnityEngine;
 
 public class RoomTrigger : MonoBehaviour
 {
-    private PuzzleManager puzzleManager;
+    private PuzzleManager _puzzleManager;
     
     private void OnTriggerEnter(Collider other)
     {
-        puzzleManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<PuzzleManager>();
+        _puzzleManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<PuzzleManager>();
         
-        puzzleManager.psm.SwitchStates(gameObject.GetComponent<IPuzzleStates>());
-        Debug.Log(puzzleManager.psm.currentPuzzle);
+        _puzzleManager.psm.SwitchStates(gameObject.GetComponent<IPuzzleStates>());
+        Debug.Log(_puzzleManager.psm.currentPuzzle);
     }
+    
+    
 }

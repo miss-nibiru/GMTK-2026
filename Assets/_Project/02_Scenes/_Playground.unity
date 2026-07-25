@@ -2639,10 +2639,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_Root
       objectReference: {fileID: 0}
-    - target: {fileID: 8706825880253155212, guid: 54d7a16f39f1a4b5093a2a6eedea1ba1, type: 3}
-      propertyPath: interactionDistance
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3619,6 +3615,17 @@ RectTransform:
   m_AnchoredPosition: {x: -0.00007247925, y: 6.7794952}
   m_SizeDelta: {x: 300, y: 286.44}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &978537902 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3399322227150675724, guid: 54d7a16f39f1a4b5093a2a6eedea1ba1, type: 3}
+  m_PrefabInstance: {fileID: 575090743}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2c74b0e1787b064085e08ace31a1227, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerPuzzleController
 --- !u!1 &1009564530
 GameObject:
   m_ObjectHideFlags: 0
@@ -8088,10 +8095,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 91105479}
     m_Modifications:
-    - target: {fileID: 7433483387612568813, guid: 2beae91ae37e94d75aa52d27635c6f99, type: 3}
-      propertyPath: puzzleControl
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 7946366063499855107, guid: 2beae91ae37e94d75aa52d27635c6f99, type: 3}
       propertyPath: m_Name
       value: KitchenPuzzle_Root
@@ -8135,10 +8138,6 @@ PrefabInstance:
     - target: {fileID: 8555768636231666550, guid: 2beae91ae37e94d75aa52d27635c6f99, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8901413193996041512, guid: 2beae91ae37e94d75aa52d27635c6f99, type: 3}
-      propertyPath: puzzleController
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8288,6 +8287,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2143119162346645672, guid: b71e3f34e190248a99c32594296d1a54, type: 3}
+      propertyPath: puzzleControl
+      value: 
+      objectReference: {fileID: 978537902}
     - target: {fileID: 4011827252665369140, guid: b71e3f34e190248a99c32594296d1a54, type: 3}
       propertyPath: m_Name
       value: LivingRoom_Root
