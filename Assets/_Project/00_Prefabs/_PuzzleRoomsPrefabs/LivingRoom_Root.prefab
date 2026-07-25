@@ -273,11 +273,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7545264652573100592, guid: 023465b99b67447b3bceff8969d61d24, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5283065130298463092, guid: 023465b99b67447b3bceff8969d61d24, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2008160244402865487}
   m_SourcePrefab: {fileID: 100100000, guid: 023465b99b67447b3bceff8969d61d24, type: 3}
+--- !u!1 &6451272587591713938 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5283065130298463092, guid: 023465b99b67447b3bceff8969d61d24, type: 3}
+  m_PrefabInstance: {fileID: 1213352322402342886}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2008160244402865487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6451272587591713938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4291bb6ff623724469b98f9d56311392, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VHSInteractions
+  puzzleIndexNum: 0
+  pickUpToggle: 0
+  displayText: a
 --- !u!4 &8709219274992934318 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7497346914034092616, guid: 023465b99b67447b3bceff8969d61d24, type: 3}
@@ -401,16 +425,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7545264652573100592, guid: 023465b99b67447b3bceff8969d61d24, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5283065130298463092, guid: 023465b99b67447b3bceff8969d61d24, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3631195604864346660}
   m_SourcePrefab: {fileID: 100100000, guid: 023465b99b67447b3bceff8969d61d24, type: 3}
 --- !u!4 &5714447291394446447 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7497346914034092616, guid: 023465b99b67447b3bceff8969d61d24, type: 3}
   m_PrefabInstance: {fileID: 2829992036078050855}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7932828499539955027 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5283065130298463092, guid: 023465b99b67447b3bceff8969d61d24, type: 3}
+  m_PrefabInstance: {fileID: 2829992036078050855}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3631195604864346660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7932828499539955027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4291bb6ff623724469b98f9d56311392, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VHSInteractions
+  puzzleIndexNum: 0
+  pickUpToggle: 0
+  displayText: a
 --- !u!1001 &2942932678018163671
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -467,16 +515,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7545264652573100592, guid: 023465b99b67447b3bceff8969d61d24, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5283065130298463092, guid: 023465b99b67447b3bceff8969d61d24, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7980112302392058292}
   m_SourcePrefab: {fileID: 100100000, guid: 023465b99b67447b3bceff8969d61d24, type: 3}
 --- !u!4 &4673761035129645471 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7497346914034092616, guid: 023465b99b67447b3bceff8969d61d24, type: 3}
   m_PrefabInstance: {fileID: 2942932678018163671}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7027394511854121123 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5283065130298463092, guid: 023465b99b67447b3bceff8969d61d24, type: 3}
+  m_PrefabInstance: {fileID: 2942932678018163671}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7980112302392058292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7027394511854121123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4291bb6ff623724469b98f9d56311392, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VHSInteractions
+  puzzleIndexNum: 0
+  pickUpToggle: 0
+  displayText: a
 --- !u!1001 &3361942576354879545
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -595,16 +667,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7545264652573100592, guid: 023465b99b67447b3bceff8969d61d24, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5283065130298463092, guid: 023465b99b67447b3bceff8969d61d24, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1204117393969808950}
   m_SourcePrefab: {fileID: 100100000, guid: 023465b99b67447b3bceff8969d61d24, type: 3}
 --- !u!4 &6743424069760485313 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7497346914034092616, guid: 023465b99b67447b3bceff8969d61d24, type: 3}
   m_PrefabInstance: {fileID: 3863694018260700553}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8993598862430723837 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5283065130298463092, guid: 023465b99b67447b3bceff8969d61d24, type: 3}
+  m_PrefabInstance: {fileID: 3863694018260700553}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1204117393969808950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8993598862430723837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4291bb6ff623724469b98f9d56311392, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VHSInteractions
+  puzzleIndexNum: 0
+  pickUpToggle: 0
+  displayText: a
 --- !u!1001 &4985540925100535079
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -683,7 +779,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 4655389518278983542, guid: 0046cbc441813417697abe4c9f9cc476, type: 3}
+      insertIndex: 0
+      addedObject: {fileID: 2110211662176694281}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0046cbc441813417697abe4c9f9cc476, type: 3}
 --- !u!4 &408551121369584209 stripped
@@ -957,15 +1056,101 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7545264652573100592, guid: 023465b99b67447b3bceff8969d61d24, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5283065130298463092, guid: 023465b99b67447b3bceff8969d61d24, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6268847408351090270}
   m_SourcePrefab: {fileID: 100100000, guid: 023465b99b67447b3bceff8969d61d24, type: 3}
+--- !u!1 &1255599401597321763 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5283065130298463092, guid: 023465b99b67447b3bceff8969d61d24, type: 3}
+  m_PrefabInstance: {fileID: 6358518341331030359}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6268847408351090270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1255599401597321763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4291bb6ff623724469b98f9d56311392, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VHSInteractions
+  puzzleIndexNum: 0
+  pickUpToggle: 0
+  displayText: a
 --- !u!4 &3473986108369935135 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7497346914034092616, guid: 023465b99b67447b3bceff8969d61d24, type: 3}
   m_PrefabInstance: {fileID: 6358518341331030359}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6604284034178120041
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 408551121369584209}
+    m_Modifications:
+    - target: {fileID: 5111544916611323200, guid: c844625022dd4d1479f604eceb65b109, type: 3}
+      propertyPath: m_Name
+      value: sand_clock_animation
+      objectReference: {fileID: 0}
+    - target: {fileID: 5111544916611549536, guid: c844625022dd4d1479f604eceb65b109, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5111544916611549536, guid: c844625022dd4d1479f604eceb65b109, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5111544916611549536, guid: c844625022dd4d1479f604eceb65b109, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5111544916611549536, guid: c844625022dd4d1479f604eceb65b109, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5111544916611549536, guid: c844625022dd4d1479f604eceb65b109, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5111544916611549536, guid: c844625022dd4d1479f604eceb65b109, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5111544916611549536, guid: c844625022dd4d1479f604eceb65b109, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5111544916611549536, guid: c844625022dd4d1479f604eceb65b109, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5111544916611549536, guid: c844625022dd4d1479f604eceb65b109, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5111544916611549536, guid: c844625022dd4d1479f604eceb65b109, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c844625022dd4d1479f604eceb65b109, type: 3}
+--- !u!4 &2110211662176694281 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5111544916611549536, guid: c844625022dd4d1479f604eceb65b109, type: 3}
+  m_PrefabInstance: {fileID: 6604284034178120041}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9208171458258395666
 PrefabInstance:
