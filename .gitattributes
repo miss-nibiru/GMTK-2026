@@ -1,0 +1,2 @@
+Assets/GeniusCrate_Games/** filter=lfs diff=lfs merge=lfs -text
+Assets/Brick[[:space:]]Project[[:space:]]Studio/** filter=lfs diff=lfs merge=lfs -text
