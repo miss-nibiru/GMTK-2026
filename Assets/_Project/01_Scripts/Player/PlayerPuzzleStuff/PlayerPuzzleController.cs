@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerPuzzleController : MonoBehaviour
 {
     public GameObject currentlyHeldItem;
+    public GameObject previouslyHeldItem;
     
     public PlayerPuzzleStateMachine ppsm { get; private set; }
     

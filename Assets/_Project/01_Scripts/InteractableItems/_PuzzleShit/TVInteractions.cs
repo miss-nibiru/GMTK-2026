@@ -44,6 +44,7 @@ public class TVInteractions : BaseInteractable
     {
         text.text = "";
         currentObject.transform.position = VHSOutputPos.position;
+        interactions.pickUpToggle = false;
         currentObject.SetActive(true);
         currentObject = null;
         interactToggle = !interactToggle;

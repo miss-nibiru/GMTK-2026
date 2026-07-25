@@ -12,8 +12,11 @@ public class PlayerInteractionInput : MonoBehaviour
     [SerializeField] private LayerMask interactionLayers = ~0;
 
     private BaseInteractable currentInteractable;
+    private BaseInteractable previousInteractable;
 
+    private GameObject pastObject;
     public GameObject currentObject {get; private set;}
+    private GameObject newObject;
     
     private void OnEnable()
     {
@@ -31,11 +34,15 @@ public class PlayerInteractionInput : MonoBehaviour
         
         ShootRay();
         
-        currentInteractable.Interact();
+        currentInteractable?.Interact();
+        
+        if(pastObject?.GetComponent<PickUpItems>() && pastObject != currentObject)
+            previousInteractable?.Interact();
     }
 
     private void ShootRay()
     {
+        pastObject = currentObject;
         currentObject = null;
         
         Ray ray = playerCamera.ViewportPointToRay(
@@ -49,15 +56,23 @@ public class PlayerInteractionInput : MonoBehaviour
                 interactionLayers,
                 QueryTriggerInteraction.Collide))
         {
+            if(pastObject?.GetComponent<PickUpItems>())
+                currentInteractable?.Interact();
+
+            pastObject = null;
             currentInteractable = null;
-            currentObject = null;
             return;
         }
         
-        currentObject = hit.collider.gameObject;
+        newObject = hit.collider.gameObject;
 
-        if (!currentObject.GetComponent<BaseInteractable>()) return;
+        if (!newObject.GetComponent<BaseInteractable>()) return;
+        
+        previousInteractable = currentInteractable;
+        currentInteractable = newObject.GetComponent<BaseInteractable>();
 
-        currentInteractable = currentObject.GetComponent<BaseInteractable>();
+        if (!newObject.GetComponent<PickUpItems>()) return;
+        
+        currentObject = newObject;
     }
 }
