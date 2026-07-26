@@ -581,7 +581,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8172622915317542547}
   m_Layer: 0
-  m_Name: baretta
+  m_Name: beretta
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -717,7 +717,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9e3341890af021c4aa02036ff25443e3, type: 3}
       propertyPath: m_Name
-      value: dasy attachment
+      value: daisy attachment
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9e3341890af021c4aa02036ff25443e3, type: 3}
       propertyPath: m_IsActive
