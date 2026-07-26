@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerInteractionInput : MonoBehaviour
 {
+    [SerializeField] private PlayerPuzzleController puzzleController;
     [SerializeField] private InputActionReference interactAction;
     [SerializeField] private Camera playerCamera;
     [SerializeField] private float interactionDistance = 3f;
@@ -17,10 +18,18 @@ public class PlayerInteractionInput : MonoBehaviour
     {
         if (!interactAction.action.WasPressedThisFrame()) return;
         Ray ray = playerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f));
-        if (!Physics.Raycast(ray, out RaycastHit hit, interactionDistance, interactionLayers, QueryTriggerInteraction.Collide))
-       
+        if (!Physics.Raycast(
+                ray,
+                out RaycastHit hit,
+                interactionDistance,
+                interactionLayers,
+                QueryTriggerInteraction.Collide))
         {
             CurrentObject = null;
+
+            if (puzzleController.CurrentlyHeldItem != null)
+                puzzleController.ReleaseHeldItem();
+
             return;
         }
 
