@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1939355517494213967}
   - component: {fileID: 136789003151585690}
+  - component: {fileID: 1757089778231926940}
   - component: {fileID: 2690000879671719249}
   m_Layer: 0
   m_Name: KidsBedroom_Root
@@ -53,6 +54,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 353bcdcd4c2d06a4aa94b15b25d28e1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RoomTrigger
+  puzzleManager: {fileID: 0}
+--- !u!114 &1757089778231926940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6038428930908967715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb4eeb7fb3eebea46b2972639678978f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PSKidsBed
 --- !u!65 &2690000879671719249
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -72,8 +86,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 6, y: 6, z: 6.2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 3, z: 1}
+  m_Center: {x: -2.5, y: -1.02, z: 2.5}
 --- !u!1001 &959328742209308762
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -469,7 +483,7 @@ MonoBehaviour:
   - {fileID: 6676972099579458916}
   - {fileID: 6839390774309975391}
   - {fileID: 1938719994370859405}
-  - {fileID: 0}
+  - {fileID: 5405290048390394057}
 --- !u!1 &684207371430314071 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1362744638054964333, guid: 07c41fa0049bf4798a2b33dfb0cbad7b, type: 3}
@@ -556,6 +570,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainTrain_Root
       objectReference: {fileID: 0}
+    - target: {fileID: 7740443242396199663, guid: 9f8da559c49b84e73ae15e9763d95496, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -564,6 +582,11 @@ PrefabInstance:
 --- !u!4 &2357938841445949342 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 59094719017321912, guid: 9f8da559c49b84e73ae15e9763d95496, type: 3}
+  m_PrefabInstance: {fileID: 2335370081809881638}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5405290048390394057 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7740443242396199663, guid: 9f8da559c49b84e73ae15e9763d95496, type: 3}
   m_PrefabInstance: {fileID: 2335370081809881638}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3171459105116057163

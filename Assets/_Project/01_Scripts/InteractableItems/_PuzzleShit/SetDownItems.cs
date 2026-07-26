@@ -22,6 +22,6 @@ public class SetDownItems : BaseInteractable
         missingPieces[currentItem.puzzleIndexNum - 1].SetActive(true);
         
         Destroy(puzzleController.currentlyHeldItem);
-        puzzleManager.psm.currentPuzzle?.UpdateProgress();
+        puzzleManager.Psm.currentPuzzle?.UpdateProgress();
     }
 }

@@ -2,10 +2,12 @@ using UnityEngine;
 
 public class PuzzleManager : MonoBehaviour
 {
-    public PuzzleStateMachine psm;
+    //Max!! I added a constructor to this so the state machine gets created first thing -- changed Start to Awake!
+    public PuzzleStateMachine Psm { get; private set;}
 
-    private void Start()
+    private void Awake()
     {
-        psm = new PuzzleStateMachine(this);
+        Psm = new PuzzleStateMachine(this);
     }
+    
 }
