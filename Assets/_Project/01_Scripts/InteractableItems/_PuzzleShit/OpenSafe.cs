@@ -11,10 +11,10 @@ public class OpenSafe : BaseInteractable
         switch (toggleState)
         {
             case false:
-                puzzleControl.ppsm.SwitchStates(puzzleControl.ppsm.safeState);
+                puzzleControl.Ppsm.SwitchStates(puzzleControl.Ppsm.safeState);
                 break;
             case true:
-                puzzleControl.ppsm.SwitchStates(puzzleControl.ppsm.pickUpState);
+                puzzleControl.Ppsm.SwitchStates(puzzleControl.Ppsm.pickUpState);
                 break;
         }
 

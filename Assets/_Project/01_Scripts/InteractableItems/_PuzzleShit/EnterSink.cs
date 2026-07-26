@@ -4,19 +4,19 @@ public class EnterSink : BaseInteractable
 {
     [SerializeField] private PlayerPuzzleController puzzleController;
 
-    private bool interactToggle;
+    private bool _interactToggle;
     
     public override void Interact()
     {
-        switch (interactToggle)
+        switch (_interactToggle)
         {
             case false:
-                puzzleController.ppsm.SwitchStates(puzzleController.ppsm.sinkState);
+                puzzleController.Ppsm.SwitchStates(puzzleController.Ppsm.sinkState);
                 break;
             case true:
-                puzzleController.ppsm.SwitchStates(puzzleController.ppsm.pickUpState);
+                puzzleController.Ppsm.SwitchStates(puzzleController.Ppsm.pickUpState);
                 break;
         }
-        interactToggle = !interactToggle;
+        _interactToggle = !_interactToggle;
     }
 }

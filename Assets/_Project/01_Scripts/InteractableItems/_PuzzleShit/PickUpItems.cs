@@ -3,23 +3,39 @@ using UnityEngine;
 public class PickUpItems : BaseInteractable
 {
     public int puzzleIndexNum;
-
     public bool pickUpToggle;
-    private PlayerPuzzleController puzzleController;
+    private PlayerPuzzleController _puzzleController;
+    
+    private void Awake()
+    {
+        _puzzleController = FindFirstObjectByType<PlayerPuzzleController>(); // find puzzle controller on the thing if needed
+    }
     
     public override void Interact()
     {
-        puzzleController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerPuzzleController>();
-        
-        switch (pickUpToggle)
+        if (_puzzleController == null) return;
+
+        GameObject heldItem = _puzzleController.CurrentlyHeldItem;
+
+        if (heldItem == gameObject)
         {
-            case false:
-                puzzleController.currentlyHeldItem = gameObject;
-                break;
-            case true:
-                puzzleController.currentlyHeldItem  = null;
-                break;        
+            _puzzleController.ReleaseHeldItem();
+            pickUpToggle = false;
+            return;
         }
-        pickUpToggle = !pickUpToggle;
+
+        if (heldItem != null)
+        {
+            PickUpItems previousItem = heldItem.GetComponent<PickUpItems>();
+
+            if (previousItem != null)
+                previousItem.pickUpToggle = false;
+
+            _puzzleController.ReleaseHeldItem();
+        }
+
+        if (_puzzleController.HoldItem(gameObject))
+            pickUpToggle = true;
     }
+    
 }

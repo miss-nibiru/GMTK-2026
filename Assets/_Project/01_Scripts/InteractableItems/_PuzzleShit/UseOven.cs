@@ -1,35 +1,49 @@
-using System.Collections;
 using UnityEngine;
 
 public class UseOven : BaseInteractable
 {
-    [SerializeField] private PlayerPuzzleController puzzleControl;
-    
-    [SerializeField] private float timer;
-    [SerializeField] private GameObject car;
-    private bool cookedCar;
-    
+    [SerializeField] private PlayerPuzzleController puzzleController;
+    [SerializeField] private GameTimeManager timeManager;
+    [SerializeField] private GameObject thawedCarPrefab;
+    [SerializeField] private Transform carOutputPosition;
+
+    [SerializeField] private int thawHour = 13;
+    private bool _carInside;
+
     public override void Interact()
     {
-        if (!puzzleControl.currentlyHeldItem && !cookedCar) return;
-        
-        switch (cookedCar)
+        if (_carInside)
         {
-            case false:
-                StartCoroutine(cookTimer());
-                Destroy(puzzleControl.currentlyHeldItem);
-                break;
-            case true:
-                Instantiate(car, transform.position, transform.rotation);
-                Destroy(gameObject);
-                break;
+            TryCollectCar();
+            return;
         }
+
+        TryInsertCar();
     }
 
-    private IEnumerator cookTimer()
+    private void TryInsertCar()
     {
-        yield return new WaitForSeconds(timer);
-        Debug.Log("Ready");
-        cookedCar = true;
+        if (timeManager.CurrentHour >= thawHour) return;
+
+        GameObject heldItem = puzzleController.CurrentlyHeldItem;
+
+        if (heldItem == null) return;
+        if (!heldItem.TryGetComponent(out FrozenCarItem frozenCar)) return;
+
+        puzzleController.ConsumeHeldItem();
+        _carInside = true;
+    }
+
+    private void TryCollectCar()
+    {
+        if (timeManager.CurrentHour < thawHour) return;
+
+        Instantiate(
+            thawedCarPrefab,
+            carOutputPosition.position,
+            carOutputPosition.rotation
+        );
+
+        _carInside = false;
     }
 }

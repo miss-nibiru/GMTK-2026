@@ -27,12 +27,12 @@ public class TVInteractions : BaseInteractable
 
     private void PutVHSIn()
     {
-        if (!puzzleControl.currentlyHeldItem) return;
+        if (!puzzleControl.CurrentlyHeldItem) return;
 
-        if (!puzzleControl.currentlyHeldItem.GetComponent<VHSInteractions>()) return;
+        if (!puzzleControl.CurrentlyHeldItem.GetComponent<VHSInteractions>()) return;
         
-        interactions = puzzleControl.currentlyHeldItem.GetComponent<VHSInteractions>();
-        currentObject = puzzleControl.currentlyHeldItem.gameObject;
+        interactions = puzzleControl.CurrentlyHeldItem.GetComponent<VHSInteractions>();
+        currentObject = puzzleControl.CurrentlyHeldItem.gameObject;
 
         text.text = interactions.displayText;
         interactions.pickUpToggle = false;
