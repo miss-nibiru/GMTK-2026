@@ -40,8 +40,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7237179420076307037}
-  - component: {fileID: 763152363982737621}
-  - component: {fileID: 732222743236815951}
   m_Layer: 0
   m_Name: MasterBedroom_Root
   m_TagString: Untagged
@@ -71,40 +69,6 @@ Transform:
   - {fileID: 5103989357710954774}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &763152363982737621
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8106458617814947185}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 353bcdcd4c2d06a4aa94b15b25d28e1e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RoomTrigger
-  puzzleManager: {fileID: 0}
---- !u!65 &732222743236815951
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8106458617814947185}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 3.5, z: 1}
-  m_Center: {x: 3.7, y: 1.6, z: 2.9}
 --- !u!1001 &574418803963672956
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -433,6 +397,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7237179420076307037}
     m_Modifications:
+    - target: {fileID: 515726044313634274, guid: 197db15c9a02e46a3b073ffb81322053, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 515726044313634274, guid: 197db15c9a02e46a3b073ffb81322053, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.39
+      objectReference: {fileID: 0}
     - target: {fileID: 1316426875425471735, guid: 197db15c9a02e46a3b073ffb81322053, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.14

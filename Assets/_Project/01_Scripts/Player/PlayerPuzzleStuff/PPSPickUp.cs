@@ -21,9 +21,9 @@ public class PPSPickUp : MonoBehaviour, IPlayerPuzzleStates
 
     public void Execute()
     {
-        if (interactor.currentObject == null || !interactor.currentObject.GetComponent<BaseInteractable>()) return;
+        if (interactor.CurrentObject == null || !interactor.CurrentObject.GetComponent<BaseInteractable>()) return;
 
-        if (interactor.currentObject.GetComponent<PickUpItems>())
+        if (interactor.CurrentObject.GetComponent<PickUpItems>())
         {
             PickUp();
         }
@@ -37,7 +37,7 @@ public class PPSPickUp : MonoBehaviour, IPlayerPuzzleStates
 
     private void PickUp()
     {
-        currentItem = interactor.currentObject.GetComponent<PickUpItems>();
+        currentItem = interactor.CurrentObject.GetComponent<PickUpItems>();
         
         switch (currentItem.pickUpToggle)
         {

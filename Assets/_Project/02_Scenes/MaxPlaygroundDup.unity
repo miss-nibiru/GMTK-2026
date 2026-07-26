@@ -3503,31 +3503,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 906100577}
   m_CullTransparentMesh: 1
---- !u!1 &937012814 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3790815342580563903, guid: 2beae91ae37e94d75aa52d27635c6f99, type: 3}
-  m_PrefabInstance: {fileID: 2032675026208564785}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &937012817 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 5859793224583640250, guid: 2beae91ae37e94d75aa52d27635c6f99, type: 3}
-  m_PrefabInstance: {fileID: 2032675026208564785}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &937012821
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 937012814}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e8192f35a44301488ec0f072d9a16fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SojaExiles.opencloseDoor
-  openandclose: {fileID: 937012817}
-  open: 0
-  Player: {fileID: 575090744}
 --- !u!1 &938138953
 GameObject:
   m_ObjectHideFlags: 0
@@ -8152,21 +8127,41 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 91105479}
     m_Modifications:
-    - target: {fileID: 5859793224583640249, guid: 2beae91ae37e94d75aa52d27635c6f99, type: 3}
+    - target: {fileID: 4935906729370109094, guid: 2beae91ae37e94d75aa52d27635c6f99, type: 3}
+      propertyPath: m_Size.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935906729370109094, guid: 2beae91ae37e94d75aa52d27635c6f99, type: 3}
+      propertyPath: m_Size.y
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935906729370109094, guid: 2beae91ae37e94d75aa52d27635c6f99, type: 3}
+      propertyPath: m_Size.z
+      value: 1.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935906729370109094, guid: 2beae91ae37e94d75aa52d27635c6f99, type: 3}
+      propertyPath: m_Center.x
+      value: -4.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935906729370109094, guid: 2beae91ae37e94d75aa52d27635c6f99, type: 3}
+      propertyPath: m_Center.y
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935906729370109094, guid: 2beae91ae37e94d75aa52d27635c6f99, type: 3}
+      propertyPath: m_Center.z
+      value: -27.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5859793225646801139, guid: 2beae91ae37e94d75aa52d27635c6f99, type: 3}
       propertyPath: Player
       value: 
       objectReference: {fileID: 575090744}
-    - target: {fileID: 5859793225646801139, guid: 2beae91ae37e94d75aa52d27635c6f99, type: 3}
+    - target: {fileID: 6591777348207752645, guid: 2beae91ae37e94d75aa52d27635c6f99, type: 3}
       propertyPath: Player
       value: 
       objectReference: {fileID: 575090744}
     - target: {fileID: 7946366063499855107, guid: 2beae91ae37e94d75aa52d27635c6f99, type: 3}
       propertyPath: m_Name
       value: KitchenPuzzle_Root
-      objectReference: {fileID: 0}
-    - target: {fileID: 8325115344660157413, guid: 2beae91ae37e94d75aa52d27635c6f99, type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8555768636231666550, guid: 2beae91ae37e94d75aa52d27635c6f99, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8216,14 +8211,10 @@ PrefabInstance:
       propertyPath: puzzleController
       value: 
       objectReference: {fileID: 978537902}
-    m_RemovedComponents:
-    - {fileID: 5859793224583640249, guid: 2beae91ae37e94d75aa52d27635c6f99, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3790815342580563903, guid: 2beae91ae37e94d75aa52d27635c6f99, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 937012821}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2beae91ae37e94d75aa52d27635c6f99, type: 3}
 --- !u!4 &2032675026208564786 stripped
 Transform:
@@ -8238,10 +8229,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 91105479}
     m_Modifications:
-    - target: {fileID: 763152363982737621, guid: c811f1d766bb34e79889cf78902b01f1, type: 3}
-      propertyPath: puzzleManager
-      value: 
-      objectReference: {fileID: 1800344735}
     - target: {fileID: 1316145136834934395, guid: c811f1d766bb34e79889cf78902b01f1, type: 3}
       propertyPath: puzzleControl
       value: 

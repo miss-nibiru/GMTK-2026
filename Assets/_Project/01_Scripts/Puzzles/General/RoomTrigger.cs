@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 // i cleaned this one up a little - check before merging!!!
@@ -13,7 +12,7 @@ public class RoomTrigger : MonoBehaviour
 
     private void Awake()
     {
-        if (puzzleManager == null) puzzleManager = FindFirstObjectByType<PuzzleManager>(); // this one finds all the puzzle refeerences in the room
+        if (puzzleManager == null) puzzleManager = FindFirstObjectByType<PuzzleManager>(); // Finds the puzzlemanager if one was not assigned.
         ResolvePuzzleState();
         ValidateSetup();
     }
