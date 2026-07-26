@@ -2710,6 +2710,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 477196848}
     - target: {fileID: 1451453046761615093, guid: 54d7a16f39f1a4b5093a2a6eedea1ba1, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1451453046761615093, guid: 54d7a16f39f1a4b5093a2a6eedea1ba1, type: 3}
       propertyPath: interactionPrompt
       value: 
       objectReference: {fileID: 1793673834}
@@ -8265,7 +8269,7 @@ RectTransform:
   m_GameObject: {fileID: 1793673834}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
+  m_LocalScale: {x: 0.035, y: 0.035, z: 0.035}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 356932455}
@@ -10207,6 +10211,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 91105479}
     m_Modifications:
+    - target: {fileID: 86387355102393780, guid: b71e3f34e190248a99c32594296d1a54, type: 3}
+      propertyPath: displayText
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1120927935080268730, guid: b71e3f34e190248a99c32594296d1a54, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.2
@@ -10247,14 +10255,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1614294726347038605, guid: b71e3f34e190248a99c32594296d1a54, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: dd228672e1e19fc479efe2c3556f297f, type: 2}
+    - target: {fileID: 1836758175206451930, guid: b71e3f34e190248a99c32594296d1a54, type: 3}
+      propertyPath: displayText
+      value: b
+      objectReference: {fileID: 0}
     - target: {fileID: 4011827252665369140, guid: b71e3f34e190248a99c32594296d1a54, type: 3}
       propertyPath: m_Name
       value: LivingRoom_Root
+      objectReference: {fileID: 0}
+    - target: {fileID: 4632952101689225031, guid: b71e3f34e190248a99c32594296d1a54, type: 3}
+      propertyPath: displayText
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5236693727333535827, guid: b71e3f34e190248a99c32594296d1a54, type: 3}
+      propertyPath: displayText
+      value: c
       objectReference: {fileID: 0}
     - target: {fileID: 5495823541002839482, guid: b71e3f34e190248a99c32594296d1a54, type: 3}
       propertyPath: puzzleManager
       value: 
       objectReference: {fileID: 1800344735}
+    - target: {fileID: 6277531022553826686, guid: b71e3f34e190248a99c32594296d1a54, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: dd228672e1e19fc479efe2c3556f297f, type: 2}
     - target: {fileID: 8848423043431548096, guid: b71e3f34e190248a99c32594296d1a54, type: 3}
       propertyPath: puzzleControl
       value: 
