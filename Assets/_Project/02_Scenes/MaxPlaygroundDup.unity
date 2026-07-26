@@ -528,6 +528,26 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7359536344260001524, guid: 0d8857566cdab4b5886bb8e0b234bafd, type: 3}
   m_PrefabInstance: {fileID: 73737474}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &79063206 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6561657917884670648, guid: b71e3f34e190248a99c32594296d1a54, type: 3}
+  m_PrefabInstance: {fileID: 8827132158934490562}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &79063210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79063206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4291bb6ff623724469b98f9d56311392, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VHSInteractions
+  puzzleIndexNum: 0
+  pickUpToggle: 0
+  displayText: a
 --- !u!1 &91105478
 GameObject:
   m_ObjectHideFlags: 0
@@ -2079,7 +2099,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7883699468703471816, guid: e7a3418badb2b4f03ac0a1c23ff1aa5d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1658665073}
   m_SourcePrefab: {fileID: 100100000, guid: e7a3418badb2b4f03ac0a1c23ff1aa5d, type: 3}
 --- !u!1 &477196848
 GameObject:
@@ -5901,6 +5924,26 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1053242329}
   m_Mesh: {fileID: 0}
+--- !u!1 &1053743930 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7827016858444704633, guid: b71e3f34e190248a99c32594296d1a54, type: 3}
+  m_PrefabInstance: {fileID: 8827132158934490562}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1053743934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1053743930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4291bb6ff623724469b98f9d56311392, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VHSInteractions
+  puzzleIndexNum: 0
+  pickUpToggle: 0
+  displayText: a
 --- !u!1 &1201150563
 GameObject:
   m_ObjectHideFlags: 0
@@ -7659,6 +7702,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1651378723}
   m_CullTransparentMesh: 1
+--- !u!1 &1658665069 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7883699468703471816, guid: e7a3418badb2b4f03ac0a1c23ff1aa5d, type: 3}
+  m_PrefabInstance: {fileID: 422583472}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1658665073
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658665069}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2192429539057574784, guid: e7a3418badb2b4f03ac0a1c23ff1aa5d, type: 3}
 --- !u!1 &1692009674
 GameObject:
   m_ObjectHideFlags: 0
@@ -9967,6 +10037,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 91105479}
     m_Modifications:
+    - target: {fileID: 2934575561475770021, guid: 2beae91ae37e94d75aa52d27635c6f99, type: 3}
+      propertyPath: puzzleManager
+      value: 
+      objectReference: {fileID: 1800344735}
     - target: {fileID: 5859793225646801139, guid: 2beae91ae37e94d75aa52d27635c6f99, type: 3}
       propertyPath: Player
       value: 
@@ -10173,6 +10247,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 91105479}
     m_Modifications:
+    - target: {fileID: 159383406750980683, guid: b71e3f34e190248a99c32594296d1a54, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 159383406750980683, guid: b71e3f34e190248a99c32594296d1a54, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 159383406750980683, guid: b71e3f34e190248a99c32594296d1a54, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1120927935080268730, guid: b71e3f34e190248a99c32594296d1a54, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.2
@@ -10213,6 +10299,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3473986108369935135, guid: b71e3f34e190248a99c32594296d1a54, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.131
+      objectReference: {fileID: 0}
+    - target: {fileID: 3473986108369935135, guid: b71e3f34e190248a99c32594296d1a54, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.066
+      objectReference: {fileID: 0}
     - target: {fileID: 4011827252665369140, guid: b71e3f34e190248a99c32594296d1a54, type: 3}
       propertyPath: m_Name
       value: LivingRoom_Root
@@ -10221,6 +10315,14 @@ PrefabInstance:
       propertyPath: puzzleManager
       value: 
       objectReference: {fileID: 1800344735}
+    - target: {fileID: 6743424069760485313, guid: b71e3f34e190248a99c32594296d1a54, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.659
+      objectReference: {fileID: 0}
+    - target: {fileID: 8709219274992934318, guid: b71e3f34e190248a99c32594296d1a54, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.71
+      objectReference: {fileID: 0}
     - target: {fileID: 8848423043431548096, guid: b71e3f34e190248a99c32594296d1a54, type: 3}
       propertyPath: puzzleControl
       value: 
@@ -10232,6 +10334,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5492759343247936136, guid: b71e3f34e190248a99c32594296d1a54, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 7827016858444704633, guid: b71e3f34e190248a99c32594296d1a54, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1053743934}
+    - targetCorrespondingSourceObject: {fileID: 6561657917884670648, guid: b71e3f34e190248a99c32594296d1a54, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 79063210}
   m_SourcePrefab: {fileID: 100100000, guid: b71e3f34e190248a99c32594296d1a54, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
