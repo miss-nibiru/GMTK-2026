@@ -330,10 +330,31 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 860112425933966252, guid: b2115346e030f4c61b4d81991ef85995, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3716306807822556527}
   m_SourcePrefab: {fileID: 100100000, guid: b2115346e030f4c61b4d81991ef85995, type: 3}
 --- !u!4 &2306725249837819189 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8626292674950441953, guid: b2115346e030f4c61b4d81991ef85995, type: 3}
   m_PrefabInstance: {fileID: 6320130410667331284}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6654673931435885944 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 860112425933966252, guid: b2115346e030f4c61b4d81991ef85995, type: 3}
+  m_PrefabInstance: {fileID: 6320130410667331284}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3716306807822556527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6654673931435885944}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9447ea8cdc454d44ca29ee24ea79d3d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FillWateringCan
+  puzzleControl: {fileID: 0}
