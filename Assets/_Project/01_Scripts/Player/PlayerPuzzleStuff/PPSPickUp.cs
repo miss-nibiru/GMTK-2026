@@ -14,7 +14,7 @@ public class PpsPickUp : MonoBehaviour, IPlayerPuzzleStates
     private GameObject _handledItem;
     private Transform _originalParent;
     private Collider[] _itemColliders;
-    
+        
     private Rigidbody _itemRigidbody;
     private bool _originalUseGravity;
     private bool _originalIsKinematic;
