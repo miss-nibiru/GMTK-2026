@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class PSKidsBed : MonoBehaviour, IPuzzleStates
 {
+    [SerializeField] private GameObject key;
+    
     private int progressCheck;
     
     
@@ -21,7 +23,7 @@ public class PSKidsBed : MonoBehaviour, IPuzzleStates
 
         if (progressCheck >= 6)
         {
-            Debug.Log("Finished Puzzle");
+            Instantiate(key, transform.position, Quaternion.identity);
         }
     }
 }
