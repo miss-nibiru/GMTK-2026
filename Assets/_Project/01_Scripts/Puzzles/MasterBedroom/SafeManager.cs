@@ -4,6 +4,8 @@ public class SafeManager : MonoBehaviour
 {
     [SerializeField] private SafeNumbers[] numbers;
 
+    [SerializeField] private OpenSafe safe;
+
     private int rightNumbers;
     
     public void CheckNumbers()
@@ -15,7 +17,6 @@ public class SafeManager : MonoBehaviour
             if (num.targetNum == num.currentNum)
             {
                 rightNumbers++;
-                continue;
             }
         }
 
@@ -23,7 +24,8 @@ public class SafeManager : MonoBehaviour
         
         if (rightNumbers >= numbers.Length)
         {
-            Debug.Log("solved puzzle");
+            safe.Interact();
+            Destroy(safe.gameObject);
         }
     }
 }

@@ -27,7 +27,7 @@ public class TVInteractions : BaseInteractable
 
     private void PutVHSIn()
     {
-        if (puzzleControl.CurrentlyHeldItem == null) return;
+        if (puzzleControl == null || puzzleControl.CurrentlyHeldItem == null) return;
 
         if (!puzzleControl.CurrentlyHeldItem.GetComponent<VHSInteractions>()) return;
         
