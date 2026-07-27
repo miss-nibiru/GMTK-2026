@@ -24,7 +24,7 @@ public class KnobManager : MonoBehaviour
         
         fixedKnobs = true;
         enterSink.Interact();
-        enterSink.enabled = false;
+        Destroy(enterSink);
         fillCan.enabled = true;
     }
 }

@@ -9,7 +9,8 @@ public class WaterStateMachine
     
     public WaterStateMachine(WateringCanInteractions interact)
     {
-        
+        fullState = new WSFull();
+        emptyState = new WSEmpty();
     }
 
     public void SwitchStates(IWateringCanStates state)
