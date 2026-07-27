@@ -8,7 +8,7 @@ public class TVInteractions : BaseInteractable
     
     [SerializeField] private PlayerPuzzleController puzzleControl;
     private GameObject currentObject;
-    private VHSInteractions interactions;
+    private VhsInteractions interactions;
     private bool interactToggle;
     
     public override void Interact()
@@ -29,9 +29,9 @@ public class TVInteractions : BaseInteractable
     {
         if (puzzleControl == null || puzzleControl.CurrentlyHeldItem == null) return;
 
-        if (!puzzleControl.CurrentlyHeldItem.GetComponent<VHSInteractions>()) return;
+        if (!puzzleControl.CurrentlyHeldItem.GetComponent<VhsInteractions>()) return;
         
-        interactions = puzzleControl.CurrentlyHeldItem.GetComponent<VHSInteractions>();
+        interactions = puzzleControl.CurrentlyHeldItem.GetComponent<VhsInteractions>();
         currentObject = puzzleControl.CurrentlyHeldItem.gameObject;
 
         text.text = interactions.displayText;

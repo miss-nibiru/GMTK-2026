@@ -1,4 +1,4 @@
-public class VHSInteractions : PickUpItems
+public class VhsInteractions : PickUpItems
 {
     public string displayText;
 }
