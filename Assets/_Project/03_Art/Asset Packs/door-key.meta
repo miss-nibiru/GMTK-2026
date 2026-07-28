@@ -1,7 +1,12 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/_Project/03_Art/Asset Packs/door-key.meta
 guid: a2ffeb979d3a2ac43ab83c80b0182ed2
 folderAsset: yes
 DefaultImporter:
+========
+guid: b3de4cc840c3346e1b72a4ffd42935dc
+PrefabImporter:
+>>>>>>>> 6bee57c (Updated oven bug and animation):Assets/_Project/00_Prefabs/HouseWithDoors.prefab.meta
   externalObjects: {}
   userData: 
   assetBundleName: 
