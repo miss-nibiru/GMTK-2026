@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 
 [DisallowMultipleComponent]
-public sealed class HourglassInteractable : MonoBehaviour, IInteractable
+public sealed class HourglassInteractable : BaseInteractable
 {
     private const string TimePauseReason = "HourglassRewind";
 
@@ -23,8 +23,9 @@ public sealed class HourglassInteractable : MonoBehaviour, IInteractable
         audioSource = GetComponent<AudioSource>();
     }
 
-    public void Interact()
+    public override void Interact()
     {
+        Debug.Log("hi");
         if (_isRewinding) return;
         if (TimeLoopManager.Instance == null)
         {

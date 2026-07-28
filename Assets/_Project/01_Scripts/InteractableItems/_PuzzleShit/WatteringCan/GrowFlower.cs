@@ -19,7 +19,6 @@ public class GrowFlower : BaseInteractable
         if (can.wsm.currentState != can.wsm.fullState) return;
         can.wsm.SwitchStates(can.wsm.emptyState);
         flower = gameObject.transform.GetChild(1).gameObject;
-        Debug.Log(flower.name);
         Growing();
     }
 

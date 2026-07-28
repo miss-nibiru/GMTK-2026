@@ -3,6 +3,7 @@ using UnityEngine;
 public class PSKidsBed : MonoBehaviour, IPuzzleStates
 {
     [SerializeField] private GameObject key;
+    [SerializeField] private Transform spawnPoint;
     
     private int progressCheck;
     
@@ -23,7 +24,8 @@ public class PSKidsBed : MonoBehaviour, IPuzzleStates
 
         if (progressCheck >= 6)
         {
-            Instantiate(key, transform.position, Quaternion.identity);
+            Instantiate(key, spawnPoint.position, Quaternion.identity);
+            Debug.Log(key.transform.position);
         }
     }
 }
