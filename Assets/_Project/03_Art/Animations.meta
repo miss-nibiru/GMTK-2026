@@ -1,7 +1,12 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/_Project/03_Art/Animations.meta
 guid: 227f1712d7ae54641b6ec6c33a0f5e49
 folderAsset: yes
 DefaultImporter:
+========
+guid: b3de4cc840c3346e1b72a4ffd42935dc
+PrefabImporter:
+>>>>>>>> aa0a4ef (Updated oven bug and animation):Assets/_Project/00_Prefabs/HouseWithDoors.prefab.meta
   externalObjects: {}
   userData: 
   assetBundleName: 
