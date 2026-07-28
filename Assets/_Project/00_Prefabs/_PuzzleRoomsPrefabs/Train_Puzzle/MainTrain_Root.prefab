@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 59094719017321912}
   - component: {fileID: 4951366551623217710}
   - component: {fileID: 855758332396394068}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MainTrain_Root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,6 +120,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 744ac4ec05c9e408eb12f730d165e652, type: 3}
       propertyPath: m_Name
       value: Train_main
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 744ac4ec05c9e408eb12f730d165e652, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
