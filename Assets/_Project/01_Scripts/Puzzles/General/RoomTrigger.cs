@@ -19,11 +19,10 @@ public class RoomTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.transform.root.CompareTag("Player")) return; // This one checks for it being only the player that can activate the puzzle
+        if (!other.transform.CompareTag("Player")) return; // This one checks for it being only the player that can activate the puzzle
 
         if (puzzleManager == null || puzzleManager.Psm == null || _puzzleState == null) return;
         puzzleManager.Psm.SwitchStates(_puzzleState);
-        
     }
 
     private void ResolvePuzzleState()
