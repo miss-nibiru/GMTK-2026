@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/_Project/02_Scenes/_FinalScenes/01_MainScreen.unity
     guid: 58a59dd726b5b4ed78995dc1abe75a94
   - enabled: 1
-    path: Assets/_Project/02_Scenes/MaxPlaygroundDup.unity
+    path: Assets/_Project/02_Scenes/_FinalScenes/02_Gameplay.unity
     guid: adc76eec19d1f41b98da9e87542e510a
   - enabled: 1
     path: Assets/_Project/02_Scenes/_FinalScenes/03_EndScreen.unity

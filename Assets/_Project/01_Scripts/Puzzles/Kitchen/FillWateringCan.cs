@@ -3,6 +3,7 @@ using UnityEngine;
 public class FillWateringCan : BaseInteractable
 {
     [SerializeField] private PlayerPuzzleController puzzleControl;
+    [SerializeField] private AudioSource audioSource;
 
     private WateringCanInteractions can;
     
@@ -14,6 +15,6 @@ public class FillWateringCan : BaseInteractable
 
         can = puzzleControl.CurrentlyHeldItem.GetComponent<WateringCanInteractions>();
         can.wsm.SwitchStates(can.wsm.fullState);
-        Debug.Log("Filled");
+        audioSource.Play();
     }
 }
