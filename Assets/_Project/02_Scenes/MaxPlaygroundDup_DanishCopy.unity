@@ -843,7 +843,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameTimeManager
   startHour: 9
   endHour: 16
-  irlDayMinutes: 15
+  irlDayMinutes: 0.5
 --- !u!114 &181481254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9335,6 +9335,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1995366989}
   m_CullTransparentMesh: 1
+--- !u!95 &2026497520 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8614907462082455570, guid: 2beae91ae37e94d75aa52d27635c6f99, type: 3}
+  m_PrefabInstance: {fileID: 2032675026208564785}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2027391212
 GameObject:
   m_ObjectHideFlags: 0
@@ -10202,10 +10207,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 91105479}
     m_Modifications:
+    - target: {fileID: 2048207704021419863, guid: 2beae91ae37e94d75aa52d27635c6f99, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2934575561475770021, guid: 2beae91ae37e94d75aa52d27635c6f99, type: 3}
       propertyPath: puzzleManager
       value: 
       objectReference: {fileID: 1800344735}
+    - target: {fileID: 3216188647962932233, guid: 2beae91ae37e94d75aa52d27635c6f99, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 575090744}
     - target: {fileID: 3716306807822556527, guid: 2beae91ae37e94d75aa52d27635c6f99, type: 3}
       propertyPath: puzzleControl
       value: 
@@ -10255,9 +10268,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 181481253}
     - target: {fileID: 7098299231517089879, guid: 2beae91ae37e94d75aa52d27635c6f99, type: 3}
+      propertyPath: ovenAnimator
+      value: 
+      objectReference: {fileID: 2026497520}
+    - target: {fileID: 7098299231517089879, guid: 2beae91ae37e94d75aa52d27635c6f99, type: 3}
+      propertyPath: thawedCarPrefab
+      value: 
+      objectReference: {fileID: 7740443242396199663, guid: 9f8da559c49b84e73ae15e9763d95496, type: 3}
+    - target: {fileID: 7098299231517089879, guid: 2beae91ae37e94d75aa52d27635c6f99, type: 3}
       propertyPath: puzzleController
       value: 
       objectReference: {fileID: 978537902}
+    - target: {fileID: 7595197398834546984, guid: 2beae91ae37e94d75aa52d27635c6f99, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 7595197398834546984, guid: 2beae91ae37e94d75aa52d27635c6f99, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.202
+      objectReference: {fileID: 0}
     - target: {fileID: 7946366063499855107, guid: 2beae91ae37e94d75aa52d27635c6f99, type: 3}
       propertyPath: m_Name
       value: KitchenPuzzle_Root
@@ -10307,7 +10336,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 978537902}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2048207704021419863, guid: 2beae91ae37e94d75aa52d27635c6f99, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2beae91ae37e94d75aa52d27635c6f99, type: 3}
