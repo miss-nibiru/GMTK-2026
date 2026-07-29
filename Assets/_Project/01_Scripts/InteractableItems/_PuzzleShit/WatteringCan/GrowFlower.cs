@@ -17,7 +17,7 @@ public class GrowFlower : BaseInteractable
         
         can = puzzleControl.CurrentlyHeldItem.GetComponent<WateringCanInteractions>();
         if (can.wsm.currentState != can.wsm.fullState) return;
-        can.wsm.SwitchStates(can.wsm.emptyState);
+        
         flower = gameObject.transform.GetChild(1).gameObject;
         Growing();
     }
