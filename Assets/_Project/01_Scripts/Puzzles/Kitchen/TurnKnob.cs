@@ -10,6 +10,15 @@ public class TurnKnob : MonoBehaviour
     public bool inRightSpot { get; private set; }
     
     private int rotatePos;
+
+    private void Start()
+    {
+        foreach (var pos in correctPos)
+        {
+            if(pos != rotatePos) continue;
+            inRightSpot = true;
+        }
+    }
     
     public void OnClick()
     {
