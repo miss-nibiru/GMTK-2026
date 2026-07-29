@@ -1298,7 +1298,8 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8910193873768089552, guid: 5bedfeaa6dcb142939915267289a1e32, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 6681195315534917855, guid: 5bedfeaa6dcb142939915267289a1e32, type: 3}
@@ -1307,8 +1308,29 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1594752150122256434, guid: 5bedfeaa6dcb142939915267289a1e32, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3186441792546441486}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8588522734912648682, guid: 5bedfeaa6dcb142939915267289a1e32, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7124420478068499614}
   m_SourcePrefab: {fileID: 100100000, guid: 5bedfeaa6dcb142939915267289a1e32, type: 3}
+--- !u!1 &2221456546397537345 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8588522734912648682, guid: 5bedfeaa6dcb142939915267289a1e32, type: 3}
+  m_PrefabInstance: {fileID: 7630431587706368427}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7124420478068499614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2221456546397537345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d7ed8413e459e74a93f2e1d9eb0e2ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OpenSafe
+  puzzleControl: {fileID: 0}
 --- !u!4 &3845197377436516724 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6681195315534917855, guid: 5bedfeaa6dcb142939915267289a1e32, type: 3}
