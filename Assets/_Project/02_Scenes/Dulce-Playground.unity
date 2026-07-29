@@ -701,6 +701,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 266046476}
     m_Modifications:
+    - target: {fileID: 5427408744883004939, guid: 0d8857566cdab4b5886bb8e0b234bafd, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8726415
+      objectReference: {fileID: 0}
+    - target: {fileID: 5427408744883004939, guid: 0d8857566cdab4b5886bb8e0b234bafd, type: 3}
+      propertyPath: m_Color.g
+      value: 0.9349921
+      objectReference: {fileID: 0}
+    - target: {fileID: 5427408744883004939, guid: 0d8857566cdab4b5886bb8e0b234bafd, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5427408744883004939, guid: 0d8857566cdab4b5886bb8e0b234bafd, type: 3}
+      propertyPath: m_Intensity
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6095767423950741831, guid: 0d8857566cdab4b5886bb8e0b234bafd, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -821,19 +837,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3323605910497654787, guid: 2772aff9b483a4fd196609e214e2d943, type: 3}
       propertyPath: m_Color.b
-      value: 0.93333334
+      value: 0.8726415
       objectReference: {fileID: 0}
     - target: {fileID: 3323605910497654787, guid: 2772aff9b483a4fd196609e214e2d943, type: 3}
       propertyPath: m_Color.g
-      value: 0.78039217
+      value: 0.9349921
       objectReference: {fileID: 0}
     - target: {fileID: 3323605910497654787, guid: 2772aff9b483a4fd196609e214e2d943, type: 3}
       propertyPath: m_Color.r
-      value: 0.8500921
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3323605910497654787, guid: 2772aff9b483a4fd196609e214e2d943, type: 3}
       propertyPath: m_Intensity
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7340425048430102599, guid: 2772aff9b483a4fd196609e214e2d943, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2902,7 +2918,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClockTimeEvent
   timeManager: {fileID: 181481253}
-  hour: 13
+  hour: 14
   minute: 30
   onTimeReached:
     m_PersistentCalls:
@@ -3191,7 +3207,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.9622642, g: 0.68519884, b: 0.06808472, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -3584,7 +3600,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.7411765, g: 0.18431373, b: 0.12941177, a: 0.7372549}
+    m_HighlightedColor: {r: 1, g: 0.5405781, b: 0.495283, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -3865,8 +3881,20 @@ PrefabInstance:
       value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3323605910497654787, guid: 2772aff9b483a4fd196609e214e2d943, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8726415
+      objectReference: {fileID: 0}
+    - target: {fileID: 3323605910497654787, guid: 2772aff9b483a4fd196609e214e2d943, type: 3}
+      propertyPath: m_Color.g
+      value: 0.9349921
+      objectReference: {fileID: 0}
+    - target: {fileID: 3323605910497654787, guid: 2772aff9b483a4fd196609e214e2d943, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3323605910497654787, guid: 2772aff9b483a4fd196609e214e2d943, type: 3}
       propertyPath: m_Intensity
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7340425048430102599, guid: 2772aff9b483a4fd196609e214e2d943, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -7796,6 +7824,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 91105479}
     m_Modifications:
+    - target: {fileID: 2516128666292271423, guid: 8fb8d4a9552f548a2be17003e031e56b, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8726415
+      objectReference: {fileID: 0}
+    - target: {fileID: 2516128666292271423, guid: 8fb8d4a9552f548a2be17003e031e56b, type: 3}
+      propertyPath: m_Color.g
+      value: 0.9349921
+      objectReference: {fileID: 0}
+    - target: {fileID: 2516128666292271423, guid: 8fb8d4a9552f548a2be17003e031e56b, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2516128666292271423, guid: 8fb8d4a9552f548a2be17003e031e56b, type: 3}
+      propertyPath: m_Intensity
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2603867070316936501, guid: 8fb8d4a9552f548a2be17003e031e56b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.66
@@ -9684,6 +9728,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 91105479}
     m_Modifications:
+    - target: {fileID: 876309251854207633, guid: 5ebe9b34f31064af485e03e0b412ad57, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8726415
+      objectReference: {fileID: 0}
+    - target: {fileID: 876309251854207633, guid: 5ebe9b34f31064af485e03e0b412ad57, type: 3}
+      propertyPath: m_Color.g
+      value: 0.9349921
+      objectReference: {fileID: 0}
+    - target: {fileID: 876309251854207633, guid: 5ebe9b34f31064af485e03e0b412ad57, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 876309251854207633, guid: 5ebe9b34f31064af485e03e0b412ad57, type: 3}
+      propertyPath: m_Intensity
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1770158240840397637, guid: 5ebe9b34f31064af485e03e0b412ad57, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.35
@@ -9758,6 +9818,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 266046476}
     m_Modifications:
+    - target: {fileID: 589497228161381290, guid: 7311cda7df7bd4c6987a3ed5e2fb5daa, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8726415
+      objectReference: {fileID: 0}
+    - target: {fileID: 589497228161381290, guid: 7311cda7df7bd4c6987a3ed5e2fb5daa, type: 3}
+      propertyPath: m_Color.g
+      value: 0.9349921
+      objectReference: {fileID: 0}
+    - target: {fileID: 589497228161381290, guid: 7311cda7df7bd4c6987a3ed5e2fb5daa, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 589497228161381290, guid: 7311cda7df7bd4c6987a3ed5e2fb5daa, type: 3}
+      propertyPath: m_Intensity
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2348517246371741921, guid: 7311cda7df7bd4c6987a3ed5e2fb5daa, type: 3}
       propertyPath: m_Name
       value: KitchenLamp_Root (1)
@@ -13820,7 +13896,7 @@ MonoBehaviour:
   evidenceUI: {fileID: 1012892044}
   caseFileClosed: {fileID: 460407281}
   caseFileOpened: {fileID: 1224014681}
-  caseButtonClose: {fileID: 460407281}
+  caseButtonClose: {fileID: 386205876}
   gameplayControls:
   - {fileID: 1969196978}
   - {fileID: 1442461829}
@@ -14562,6 +14638,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 266046476}
     m_Modifications:
+    - target: {fileID: 589497228161381290, guid: 7311cda7df7bd4c6987a3ed5e2fb5daa, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8726415
+      objectReference: {fileID: 0}
+    - target: {fileID: 589497228161381290, guid: 7311cda7df7bd4c6987a3ed5e2fb5daa, type: 3}
+      propertyPath: m_Color.g
+      value: 0.9349921
+      objectReference: {fileID: 0}
+    - target: {fileID: 589497228161381290, guid: 7311cda7df7bd4c6987a3ed5e2fb5daa, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 589497228161381290, guid: 7311cda7df7bd4c6987a3ed5e2fb5daa, type: 3}
+      propertyPath: m_Intensity
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2348517246371741921, guid: 7311cda7df7bd4c6987a3ed5e2fb5daa, type: 3}
       propertyPath: m_Name
       value: KitchenLamp_Root
@@ -14723,6 +14815,22 @@ PrefabInstance:
       propertyPath: puzzleManager
       value: 
       objectReference: {fileID: 1800344735}
+    - target: {fileID: 2963644234257494166, guid: 2beae91ae37e94d75aa52d27635c6f99, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8726415
+      objectReference: {fileID: 0}
+    - target: {fileID: 2963644234257494166, guid: 2beae91ae37e94d75aa52d27635c6f99, type: 3}
+      propertyPath: m_Color.g
+      value: 0.9349921
+      objectReference: {fileID: 0}
+    - target: {fileID: 2963644234257494166, guid: 2beae91ae37e94d75aa52d27635c6f99, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2963644234257494166, guid: 2beae91ae37e94d75aa52d27635c6f99, type: 3}
+      propertyPath: m_Intensity
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3307906010812468208, guid: 2beae91ae37e94d75aa52d27635c6f99, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -14731,6 +14839,22 @@ PrefabInstance:
       propertyPath: puzzleControl
       value: 
       objectReference: {fileID: 978537902}
+    - target: {fileID: 3737686502098448621, guid: 2beae91ae37e94d75aa52d27635c6f99, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8726415
+      objectReference: {fileID: 0}
+    - target: {fileID: 3737686502098448621, guid: 2beae91ae37e94d75aa52d27635c6f99, type: 3}
+      propertyPath: m_Color.g
+      value: 0.9349921
+      objectReference: {fileID: 0}
+    - target: {fileID: 3737686502098448621, guid: 2beae91ae37e94d75aa52d27635c6f99, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3737686502098448621, guid: 2beae91ae37e94d75aa52d27635c6f99, type: 3}
+      propertyPath: m_Intensity
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5859793225646801139, guid: 2beae91ae37e94d75aa52d27635c6f99, type: 3}
       propertyPath: Player
       value: 

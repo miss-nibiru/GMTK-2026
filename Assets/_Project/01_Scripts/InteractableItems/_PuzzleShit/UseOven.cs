@@ -16,26 +16,30 @@ public class UseOven : BaseInteractable
         if (_carInside)
         {
             TryCollectCar();
-            Debug.Log(thawedCarPrefab.name + " has been collected");
             return;
         }
 
         TryInsertCar();
-        Debug.Log(thawedCarPrefab.name + " has been inserted");
     }
 
-    private void TryInsertCar()
+    private bool TryInsertCar()
     {
-        if (timeManager.CurrentHour >= thawHour) return;
+        if (timeManager.CurrentHour >= thawHour) 
+            return false;
+        
         GameObject heldItem = puzzleController.CurrentlyHeldItem;
 
-        if (heldItem == null) return;
-        if (!heldItem.TryGetComponent(out FrozenCarItem frozenCar)) return;
+        if (heldItem == null)
+            return false;
+        if (!heldItem.TryGetComponent(out FrozenCarItem frozenCar))
+            return false;
         
         ovenAnimator.Play("OpenOven");
 
         puzzleController.ConsumeHeldItem();
         _carInside = true;
+
+        return true;
     }
 
     private void TryCollectCar()
