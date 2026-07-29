@@ -381,6 +381,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7631643497430251714, guid: 7e7e3ce1bf8764e3a9755ac9e634bfa2, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.a
+      value: 0.5372549
+      objectReference: {fileID: 0}
+    - target: {fileID: 7631643497430251714, guid: 7e7e3ce1bf8764e3a9755ac9e634bfa2, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 0.1254902
+      objectReference: {fileID: 0}
+    - target: {fileID: 7631643497430251714, guid: 7e7e3ce1bf8764e3a9755ac9e634bfa2, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 0.18039216
+      objectReference: {fileID: 0}
+    - target: {fileID: 7631643497430251714, guid: 7e7e3ce1bf8764e3a9755ac9e634bfa2, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 0.7411765
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3196,7 +3212,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 386205879}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2036089407}
+        m_TargetAssemblyTypeName: EvidenceMenuController, Assembly-CSharp
+        m_MethodName: CloseCaseFile
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &386205879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3469,13 +3497,14 @@ GameObject:
   - component: {fileID: 460407282}
   - component: {fileID: 460407284}
   - component: {fileID: 460407283}
+  - component: {fileID: 460407285}
   m_Layer: 5
   m_Name: CaseClosed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &460407282
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3533,6 +3562,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 460407281}
   m_CullTransparentMesh: 1
+--- !u!114 &460407285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 460407281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.7411765, g: 0.18431373, b: 0.12941177, a: 0.7372549}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 460407283}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2036089407}
+        m_TargetAssemblyTypeName: EvidenceMenuController, Assembly-CSharp
+        m_MethodName: OpenCaseFileFromEvidence
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &477196848
 GameObject:
   m_ObjectHideFlags: 0
@@ -3956,6 +4041,18 @@ PrefabInstance:
     - target: {fileID: 6724451488477663317, guid: 7e7e3ce1bf8764e3a9755ac9e634bfa2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7631643497430251714, guid: 7e7e3ce1bf8764e3a9755ac9e634bfa2, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 0.1254902
+      objectReference: {fileID: 0}
+    - target: {fileID: 7631643497430251714, guid: 7e7e3ce1bf8764e3a9755ac9e634bfa2, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 0.18039216
+      objectReference: {fileID: 0}
+    - target: {fileID: 7631643497430251714, guid: 7e7e3ce1bf8764e3a9755ac9e634bfa2, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 0.7411765
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9307,6 +9404,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7631643497430251714, guid: 7e7e3ce1bf8764e3a9755ac9e634bfa2, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.a
+      value: 0.5372549
+      objectReference: {fileID: 0}
+    - target: {fileID: 7631643497430251714, guid: 7e7e3ce1bf8764e3a9755ac9e634bfa2, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 0.1254902
+      objectReference: {fileID: 0}
+    - target: {fileID: 7631643497430251714, guid: 7e7e3ce1bf8764e3a9755ac9e634bfa2, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 0.18039216
+      objectReference: {fileID: 0}
+    - target: {fileID: 7631643497430251714, guid: 7e7e3ce1bf8764e3a9755ac9e634bfa2, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 0.7411765
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10007,6 +10120,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5e8ffb1310baf44ea32ca749817aef5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FirstPersonCamera
+--- !u!20 &1442461830 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 4681111270948082506, guid: 54d7a16f39f1a4b5093a2a6eedea1ba1, type: 3}
+  m_PrefabInstance: {fileID: 575090743}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1458679748
 GameObject:
   m_ObjectHideFlags: 0
@@ -10331,6 +10449,18 @@ PrefabInstance:
     - target: {fileID: 6724451488477663317, guid: 7e7e3ce1bf8764e3a9755ac9e634bfa2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7631643497430251714, guid: 7e7e3ce1bf8764e3a9755ac9e634bfa2, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 0.1254902
+      objectReference: {fileID: 0}
+    - target: {fileID: 7631643497430251714, guid: 7e7e3ce1bf8764e3a9755ac9e634bfa2, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 0.18039216
+      objectReference: {fileID: 0}
+    - target: {fileID: 7631643497430251714, guid: 7e7e3ce1bf8764e3a9755ac9e634bfa2, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 0.7411765
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11800,7 +11930,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1769059856}
-  - component: {fileID: 1769059857}
   m_Layer: 5
   m_Name: CaseFile_Main
   m_TagString: Untagged
@@ -11829,26 +11958,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1350, y: 921.6}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1769059857
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1769059855}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fdcecf6ab35f4ee9a8c72c9c8628e9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CaseFileUIController
-  caseFileClosed: {fileID: 460407281}
-  caseFileOpened: {fileID: 1224014681}
-  caseButtonClose: {fileID: 386205876}
-  evidenceCarousel: {fileID: 1012892044}
-  player: {fileID: 1969196978}
-  camera: {fileID: 1442461829}
-  playerInput: {fileID: 1969196976}
-  playerUI: {fileID: 1969196977}
 --- !u!1 &1776073313
 GameObject:
   m_ObjectHideFlags: 0
@@ -12476,6 +12585,18 @@ PrefabInstance:
     - target: {fileID: 6724451488477663317, guid: 7e7e3ce1bf8764e3a9755ac9e634bfa2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7631643497430251714, guid: 7e7e3ce1bf8764e3a9755ac9e634bfa2, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 0.1254902
+      objectReference: {fileID: 0}
+    - target: {fileID: 7631643497430251714, guid: 7e7e3ce1bf8764e3a9755ac9e634bfa2, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 0.18039216
+      objectReference: {fileID: 0}
+    - target: {fileID: 7631643497430251714, guid: 7e7e3ce1bf8764e3a9755ac9e634bfa2, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 0.7411765
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13697,10 +13818,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EvidenceMenuController
   evidenceUI: {fileID: 1012892044}
+  caseFileClosed: {fileID: 460407281}
+  caseFileOpened: {fileID: 1224014681}
+  caseButtonClose: {fileID: 460407281}
   gameplayControls:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1969196978}
+  - {fileID: 1442461829}
+  - {fileID: 1969196976}
+  - {fileID: 1969196977}
 --- !u!1 &2045899828
 GameObject:
   m_ObjectHideFlags: 0
@@ -14598,6 +14723,10 @@ PrefabInstance:
       propertyPath: puzzleManager
       value: 
       objectReference: {fileID: 1800344735}
+    - target: {fileID: 3307906010812468208, guid: 2beae91ae37e94d75aa52d27635c6f99, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3716306807822556527, guid: 2beae91ae37e94d75aa52d27635c6f99, type: 3}
       propertyPath: puzzleControl
       value: 
@@ -14658,12 +14787,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8825972697941893062, guid: 2beae91ae37e94d75aa52d27635c6f99, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1442461830}
     - target: {fileID: 8901413193996041512, guid: 2beae91ae37e94d75aa52d27635c6f99, type: 3}
       propertyPath: puzzleController
       value: 
       objectReference: {fileID: 978537902}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4573968872560346602, guid: 2beae91ae37e94d75aa52d27635c6f99, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2beae91ae37e94d75aa52d27635c6f99, type: 3}
@@ -15001,9 +15135,9 @@ SceneRoots:
   - {fileID: 1800344736}
   - {fileID: 661425347}
   - {fileID: 1240345062}
+  - {fileID: 1201150564}
   - {fileID: 356932455}
   - {fileID: 546455046}
-  - {fileID: 1201150564}
   - {fileID: 91105479}
   - {fileID: 233016109}
   - {fileID: 1218597739}

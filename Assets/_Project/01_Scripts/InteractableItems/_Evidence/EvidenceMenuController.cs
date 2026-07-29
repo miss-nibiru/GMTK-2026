@@ -2,31 +2,42 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 /// <summary>
-/// Opens and closes the evidence ui with tab button
+/// Controls the case file and evidence menu.
 ///
-/// While open:
-/// - Player gameplay controls are disabled.
-/// - The cursor is visible and unlocked.
-/// - The game clock continues running.
+/// The opening case file will pause the clock.
+/// The Tab evidence menu will not pause the clock.
+/// Clock behaviour is connected separately.
 /// </summary>
 public class EvidenceMenuController : MonoBehaviour
 {
+    private const string StartupCasePauseReason = "StartupCaseFile";
     [SerializeField] private GameObject evidenceUI;
+    
+    [SerializeField] private GameObject caseFileClosed;
+    [SerializeField] private GameObject caseFileOpened;
+    [SerializeField] private GameObject caseButtonClose;
+    
     [SerializeField] private MonoBehaviour[] gameplayControls;
 
     private bool _isOpen;
+    private bool _isCaseFileOpen;
+    private bool _isStartupCaseFile;
+
     public bool IsOpen => _isOpen;
 
     private void Start()
     {
-        SetEvidenceOpen(false);
+        ShowStartupCaseFile();
     }
 
     private void Update()
     {
-        if (Keyboard.current != null && Keyboard.current.tabKey.wasPressedThisFrame) 
-            ToggleEvidence();
+        if (Keyboard.current == null ||
+            !Keyboard.current.tabKey.wasPressedThisFrame) 
+            return;
         
+        if (_isCaseFileOpen) return;
+        ToggleEvidence();
     }
 
     public void ToggleEvidence()
@@ -44,18 +55,80 @@ public class EvidenceMenuController : MonoBehaviour
         SetEvidenceOpen(false);
     }
 
+    private void ShowStartupCaseFile()
+    {
+        _isStartupCaseFile = true;
+        GameTimeManager.Instance?.PauseTime(StartupCasePauseReason);
+        
+        
+        ShowOpenedCaseFile();
+    }
+
+    public void OpenCaseFileFromEvidence()
+    {
+        _isStartupCaseFile = false;
+        ShowOpenedCaseFile();
+    }
+
+    private void ShowOpenedCaseFile()
+    {
+        _isOpen = true;
+        _isCaseFileOpen = true;
+
+        caseFileOpened.SetActive(true);
+        caseButtonClose.SetActive(true);
+
+        caseFileClosed.SetActive(false);
+        evidenceUI.SetActive(false);
+
+        SetMenuOpened(true);
+    }
+
+    public void CloseCaseFile()
+    {
+        if (_isStartupCaseFile)
+        {
+            GameTimeManager.Instance?.ResumeTime(StartupCasePauseReason);
+            _isStartupCaseFile = false;
+        }
+        
+        _isOpen = false;
+        _isCaseFileOpen = false;
+
+        caseFileOpened.SetActive(false);
+        caseButtonClose.SetActive(false);
+        caseFileClosed.SetActive(false);
+        evidenceUI.SetActive(false);
+
+        SetMenuOpened(false);
+    }
+
     private void SetEvidenceOpen(bool shouldOpen)
     {
         _isOpen = shouldOpen;
+        _isCaseFileOpen = false;
 
-        if (evidenceUI != null) evidenceUI.SetActive(shouldOpen);
-        
+        evidenceUI.SetActive(shouldOpen);
+        caseFileClosed.SetActive(shouldOpen);
 
-        foreach (MonoBehaviour gameplayControl in gameplayControls) 
+        caseFileOpened.SetActive(false);
+        caseButtonClose.SetActive(false);
+
+        SetMenuOpened(shouldOpen);
+    }
+
+    private void SetMenuOpened(bool shouldOpen)
+    {
+        foreach (MonoBehaviour gameplayControl in gameplayControls)
+        {
             if (gameplayControl != null) gameplayControl.enabled = !shouldOpen;
-        
-        Cursor.lockState = shouldOpen ? CursorLockMode.None : CursorLockMode.Locked;
+            
+        }
+
+        Cursor.lockState = shouldOpen
+            ? CursorLockMode.None
+            : CursorLockMode.Locked;
+
         Cursor.visible = shouldOpen;
-        
     }
 }
