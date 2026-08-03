@@ -4,8 +4,9 @@ using UnityEngine.UI;
 
 public class EvidenceDetailsUI : MonoBehaviour
 {
-    [Header("Opening Source")]
+    [Header("Controllers")]
     [SerializeField] private EvidenceCarouselUI carousel;
+    [SerializeField] private EvidenceMenuController menuController;
 
     [Header("Full Evidence View")]
     [SerializeField] private GameObject fullView;
@@ -17,12 +18,19 @@ public class EvidenceDetailsUI : MonoBehaviour
     [SerializeField] private Button closeButton;
     [SerializeField] private Button previousButton;
     [SerializeField] private Button nextButton;
+    
+    [SerializeField] private PlayerThoughtsUI playerThoughts;
 
+    private bool _showThoughtAfterClose;
+    private EvidenceTracker _tracker;
     private EvidenceData _currentEvidence;
     private int _currentPageIndex;
 
     private void Awake()
     {
+        _tracker = EvidenceTracker.GetOrCreate();
+        _tracker.EvidenceDiscovered += HandleFirstDiscovery;
+
         if (carousel != null)
             carousel.EvidenceOpened += OpenDetails;
 
@@ -40,6 +48,9 @@ public class EvidenceDetailsUI : MonoBehaviour
 
     private void OnDestroy()
     {
+        if (_tracker != null)
+            _tracker.EvidenceDiscovered -= HandleFirstDiscovery;
+
         if (carousel != null)
             carousel.EvidenceOpened -= OpenDetails;
 
@@ -53,7 +64,19 @@ public class EvidenceDetailsUI : MonoBehaviour
             nextButton.onClick.RemoveListener(NextPage);
     }
 
+    private void HandleFirstDiscovery(EvidenceData evidence)
+    {
+        _showThoughtAfterClose = true;
+        OpenDetailsInternal(evidence);
+    }
+
     public void OpenDetails(EvidenceData evidence)
+    {
+        _showThoughtAfterClose = false;
+        OpenDetailsInternal(evidence);
+    }
+
+    private void OpenDetailsInternal(EvidenceData evidence)
     {
         if (evidence == null)
             return;
@@ -65,7 +88,9 @@ public class EvidenceDetailsUI : MonoBehaviour
         evidenceImage.sprite = evidence.EvidenceImage;
         evidenceImage.enabled = evidence.EvidenceImage != null;
 
+        menuController.SetEvidenceDetailsOpen(true);
         fullView.SetActive(true);
+
         RefreshPage();
     }
 
@@ -124,8 +149,21 @@ public class EvidenceDetailsUI : MonoBehaviour
 
     public void CloseDetails()
     {
+        EvidenceData closedEvidence = _currentEvidence;
+        bool shouldShowThought = _showThoughtAfterClose;
+
         _currentEvidence = null;
         _currentPageIndex = 0;
+        _showThoughtAfterClose = false;
+
         fullView.SetActive(false);
+        menuController.SetEvidenceDetailsOpen(false);
+
+        if (shouldShowThought &&
+            closedEvidence != null &&
+            playerThoughts != null)
+        {
+            playerThoughts.ShowThought(closedEvidence);
+        }
     }
 }
