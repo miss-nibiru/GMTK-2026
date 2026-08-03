@@ -10,11 +10,13 @@ public class MenuSceneController : MonoBehaviour
 
     public void StartGame()
     {
+        PlaythroughState.GetOrCreate().BeginNewGame();
         SceneManager.LoadScene(gameplaySceneName);
     }
 
     public void RestartGame()
     {
+        PlaythroughState.GetOrCreate().BeginNewGame();
         SceneManager.LoadScene(gameplaySceneName);
     }
 

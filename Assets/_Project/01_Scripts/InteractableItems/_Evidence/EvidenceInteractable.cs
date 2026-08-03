@@ -1,38 +1,40 @@
 using UnityEngine;
 
 /// <summary>
-/// discover evidence using the existing interaction system
+/// Allows PlayerInteractionInput to discover evidence using E.
 /// </summary>
-[RequireComponent(typeof(EvidenceDiscoverable))] //need this script to work together
-public class EvidenceInteractable : MonoBehaviour, IInteractable
+[RequireComponent(typeof(EvidenceDiscoverable))]
+public class EvidenceInteractable : BaseInteractable
 {
     [SerializeField] private bool hideObjectAfterDiscovery;
+
     private EvidenceDiscoverable _evidenceDiscoverable;
+    private bool _reportedThisLoop;
 
     private void Awake()
     {
-        _evidenceDiscoverable = GetComponent<EvidenceDiscoverable>();
+        _evidenceDiscoverable =
+            GetComponent<EvidenceDiscoverable>();
     }
 
-    private void Start()
+    public override void Interact()
     {
-        if (IsAlreadyDiscovered()) 
-            ApplyDiscoveredState();
-        
-    }
+        if (_reportedThisLoop || _evidenceDiscoverable == null)
+            return;
 
-    public void Interact()
-    {
-        _evidenceDiscoverable.DiscoverEvidence();
-        if (IsAlreadyDiscovered()) ApplyDiscoveredState();
-        
-    }
-
-    private bool IsAlreadyDiscovered()
-    {
         EvidenceData evidence = _evidenceDiscoverable.EvidenceData;
-        return EvidenceTracker.Instance != null && evidence != null && 
-               EvidenceTracker.Instance.HasDiscovered(evidence.EvidenceId);
+
+        if (evidence == null ||
+            string.IsNullOrWhiteSpace(evidence.EvidenceId))
+        {
+            Debug.LogWarning($"Evidence is not configured on '{gameObject.name}'.", gameObject);
+            return;
+        }
+
+        _reportedThisLoop = true;
+        _evidenceDiscoverable.ReportDiscovery();
+
+        ApplyDiscoveredState();
     }
 
     private void ApplyDiscoveredState()
@@ -43,6 +45,8 @@ public class EvidenceInteractable : MonoBehaviour, IInteractable
             return;
         }
 
+        // Prevent another interaction during this loop.
+        // Reloading restores the physical object for the next loop.
         Destroy(this);
     }
 }

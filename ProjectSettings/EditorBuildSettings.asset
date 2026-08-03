@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/_Project/02_Scenes/_FinalScenes/01_MainScreen.unity
     guid: 58a59dd726b5b4ed78995dc1abe75a94
   - enabled: 1
-    path: Assets/_Project/02_Scenes/_FinalScenes/02_Gameplay.unity
-    guid: adc76eec19d1f41b98da9e87542e510a
+    path: Assets/_Project/02_Scenes/Dulce-Playground.unity
+    guid: eb10d5a6ce8b541b697ead85fa092bc0
   - enabled: 1
     path: Assets/_Project/02_Scenes/_FinalScenes/03_EndScreen.unity
     guid: d99ea906a8dee4542965042a935ff042

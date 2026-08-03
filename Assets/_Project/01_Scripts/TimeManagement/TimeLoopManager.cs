@@ -10,7 +10,10 @@ using UnityEngine.SceneManagement;
 public class TimeLoopManager : MonoBehaviour
 {
     public static TimeLoopManager Instance { get; private set; }
-    public int LoopCount { get; private set; }
+    public int LoopCount =>
+        PlaythroughState.Instance != null
+            ? PlaythroughState.Instance.LoopCount
+            : 0;
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -25,11 +28,10 @@ public class TimeLoopManager : MonoBehaviour
 
     public void RewindFullDay()
     {
-        
-        //in the future to grow: the player can control a few hours to go back in time?
-        
-        LoopCount++;
-        var currentScene = SceneManager.GetActiveScene();
+        PlaythroughState.GetOrCreate().AdvanceLoop();
+
+        Scene currentScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(currentScene.buildIndex);
     }
+    
 }

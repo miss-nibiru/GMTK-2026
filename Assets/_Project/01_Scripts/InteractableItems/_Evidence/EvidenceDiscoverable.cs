@@ -1,11 +1,8 @@
 using UnityEngine;
 
 /// <summary>
-/// MAAAAAX! ---
-/// Attach this to an object in the puzzle that can go into the UI
-/// You need to assign the DATA as well
-/// Call DiscoverEvidence() when the player successfully
-/// collects the evidence
+/// Connects a physical clue to its EvidenceData.
+/// Puzzle scripts may call DiscoverEvidence through a UnityEvent.
 /// </summary>
 public class EvidenceDiscoverable : MonoBehaviour
 {
@@ -13,10 +10,23 @@ public class EvidenceDiscoverable : MonoBehaviour
 
     public EvidenceData EvidenceData => evidenceData;
 
+    private void Awake()
+    {
+        EvidenceTracker
+            .GetOrCreate()
+            .RegisterEvidence(evidenceData);
+    }
+
+    // Keep this void method for UnityEvents and existing puzzle scripts.
     public void DiscoverEvidence()
     {
-        if (EvidenceTracker.Instance == null) return;
-        EvidenceTracker.Instance.DiscoverEvidence(evidenceData);
-        
+        ReportDiscovery();
+    }
+
+    public bool ReportDiscovery()
+    {
+        return EvidenceTracker
+            .GetOrCreate()
+            .DiscoverEvidence(evidenceData);
     }
 }
