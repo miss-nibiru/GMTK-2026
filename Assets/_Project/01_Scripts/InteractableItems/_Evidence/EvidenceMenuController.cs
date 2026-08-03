@@ -22,8 +22,10 @@ public class EvidenceMenuController : MonoBehaviour
     private bool _isOpen;
     private bool _isCaseFileOpen;
     private bool _isStartupCaseFile;
+    private bool _isEvidenceDetailsOpen;
 
-    public bool IsOpen => _isOpen;
+    public bool IsOpen =>
+        _isOpen || _isEvidenceDetailsOpen;
 
     private void Start()
     {
@@ -32,6 +34,9 @@ public class EvidenceMenuController : MonoBehaviour
 
     private void Update()
     {
+        if (_isEvidenceDetailsOpen)
+            return;
+        
         if (Keyboard.current == null ||
             !Keyboard.current.tabKey.wasPressedThisFrame) 
             return;
@@ -115,6 +120,15 @@ public class EvidenceMenuController : MonoBehaviour
         caseButtonClose.SetActive(false);
 
         SetMenuOpened(shouldOpen);
+    }
+    
+    public void SetEvidenceDetailsOpen(bool shouldOpen)
+    {
+        _isEvidenceDetailsOpen = shouldOpen;
+
+        // If the carousel was already open, closing the details
+        // returns to it. Otherwise, closing returns to gameplay.
+        SetMenuOpened(shouldOpen || _isOpen);
     }
 
     private void SetMenuOpened(bool shouldOpen)
