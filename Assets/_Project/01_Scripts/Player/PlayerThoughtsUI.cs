@@ -7,6 +7,12 @@ public class PlayerThoughtsUI : MonoBehaviour
     [SerializeField] private CanvasGroup canvasGroup;
     [SerializeField] private TMP_Text thoughtText;
     [SerializeField] private AudioSource voiceSource;
+    
+    [Header("Repeated Discovery")]
+    [SerializeField, TextArea(2, 4)]
+    private string repeatedDiscoveryLine;
+
+    private EvidenceTracker _tracker;
 
     [Header("Timing")]
     [SerializeField] private float fadeDuration = 0.25f;
@@ -19,6 +25,9 @@ public class PlayerThoughtsUI : MonoBehaviour
         canvasGroup.alpha = 0f;
         canvasGroup.interactable = false;
         canvasGroup.blocksRaycasts = false;
+        
+        _tracker = EvidenceTracker.GetOrCreate();
+        _tracker.DiscoveryReported += HandleDiscoveryReported;
     }
 
     public void ShowThought(EvidenceData evidence)
@@ -47,6 +56,21 @@ public class PlayerThoughtsUI : MonoBehaviour
         thoughtText.text = line;
         _displayRoutine = StartCoroutine(
             DisplayRoutine(voiceClip));
+    }
+    
+    private void OnDestroy()
+    {
+        if (_tracker != null)
+            _tracker.DiscoveryReported -= HandleDiscoveryReported;
+    }
+
+    private void HandleDiscoveryReported(
+        EvidenceDiscoveryReport report)
+    {
+        if (report.IsFirstDiscovery)
+            return;
+
+        ShowThought(repeatedDiscoveryLine);
     }
 
     private IEnumerator DisplayRoutine(AudioClip voiceClip)

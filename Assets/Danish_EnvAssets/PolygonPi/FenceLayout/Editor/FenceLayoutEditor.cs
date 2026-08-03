@@ -1,10 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEditor;
 #if UNITY_2019_1_OR_NEWER
 using UnityEditor.Experimental.SceneManagement;
 #endif
 using UnityEditor.SceneManagement;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 [CustomEditor(typeof(FenceLayout)), CanEditMultipleObjects]
 public class FenceLayoutEditor : Editor
@@ -212,6 +214,7 @@ public class FenceLayoutEditor : Editor
 
 	// --------------------------------------------------------------------------
 
+	[Obsolete("Obsolete")]
 	public void OnEnable()
 	{
 		m_fenceLayout = target as FenceLayout;
