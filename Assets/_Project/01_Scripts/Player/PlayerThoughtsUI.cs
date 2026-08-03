@@ -12,8 +12,6 @@ public class PlayerThoughtsUI : MonoBehaviour
     [SerializeField, TextArea(2, 4)]
     private string repeatedDiscoveryLine;
 
-    private EvidenceTracker _tracker;
-
     [Header("Timing")]
     [SerializeField] private float fadeDuration = 0.25f;
     [SerializeField] private float displayDuration = 3.5f;
@@ -26,8 +24,6 @@ public class PlayerThoughtsUI : MonoBehaviour
         canvasGroup.interactable = false;
         canvasGroup.blocksRaycasts = false;
         
-        _tracker = EvidenceTracker.GetOrCreate();
-        _tracker.DiscoveryReported += HandleDiscoveryReported;
     }
 
     public void ShowThought(EvidenceData evidence)
@@ -58,11 +54,6 @@ public class PlayerThoughtsUI : MonoBehaviour
             DisplayRoutine(voiceClip));
     }
     
-    private void OnDestroy()
-    {
-        if (_tracker != null)
-            _tracker.DiscoveryReported -= HandleDiscoveryReported;
-    }
 
     private void HandleDiscoveryReported(
         EvidenceDiscoveryReport report)
@@ -92,6 +83,11 @@ public class PlayerThoughtsUI : MonoBehaviour
 
         thoughtText.text = string.Empty;
         _displayRoutine = null;
+    }
+    
+    public void ShowRepeatedDiscoveryThought()
+    {
+        ShowThought(repeatedDiscoveryLine);
     }
 
     private IEnumerator Fade(float start, float end)

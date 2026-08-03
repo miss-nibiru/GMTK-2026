@@ -6,16 +6,42 @@ public class EvidenceConfirmationUI : MonoBehaviour
 {
     [SerializeField] private EvidenceMenuController menuController;
     [SerializeField] private EvidenceCarouselUI carousel;
+    [SerializeField] private PlayerThoughtsUI playerThoughts;
     
     [Header("Timing")]
     [SerializeField, Min(0.1f)]
     private float visibleDuration = 1.25f;
 
     private Coroutine _confirmationRoutine;
+    private EvidenceTracker _tracker;
 
-    public void PlayConfirmation(
-        EvidenceData evidence,
-        Action onComplete = null)
+    private void Awake()
+    {
+        _tracker = EvidenceTracker.GetOrCreate();
+        _tracker.DiscoveryReported += HandleDiscoveryReported;
+    }
+
+    private void OnDestroy()
+    {
+        if (_tracker != null)
+            _tracker.DiscoveryReported -= HandleDiscoveryReported;
+    }
+
+    private void HandleDiscoveryReported(
+        EvidenceDiscoveryReport report)
+    {
+        if (report.IsFirstDiscovery)
+            return;
+
+        PlayConfirmation(
+            report.Evidence,
+            () =>
+            {
+                if (playerThoughts != null)
+                    playerThoughts.ShowRepeatedDiscoveryThought();
+            });
+    }
+    public void PlayConfirmation(EvidenceData evidence, Action onComplete = null)
     {
         if (evidence == null)
         {
@@ -41,9 +67,12 @@ public class EvidenceConfirmationUI : MonoBehaviour
             carousel.CenterOnEvidence(evidence);
 
         if (!evidenceWasCentred) Debug.LogWarning($"Could not centre evidence '{evidence.EvidenceId}'.", evidence);
-        // Wait for the centred slot to finish refreshing.
-        yield return null;
         
+        yield return null;
+
+        bool confirmationStarted = carousel.PlayCenteredConfirmationShine();
+
+        if (!confirmationStarted) Debug.LogWarning("The centred evidence slot could not play its confirmation.");
         yield return new WaitForSecondsRealtime(visibleDuration);
 
         menuController.CloseEvidence();

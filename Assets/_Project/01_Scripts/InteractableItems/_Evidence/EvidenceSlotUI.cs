@@ -19,13 +19,20 @@ public class EvidenceSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     [SerializeField] private Outline selectedOutline;
     
     [Header("Discovery Confirmation")]
-    [SerializeField, Min(0.05f)]
-    private float confirmationShineDuration = 0.75f;
+    [SerializeField]
+    private Image discoveryFlashOverlay;
 
-    [SerializeField, Min(1)]
-    private int confirmationShinePulses = 2;
+    [SerializeField, Min(0.05f)]
+    private float confirmationDuration = 0.6f;
+
+    [SerializeField, Min(1f)]
+    private float confirmationPopScale = 1.2f;
+
+    [SerializeField, Range(0f, 1f)]
+    private float confirmationPeakAlpha = 0.8f;
 
     private Coroutine _confirmationShineRoutine;
+    private bool _isPlayingConfirmation;
     
     private Button _button;
     private EvidenceData _evidenceData;
@@ -52,7 +59,8 @@ public class EvidenceSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 
     private void Update()
     {
-        if (!_hasStarted) return;
+        if (!_hasStarted || _isPlayingConfirmation)
+            return;
         Vector3 targetScale = _restingScale;
 
         if (_isSelected && _pointerOver && _evidenceData != null) targetScale *= hoverScaleMultiplier;
@@ -104,11 +112,17 @@ public class EvidenceSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     
     public void PlayConfirmationShine()
     {
-        if (selectedOutline == null || _evidenceData == null)
+        if (discoveryFlashOverlay == null ||
+            _evidenceData == null ||
+            !_hasStarted)
+        {
             return;
+        }
 
         if (_confirmationShineRoutine != null)
             StopCoroutine(_confirmationShineRoutine);
+
+        ResetConfirmationVisuals();
 
         _confirmationShineRoutine =
             StartCoroutine(ConfirmationShineRoutine());
@@ -116,45 +130,61 @@ public class EvidenceSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 
     private IEnumerator ConfirmationShineRoutine()
     {
-        bool originalEnabled = selectedOutline.enabled;
-        Color originalColor = selectedOutline.effectColor;
-
-        float maximumAlpha =
-            originalColor.a > 0f ? originalColor.a : 1f;
-
-        selectedOutline.enabled = true;
+        _isPlayingConfirmation = true;
 
         float elapsed = 0f;
 
-        while (elapsed < confirmationShineDuration)
+        while (elapsed < confirmationDuration)
         {
             elapsed += Time.unscaledDeltaTime;
 
-            float progress =
-                elapsed / confirmationShineDuration;
+            float progress = Mathf.Clamp01(
+                elapsed / confirmationDuration);
 
-            float pulse =
-                (Mathf.Sin(
-                    progress *
-                    Mathf.PI *
-                    2f *
-                    confirmationShinePulses) + 1f) * 0.5f;
+            // Moves from 0 → 1 → 0.
+            float pulse = Mathf.Sin(progress * Mathf.PI);
 
-            Color shineColor = originalColor;
-
-            shineColor.a = Mathf.Lerp(
-                maximumAlpha * 0.15f,
-                maximumAlpha,
+            float currentScale = Mathf.Lerp(
+                1f,
+                confirmationPopScale,
                 pulse);
 
-            selectedOutline.effectColor = shineColor;
+            transform.localScale =
+                _restingScale * currentScale;
+
+            Color overlayColour =
+                discoveryFlashOverlay.color;
+
+            overlayColour.a =
+                confirmationPeakAlpha * pulse;
+
+            discoveryFlashOverlay.color =
+                overlayColour;
 
             yield return null;
         }
 
-        selectedOutline.effectColor = originalColor;
-        selectedOutline.enabled = originalEnabled;
+        ResetConfirmationVisuals();
         _confirmationShineRoutine = null;
+    }
+
+    private void ResetConfirmationVisuals()
+    {
+        _isPlayingConfirmation = false;
+
+        if (_hasStarted)
+            transform.localScale = _restingScale;
+
+        if (discoveryFlashOverlay != null)
+        {
+            Color overlayColour =
+                discoveryFlashOverlay.color;
+
+            overlayColour.a = 0f;
+
+            discoveryFlashOverlay.color =
+                overlayColour;
+        }
     }
 
     public void Clear()
