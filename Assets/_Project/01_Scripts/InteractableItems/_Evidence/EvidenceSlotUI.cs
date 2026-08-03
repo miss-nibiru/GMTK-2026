@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 using UnityEngine.EventSystems;
 
 /// <summary>
@@ -16,6 +17,15 @@ public class EvidenceSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     [SerializeField, Min(0.01f)] private float hoverSpeed = 14f;
     [SerializeField] private Image evidenceIcon;
     [SerializeField] private Outline selectedOutline;
+    
+    [Header("Discovery Confirmation")]
+    [SerializeField, Min(0.05f)]
+    private float confirmationShineDuration = 0.75f;
+
+    [SerializeField, Min(1)]
+    private int confirmationShinePulses = 2;
+
+    private Coroutine _confirmationShineRoutine;
     
     private Button _button;
     private EvidenceData _evidenceData;
@@ -90,6 +100,61 @@ public class EvidenceSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitH
         
         if (!_button) return;
         _button.interactable = hasEvidence;
+    }
+    
+    public void PlayConfirmationShine()
+    {
+        if (selectedOutline == null || _evidenceData == null)
+            return;
+
+        if (_confirmationShineRoutine != null)
+            StopCoroutine(_confirmationShineRoutine);
+
+        _confirmationShineRoutine =
+            StartCoroutine(ConfirmationShineRoutine());
+    }
+
+    private IEnumerator ConfirmationShineRoutine()
+    {
+        bool originalEnabled = selectedOutline.enabled;
+        Color originalColor = selectedOutline.effectColor;
+
+        float maximumAlpha =
+            originalColor.a > 0f ? originalColor.a : 1f;
+
+        selectedOutline.enabled = true;
+
+        float elapsed = 0f;
+
+        while (elapsed < confirmationShineDuration)
+        {
+            elapsed += Time.unscaledDeltaTime;
+
+            float progress =
+                elapsed / confirmationShineDuration;
+
+            float pulse =
+                (Mathf.Sin(
+                    progress *
+                    Mathf.PI *
+                    2f *
+                    confirmationShinePulses) + 1f) * 0.5f;
+
+            Color shineColor = originalColor;
+
+            shineColor.a = Mathf.Lerp(
+                maximumAlpha * 0.15f,
+                maximumAlpha,
+                pulse);
+
+            selectedOutline.effectColor = shineColor;
+
+            yield return null;
+        }
+
+        selectedOutline.effectColor = originalColor;
+        selectedOutline.enabled = originalEnabled;
+        _confirmationShineRoutine = null;
     }
 
     public void Clear()
