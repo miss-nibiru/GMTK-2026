@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5797851621783606477}
   - component: {fileID: 3835963097733150905}
   - component: {fileID: 8333960771941678190}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Notebook
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7313300647110759945}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Notebook_Root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 7077021023941434820}
   - component: {fileID: 8958002236250110360}
   - component: {fileID: 5998574266541010461}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BookTitle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
