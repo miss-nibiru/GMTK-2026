@@ -29,7 +29,16 @@ public class EvidenceMenuController : MonoBehaviour
 
     private void Start()
     {
-        ShowStartupCaseFile();
+        PlaythroughState state =
+            PlaythroughState.GetOrCreate();
+
+        if (!state.CaseFileViewed)
+        {
+            ShowStartupCaseFile();
+            return;
+        }
+
+        HideAllImmediately();
     }
 
     private void Update()
@@ -93,10 +102,16 @@ public class EvidenceMenuController : MonoBehaviour
     {
         if (_isStartupCaseFile)
         {
-            GameTimeManager.Instance?.ResumeTime(StartupCasePauseReason);
+            GameTimeManager.Instance?.ResumeTime(
+                StartupCasePauseReason);
+
+            PlaythroughState
+                .GetOrCreate()
+                .MarkCaseFileViewed();
+
             _isStartupCaseFile = false;
         }
-        
+
         _isOpen = false;
         _isCaseFileOpen = false;
 
@@ -145,4 +160,20 @@ public class EvidenceMenuController : MonoBehaviour
 
         Cursor.visible = shouldOpen;
     }
+    
+    private void HideAllImmediately()
+    {
+        _isOpen = false;
+        _isCaseFileOpen = false;
+        _isStartupCaseFile = false;
+        _isEvidenceDetailsOpen = false;
+
+        evidenceUI.SetActive(false);
+        caseFileClosed.SetActive(false);
+        caseFileOpened.SetActive(false);
+        caseButtonClose.SetActive(false);
+
+        SetMenuOpened(false);
+    }
+    
 }
