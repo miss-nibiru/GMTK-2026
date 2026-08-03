@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29d1fddd189524fb8adc5a32ce42aab2, type: 3}
+  m_Name: SO_MariaDiary
+  m_EditorClassIdentifier: Assembly-CSharp::EvidenceData
+  evidenceId: diary
+  displayName: A kids diary
+  interactionDisplayName: Diary
+  evidenceImage: {fileID: 21300000, guid: 0a687c91f1a914cfaaa3db4664737c82, type: 3}
+  pages:
+  - heading: Apreel 1
+    body: 'Dear dairee
+
+
+      Mark pushd me in the mud today. He sed my dol was
+      dum so then I hid his red train in the fridge. He cryd and Dad got mad..'
+  - heading: Apreel 5
+    body: 'Der diaree
+
+
+      mom really likes flowers theres always flowers around
+      and it smells relly nice. mommy say unky likes them too. Unky stayed for dinner'
+  - heading: Apreel 9
+    body: 'Dear dairy
+
+
+      Unky frank came again when daddy was not hom. mommy
+      said to go to our room to play because the gowrn ups will talk but i think
+      unky yell'
+  - heading: Apreel 12
+    body: 'Diarree
+
+
+      I drew white flwrs for my drawing class and miss camille
+      sed that it was a very pretty flwr. mommy put the flower on the fridge and
+      then mark cryed'
+  - heading: Aprieel 31
+    body: 'Weeee!!! Kids partee
+
+
+      Dino piza is my favourite pizza ever. Unky
+      Franky came with us and played with us and jumped with us but he got really
+      tired. He was asking mommy to go home but we stayed hehe we won!'
+  - heading: May 16
+    body: 'Dear diaree
+
+
+      Im in my room now becos mommy said mark and i should
+      play in the room when unky is here but i wanted the flowers he brought so im
+      angry i dont have the flows'
+  description: A small diary. Belongs to Maria Rivera. There's lots of stories, doodles
+    and such
+  detectiveLine: I should keep this in mind...
+  detectiveAudio: {fileID: 0}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2653977252434329965}
   - component: {fileID: 4255448781955676565}
   - component: {fileID: 8255459349919544348}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: slide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 81518938030259514}
   - component: {fileID: 6065045737332050362}
   - component: {fileID: 6766824981895170706}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bullet_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,7 +189,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6266334389679269860}
-  m_Layer: 0
+  - component: {fileID: 1730297514863449150}
+  - component: {fileID: 3300278414781155255}
+  - component: {fileID: 3016087727332428084}
+  m_Layer: 7
   m_Name: Pistol_Root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -212,6 +215,53 @@ Transform:
   - {fileID: 7545226568981291095}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1730297514863449150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2503337326562777918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c42f28e5001c4cec99b29bdc0d9a000, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EvidenceDiscoverable
+  evidenceData: {fileID: 11400000, guid: b55f557dae8b145f59e4d45a8700b8e6, type: 2}
+--- !u!114 &3300278414781155255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2503337326562777918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cceed0c085484ce2972c1398cb82d94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EvidenceInteractable
+  hideObjectAfterDiscovery: 0
+--- !u!65 &3016087727332428084
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2503337326562777918}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3004477840740048985
 GameObject:
   m_ObjectHideFlags: 0
@@ -223,7 +273,7 @@ GameObject:
   - component: {fileID: 6378730268168004797}
   - component: {fileID: 3549142658325413160}
   - component: {fileID: 8661511985295034037}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: lower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -311,7 +361,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7545226568981291095}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -348,7 +398,7 @@ GameObject:
   - component: {fileID: 232807127816298277}
   - component: {fileID: 7023620767782687771}
   - component: {fileID: 9158207853775443764}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: mag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -440,7 +490,7 @@ GameObject:
   - component: {fileID: 7544025322105379665}
   - component: {fileID: 1542381145628321076}
   - component: {fileID: 225368192657573387}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -530,7 +580,7 @@ GameObject:
   - component: {fileID: 246476749011258850}
   - component: {fileID: 3129284750122086716}
   - component: {fileID: 5975441333845083417}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}

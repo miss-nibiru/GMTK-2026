@@ -4,17 +4,17 @@ using UnityEngine.UI;
 
 public class EvidenceDetailsUI : MonoBehaviour
 {
-    [Header("Existing References")]
+    [Header("Opening Source")]
     [SerializeField] private EvidenceCarouselUI carousel;
-    [SerializeField] private GameObject detailsPanel;
-    [SerializeField] private Image evidenceImage;
-    [SerializeField] private TMP_Text evidenceName;
-    [SerializeField] private TMP_Text evidenceDescription;
-    [SerializeField] private Button closeButton;
 
-    [Header("Page References")]
-    [SerializeField] private TMP_Text pageHeading;
-    [SerializeField] private TMP_Text pageIndicator;
+    [Header("Full Evidence View")]
+    [SerializeField] private GameObject fullView;
+    [SerializeField] private Image evidenceImage;
+    [SerializeField] private TMP_Text evidenceTitle;
+    [SerializeField] private TMP_Text evidenceDescription;
+
+    [Header("Buttons")]
+    [SerializeField] private Button closeButton;
     [SerializeField] private Button previousButton;
     [SerializeField] private Button nextButton;
 
@@ -23,30 +23,37 @@ public class EvidenceDetailsUI : MonoBehaviour
 
     private void Awake()
     {
-        carousel.EvidenceOpened += OpenDetails;
+        if (carousel != null)
+            carousel.EvidenceOpened += OpenDetails;
 
-        closeButton.onClick.AddListener(CloseDetails);
-        previousButton.onClick.AddListener(PreviousPage);
-        nextButton.onClick.AddListener(NextPage);
+        if (closeButton != null)
+            closeButton.onClick.AddListener(CloseDetails);
 
-        CloseDetails();
-    }
+        if (previousButton != null)
+            previousButton.onClick.AddListener(PreviousPage);
 
-    private void OnDisable()
-    {
-        CloseDetails();
+        if (nextButton != null)
+            nextButton.onClick.AddListener(NextPage);
+
+        fullView.SetActive(false);
     }
 
     private void OnDestroy()
     {
-        carousel.EvidenceOpened -= OpenDetails;
+        if (carousel != null)
+            carousel.EvidenceOpened -= OpenDetails;
 
-        closeButton.onClick.RemoveListener(CloseDetails);
-        previousButton.onClick.RemoveListener(PreviousPage);
-        nextButton.onClick.RemoveListener(NextPage);
+        if (closeButton != null)
+            closeButton.onClick.RemoveListener(CloseDetails);
+
+        if (previousButton != null)
+            previousButton.onClick.RemoveListener(PreviousPage);
+
+        if (nextButton != null)
+            nextButton.onClick.RemoveListener(NextPage);
     }
 
-    private void OpenDetails(EvidenceData evidence)
+    public void OpenDetails(EvidenceData evidence)
     {
         if (evidence == null)
             return;
@@ -54,11 +61,11 @@ public class EvidenceDetailsUI : MonoBehaviour
         _currentEvidence = evidence;
         _currentPageIndex = 0;
 
-        evidenceName.text = evidence.DisplayName;
+        evidenceTitle.text = evidence.DisplayName;
         evidenceImage.sprite = evidence.EvidenceImage;
         evidenceImage.enabled = evidence.EvidenceImage != null;
 
-        detailsPanel.SetActive(true);
+        fullView.SetActive(true);
         RefreshPage();
     }
 
@@ -91,35 +98,34 @@ public class EvidenceDetailsUI : MonoBehaviour
         if (_currentEvidence == null)
             return;
 
-        evidenceDescription.text =
-            _currentEvidence.GetPageBody(_currentPageIndex);
-
         string heading =
             _currentEvidence.GetPageHeading(_currentPageIndex);
 
-        pageHeading.text = heading;
-        pageHeading.gameObject.SetActive(
-            !string.IsNullOrWhiteSpace(heading));
+        string body =
+            _currentEvidence.GetPageBody(_currentPageIndex);
+
+        evidenceDescription.text =
+            string.IsNullOrWhiteSpace(heading)
+                ? body
+                : $"{heading}\n\n{body}";
 
         int pageCount = _currentEvidence.PageCount;
         bool hasMultiplePages = pageCount > 1;
 
         previousButton.gameObject.SetActive(hasMultiplePages);
         nextButton.gameObject.SetActive(hasMultiplePages);
-        pageIndicator.gameObject.SetActive(hasMultiplePages);
 
-        previousButton.interactable = _currentPageIndex > 0;
+        previousButton.interactable =
+            _currentPageIndex > 0;
+
         nextButton.interactable =
             _currentPageIndex < pageCount - 1;
-
-        pageIndicator.text =
-            $"{_currentPageIndex + 1} / {pageCount}";
     }
 
     public void CloseDetails()
     {
         _currentEvidence = null;
         _currentPageIndex = 0;
-        detailsPanel.SetActive(false);
+        fullView.SetActive(false);
     }
 }

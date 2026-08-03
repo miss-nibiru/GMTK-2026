@@ -14,5 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EvidenceData
   evidenceId: gun
   displayName: A gun
+  interactionDisplayName: gun
   evidenceImage: {fileID: 21300000, guid: fddb91bd7f23e4700814b8179fbf77e7, type: 3}
+  pages: []
   description: This is a berretta 9mm. It has a keychain attached to it. A flower?
+  detectiveLine: 
+  detectiveAudio: {fileID: 0}
