@@ -133,6 +133,56 @@ public class EvidenceCarouselUI : MonoBehaviour
             return;
         }
     }
+    
+    public bool CenterOnEvidence(EvidenceData evidence)
+    {
+        if (evidence == null)
+            return false;
+
+        TryConnectTracker();
+
+        if (_tracker == null)
+            return false;
+
+        IReadOnlyList<EvidenceData> discoveredEvidence =
+            _tracker.DiscoveredEvidence;
+
+        for (int i = 0; i < discoveredEvidence.Count; i++)
+        {
+            EvidenceData discovered = discoveredEvidence[i];
+
+            bool isMatchingEvidence =
+                discovered == evidence ||
+                string.Equals(
+                    discovered.EvidenceId,
+                    evidence.EvidenceId,
+                    StringComparison.Ordinal);
+
+            if (!isMatchingEvidence)
+                continue;
+
+            _selectedEvidenceIndex = i;
+            RefreshCarousel();
+            return true;
+        }
+
+        return false;
+    }
+    
+    public bool PlayCenteredConfirmationShine()
+    {
+        if (visibleSlots == null || visibleSlots.Length == 0)
+            return false;
+
+        int centerSlotIndex = visibleSlots.Length / 2;
+        EvidenceSlotUI centerSlot = visibleSlots[centerSlotIndex];
+
+        if (centerSlot == null || centerSlot.EvidenceData == null)
+            return false;
+
+        centerSlot.PlayConfirmationShine();
+        return true;
+    }
 
     private void HandleEvidenceDiscovered(EvidenceData newEvidence)
     {

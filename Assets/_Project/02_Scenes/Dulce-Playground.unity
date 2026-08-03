@@ -3425,6 +3425,7 @@ GameObject:
   m_Component:
   - component: {fileID: 356932455}
   - component: {fileID: 356932459}
+  - component: {fileID: 356932460}
   - component: {fileID: 356932458}
   - component: {fileID: 356932457}
   - component: {fileID: 356932456}
@@ -3448,7 +3449,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 734228508}
-  - {fileID: 671782538}
   - {fileID: 1793673837}
   - {fileID: 1944954517}
   - {fileID: 477196851}
@@ -3456,6 +3456,7 @@ RectTransform:
   - {fileID: 1012892045}
   - {fileID: 2105328465}
   - {fileID: 1989366178}
+  - {fileID: 671782538}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3540,6 +3541,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EvidenceDetailsUI
   carousel: {fileID: 1012892047}
   menuController: {fileID: 2036089407}
+  evidenceConfirmation: {fileID: 356932460}
   fullView: {fileID: 2105328464}
   evidenceImage: {fileID: 1549827206}
   evidenceTitle: {fileID: 1916485651}
@@ -3547,7 +3549,23 @@ MonoBehaviour:
   closeButton: {fileID: 262221812}
   previousButton: {fileID: 1755549787}
   nextButton: {fileID: 648528618}
-  playerThoughts: {fileID: 0}
+  playerThoughts: {fileID: 671782540}
+--- !u!114 &356932460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 356932454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 297b574a67332400bb1c0409b8778f33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EvidenceConfirmationUI
+  menuController: {fileID: 2036089407}
+  carousel: {fileID: 1012892047}
+  effectBank: {fileID: 1036590837}
+  visibleDuration: 1.25
 --- !u!1 &366081835
 GameObject:
   m_ObjectHideFlags: 0
@@ -6282,7 +6300,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &671782539
 CanvasGroup:
@@ -6311,8 +6329,9 @@ MonoBehaviour:
   canvasGroup: {fileID: 671782539}
   thoughtText: {fileID: 2040112141}
   voiceSource: {fileID: 0}
+  repeatedDiscoveryLine: I've already examined this. Nothing new here
   fadeDuration: 0.25
-  displayDuration: 3.5
+  displayDuration: 2.5
 --- !u!1001 &678071049
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10117,7 +10136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Seanzo.PostProcess.Player::Seanzo.PostProcess.Player.EffectBank
   effects:
-  - {fileID: 11400000, guid: 6ca6918c0145e463cac0c40fbd548d16, type: 2}
+  - {fileID: 11400000, guid: c35a0741438324084bbaa177304d4314, type: 2}
 --- !u!114 &1036590838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17411,10 +17430,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 205855356}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 500, y: 300}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2040112141
 MonoBehaviour:
@@ -17463,8 +17482,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
-  m_fontSizeBase: 40
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

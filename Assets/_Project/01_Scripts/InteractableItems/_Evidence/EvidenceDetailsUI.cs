@@ -7,6 +7,7 @@ public class EvidenceDetailsUI : MonoBehaviour
     [Header("Controllers")]
     [SerializeField] private EvidenceCarouselUI carousel;
     [SerializeField] private EvidenceMenuController menuController;
+    [SerializeField] private EvidenceConfirmationUI evidenceConfirmation;
 
     [Header("Full Evidence View")]
     [SerializeField] private GameObject fullView;
@@ -159,11 +160,21 @@ public class EvidenceDetailsUI : MonoBehaviour
         fullView.SetActive(false);
         menuController.SetEvidenceDetailsOpen(false);
 
-        if (shouldShowThought &&
-            closedEvidence != null &&
-            playerThoughts != null)
+        if (!shouldShowThought || closedEvidence == null)
+            return;
+
+        if (evidenceConfirmation != null)
         {
-            playerThoughts.ShowThought(closedEvidence);
+            evidenceConfirmation.PlayConfirmation(
+                closedEvidence,
+                () =>
+                {
+                    if (playerThoughts != null) playerThoughts.ShowThought(closedEvidence);
+                });
+
+            return;
         }
+        
+        if (playerThoughts != null) playerThoughts.ShowThought(closedEvidence);
     }
 }
