@@ -15,22 +15,8 @@ MonoBehaviour:
   bindings:
   - component: ColorAdjustments
     parameter: postExposure
-    to: {x: 1.35, y: 0, z: 0, w: 0}
+    to: {x: 0.3, y: 0, z: 0, w: 0}
     duration: 0.2
-    curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 0
-      m_PostInfinity: 0
-      m_RotationOrder: 0
-    loop: 0
-    loopCount: 0
-    hold: 0.6
-    revert: 1
-  - component: Vignette
-    parameter: intensity
-    to: {x: 0.42, y: 0, z: 0, w: 0}
-    duration: 0.1
     curve:
       serializedVersion: 2
       m_Curve: []
