@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1681851372458224769}
   - component: {fileID: 928795439662966773}
   - component: {fileID: 2626456432444319774}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Piecepaper1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8161770610229344426}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PiecePaper1_Root
   m_TagString: Untagged
   m_Icon: {fileID: 0}

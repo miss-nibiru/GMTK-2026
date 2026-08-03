@@ -12,7 +12,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29d1fddd189524fb8adc5a32ce42aab2, type: 3}
   m_Name: SO_OliviaAgenda
   m_EditorClassIdentifier: Assembly-CSharp::EvidenceData
-  evidenceId: suicide_note
-  displayName: And Old Forgotten Note
+  evidenceId: olivia_agenda
+  displayName: An agenda
+  interactionDisplayName: 
   evidenceImage: {fileID: 21300000, guid: 0a687c91f1a914cfaaa3db4664737c82, type: 3}
-  description: Roberta's note did she kill herself?
+  pages:
+  - heading: April 20
+    body: 'Help Francisco with taxes (again)
+
+      Pick up Mark - 3:30 PM
+
+      Maria
+      piano practice - 5:00 PM
+
+      Groceries
+
+      Water daisies'
+  - heading: April 27
+    body: 'Mark Soccer 3:30 PM
+
+      Maria piano practice 5:00 PM
+
+      Drop-off
+      Santiago at Airport 7:00 PM'
+  - heading: April 31
+    body: 'Kid''s day party at dino pizza 12:00 pm
+
+      Pick up Francisco 11 AM
+      (he really wanted to come)'
+  - heading: May 5
+    body: 'Pickup Santiago Airport 1:00 AM (bring welcome roses!!)
+
+      Meeting
+      zoom at 5:00 PM - have presentation ready
+
+      Work on social posts'
+  - heading: May 15 == Anniversary!!
+    body: 'City blackout 5:00 PM (cook before then!)
+
+      Buy red wine, Risotto,
+      Pork roulade (check recipe)
+
+      Santiago home 4:00 PM
+
+      Pick up cake
+      2:00 PM'
+  description: Looks like a personal planner... Most entries are reminders, appointments,
+    and family errands...
+  detectiveLine: Looks like she kept everything organized
+  detectiveAudio: {fileID: 0}
