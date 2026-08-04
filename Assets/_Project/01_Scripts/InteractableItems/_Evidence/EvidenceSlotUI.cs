@@ -33,6 +33,7 @@ public class EvidenceSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 
     private Coroutine _confirmationShineRoutine;
     private bool _isPlayingConfirmation;
+    private bool _isCarouselMoving;
     
     private Button _button;
     private EvidenceData _evidenceData;
@@ -59,8 +60,13 @@ public class EvidenceSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 
     private void Update()
     {
-        if (!_hasStarted || _isPlayingConfirmation)
+        if (!_hasStarted ||
+            _isPlayingConfirmation ||
+            _isCarouselMoving)
+        {
             return;
+        }
+        
         Vector3 targetScale = _restingScale;
 
         if (_isSelected && _pointerOver && _evidenceData != null) targetScale *= hoverScaleMultiplier;
@@ -85,8 +91,10 @@ public class EvidenceSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     private void OnDisable()
     {
         _pointerOver = false;
-        if (_hasStarted) transform.localScale = _restingScale;
-        
+        _isCarouselMoving = false;
+
+        if (_hasStarted)
+            transform.localScale = _restingScale;
     }
 
     private void OnDestroy()
@@ -185,6 +193,33 @@ public class EvidenceSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitH
             discoveryFlashOverlay.color =
                 overlayColour;
         }
+    }
+    
+    public void BeginCarouselMove()
+    {
+        _isCarouselMoving = true;
+        _pointerOver = false;
+
+        if (_hasStarted)
+            transform.localScale = _restingScale;
+    }
+
+    public void SetCarouselPose(
+        Vector2 anchoredPosition,
+        Vector3 scale)
+    {
+        if (transform is RectTransform rectTransform)
+            rectTransform.anchoredPosition = anchoredPosition;
+
+        transform.localScale = scale;
+    }
+
+    public void EndCarouselMove()
+    {
+        _isCarouselMoving = false;
+
+        if (_hasStarted)
+            transform.localScale = _restingScale;
     }
 
     public void Clear()

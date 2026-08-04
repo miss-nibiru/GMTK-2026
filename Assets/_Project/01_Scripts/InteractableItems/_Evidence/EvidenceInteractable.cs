@@ -9,7 +9,7 @@ public class EvidenceInteractable : BaseInteractable
     [SerializeField] private bool hideObjectAfterDiscovery;
 
     private EvidenceDiscoverable _evidenceDiscoverable;
-    private bool _reportedThisLoop;
+    
 
     private void Awake()
     {
@@ -19,7 +19,7 @@ public class EvidenceInteractable : BaseInteractable
 
     public override void Interact()
     {
-        if (_reportedThisLoop || _evidenceDiscoverable == null)
+        if (_evidenceDiscoverable == null)
             return;
 
         EvidenceData evidence = _evidenceDiscoverable.EvidenceData;
@@ -30,8 +30,7 @@ public class EvidenceInteractable : BaseInteractable
             Debug.LogWarning($"Evidence is not configured on '{gameObject.name}'.", gameObject);
             return;
         }
-
-        _reportedThisLoop = true;
+        
         _evidenceDiscoverable.ReportDiscovery();
 
         ApplyDiscoveredState();
@@ -39,14 +38,6 @@ public class EvidenceInteractable : BaseInteractable
 
     private void ApplyDiscoveredState()
     {
-        if (hideObjectAfterDiscovery)
-        {
-            gameObject.SetActive(false);
-            return;
-        }
-
-        // Prevent another interaction during this loop.
-        // Reloading restores the physical object for the next loop.
-        Destroy(this);
+        if (hideObjectAfterDiscovery) gameObject.SetActive(false);
     }
 }
