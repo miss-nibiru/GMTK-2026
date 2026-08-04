@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 /// <summary>
 /// Displays discovered evidence
@@ -18,8 +19,19 @@ public class EvidenceCarouselUI : MonoBehaviour
     [SerializeField, Min(0f)] private float horizontalSpacing;
     [SerializeField, Min(0.01f)] private float centerScale;
     [SerializeField, Range(0f, 1f)]
+    
     private float scaleReductionPerStep;
     [SerializeField] private float verticalRisePerStep;
+    
+    [Header("Carousel Movement")]
+    [SerializeField, Min(0.05f)]
+    private float movementDuration = 0.35f;
+
+    [SerializeField]
+    private AnimationCurve movementCurve =
+        AnimationCurve.EaseInOut(0f, 0f, 1f, 1f);
+
+    private Coroutine _carouselMoveRoutine;
 
     private EvidenceTracker _tracker;
     private int _selectedEvidenceIndex;
@@ -63,29 +75,6 @@ public class EvidenceCarouselUI : MonoBehaviour
         RefreshCarousel();
     }
 
-    private void OnDestroy()
-    {
-        foreach (EvidenceSlotUI slot in visibleSlots)
-        {
-            if (slot != null) slot.Clicked -= HandleSlotClicked;
-        }
-
-        if (leftArrow != null)
-        {
-            leftArrow.onClick.RemoveListener(SelectPrevious);
-        }
-
-        if (rightArrow != null)
-        {
-            rightArrow.onClick.RemoveListener(SelectNext);
-        }
-
-        if (_tracker != null)
-        {
-            _tracker.EvidenceDiscovered -= HandleEvidenceDiscovered;
-        }
-    }
-
     public void SelectPrevious()
     {
         SelectRelative(-1);
@@ -105,13 +94,134 @@ public class EvidenceCarouselUI : MonoBehaviour
 
     private void SelectRelative(int direction)
     {
-        if (_tracker == null || _tracker.DiscoveredEvidence.Count <= 1)
+        if (_tracker == null ||
+            _tracker.DiscoveredEvidence.Count <= 1 ||
+            _carouselMoveRoutine != null)
+        {
             return;
+        }
 
-        _selectedEvidenceIndex = WrapIndex(_selectedEvidenceIndex + direction, _tracker.DiscoveredEvidence.Count);
-        RefreshCarousel();
-        
+        _carouselMoveRoutine =
+            StartCoroutine(AnimateCarousel(direction));
     }
+    
+    private IEnumerator AnimateCarousel(int direction)
+{
+    direction = direction < 0 ? -1 : 1;
+
+    if (leftArrow != null)
+        leftArrow.interactable = false;
+
+    if (rightArrow != null)
+        rightArrow.interactable = false;
+
+    int slotCount = visibleSlots.Length;
+    int centerSlotIndex = slotCount / 2;
+
+    Vector2[] startPositions = new Vector2[slotCount];
+    Vector2[] targetPositions = new Vector2[slotCount];
+
+    Vector3[] startScales = new Vector3[slotCount];
+    Vector3[] targetScales = new Vector3[slotCount];
+
+    for (int i = 0; i < slotCount; i++)
+    {
+        EvidenceSlotUI slot = visibleSlots[i];
+
+        if (slot == null)
+            continue;
+
+        RectTransform slotTransform =
+            slot.transform as RectTransform;
+
+        if (slotTransform == null)
+            continue;
+
+        slot.BeginCarouselMove();
+
+        startPositions[i] =
+            slotTransform.anchoredPosition;
+
+        startScales[i] =
+            slotTransform.localScale;
+
+        // Next moves the right card towards centre.
+        // Previous moves the left card towards centre.
+        int targetSlotIndex = i - direction;
+        int targetOffset =
+            targetSlotIndex - centerSlotIndex;
+
+        int targetDistance =
+            Mathf.Abs(targetOffset);
+
+        targetPositions[i] =
+            centerPosition +
+            new Vector2(
+                targetOffset * horizontalSpacing,
+                targetDistance * verticalRisePerStep);
+
+        float targetScale = Mathf.Max(
+            0.05f,
+            centerScale -
+            targetDistance * scaleReductionPerStep);
+
+        targetScales[i] =
+            Vector3.one * targetScale;
+    }
+
+    float elapsed = 0f;
+
+    while (elapsed < movementDuration)
+    {
+        elapsed += Time.unscaledDeltaTime;
+
+        float progress = Mathf.Clamp01(
+            elapsed / movementDuration);
+
+        float easedProgress =
+            movementCurve != null
+                ? movementCurve.Evaluate(progress)
+                : progress;
+
+        for (int i = 0; i < slotCount; i++)
+        {
+            EvidenceSlotUI slot = visibleSlots[i];
+
+            if (slot == null)
+                continue;
+
+            Vector2 position = Vector2.LerpUnclamped(
+                startPositions[i],
+                targetPositions[i],
+                easedProgress);
+
+            Vector3 scale = Vector3.LerpUnclamped(
+                startScales[i],
+                targetScales[i],
+                easedProgress);
+
+            slot.SetCarouselPose(position, scale);
+        }
+
+        yield return null;
+    }
+
+    _selectedEvidenceIndex = WrapIndex(
+        _selectedEvidenceIndex + direction,
+        _tracker.DiscoveredEvidence.Count);
+
+    // Restore the permanent slot layout, then update their evidence.
+    ApplyAutomaticLayout();
+    RefreshCarousel();
+
+    foreach (EvidenceSlotUI slot in visibleSlots)
+    {
+        if (slot != null)
+            slot.EndCarouselMove();
+    }
+
+    _carouselMoveRoutine = null;
+}
 
     private void HandleSlotClicked(EvidenceSlotUI clickedSlot)
     {
@@ -244,13 +354,7 @@ public class EvidenceCarouselUI : MonoBehaviour
         SelectionChanged?.Invoke(SelectedEvidence);
     }
 
-    private void ClearAllSlots()
-    {
-        
-        foreach (EvidenceSlotUI slot in visibleSlots) 
-            if (slot != null) slot.Clear();
-        
-    }
+    
 
     private void ApplyAutomaticLayout()
     {
@@ -287,6 +391,37 @@ public class EvidenceCarouselUI : MonoBehaviour
     private static int WrapIndex(int index, int count)
     {
         return (index % count + count) % count;
+    }
+    
+    private void ClearAllSlots()
+    {
+        
+        foreach (EvidenceSlotUI slot in visibleSlots) 
+            if (slot != null) slot.Clear();
+        
+    }
+    
+    private void OnDestroy()
+    {
+        foreach (EvidenceSlotUI slot in visibleSlots)
+        {
+            if (slot != null) slot.Clicked -= HandleSlotClicked;
+        }
+
+        if (leftArrow != null)
+        {
+            leftArrow.onClick.RemoveListener(SelectPrevious);
+        }
+
+        if (rightArrow != null)
+        {
+            rightArrow.onClick.RemoveListener(SelectNext);
+        }
+
+        if (_tracker != null)
+        {
+            _tracker.EvidenceDiscovered -= HandleEvidenceDiscovered;
+        }
     }
     
 /// <summary>
