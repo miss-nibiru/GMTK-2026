@@ -18,12 +18,12 @@ MonoBehaviour:
   evidenceImage: {fileID: 21300000, guid: 0a687c91f1a914cfaaa3db4664737c82, type: 3}
   pages:
   - heading: April 20
-    body: 'Help Francisco with taxes (again)
+    body: 'Help Francisco with taxes
 
       Pick up Mark - 3:30 PM
 
-      Maria
-      piano practice - 5:00 PM
+      Maria piano
+      practice - 5:00 PM
 
       Groceries
 
@@ -36,26 +36,29 @@ MonoBehaviour:
       Drop-off
       Santiago at Airport 7:00 PM'
   - heading: April 31
-    body: 'Pick up Francisco 11 AM
+    body: 'Pick up Francisco 11:00 am
 
-      Kid''s day party at dino pizza 12:00 pm'
+      Kid''s day party at dino pizza 12:00
+      pm'
   - heading: May 5
-    body: 'Pickup Santiago Airport 1:00 AM
+    body: 'Pickup Santiago Airport 1:00 am
 
-      Meeting zoom at 5:00 PM - have
+      Meeting zoom at 5:00 pm - have
       presentation ready
 
       Work on social posts'
-  - heading: May 15 == Anniversary!!
-    body: 'City blackout 5:00 PM (cook before then!)
+  - heading: May 15 - Anniversary!!
+    body: 'City blackout 5:00 pm
 
-      Buy red wine, Risotto,
-      pork roulade (check recipe)
+      (cook before then!)
+
+      Buy red wine,
+      Risotto, pork roulade (check recipe)
 
       Pick up cake 2:00 PM
 
-      Santiago home
-      4:00 PM'
+      Santiago
+      home 4:00 PM'
   description: Looks like a personal planner... Most entries are reminders, appointments,
     and family errands...
   detectiveLine: Looks like she kept everything organized
