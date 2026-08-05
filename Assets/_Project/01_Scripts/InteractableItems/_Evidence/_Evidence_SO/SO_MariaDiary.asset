@@ -22,12 +22,12 @@ MonoBehaviour:
 
 
       Mark pushd me in the mud today. He sed my dol was
-      dum so then I hid his red train in the fridge. He cryd and Dad got mad..'
+      dum so then I hid his red train in the fridge. He cryd and dad got mad...'
   - heading: Apreel 5
     body: 'Der diaree
 
 
-      mom really likes flowers theres always flowers around
+      mom really likes Flowers theres always flowers around
       and it smells relly nice. mommy say unky likes them too. Unky stayed for dinner'
   - heading: Ayprul 9
     body: 'Dear dairy
@@ -49,14 +49,20 @@ MonoBehaviour:
 
       Dino piza is my favourite pizza ever. Unky
       Franky came with us and played with us and jumped with us but he got really
-      tired. He was asking mommy to go home but we stayed hehe we won!'
+      tired. He telling mommy to go home but we stayed hehe we won!'
+  - heading: May 9
+    body: 'Deer diary
+
+
+      I am sad today and i dont wanna type anything i want
+      to play with my bear'
   - heading: May 16
     body: 'Dear diaree
 
 
       Im in my room now becos mommy said mark and i should
-      play in the room when unky is here but i wanted the flowers he brought so im
-      angry i dont have the flows'
+      play in the room when unky is here but i wanted the Flowers he brought so im
+      angry i dont have the Flowers'
   description: A small diary. Belongs to Maria Rivera. There's lots of stories, doodles
     and such
   detectiveLine: I should keep this in mind...
