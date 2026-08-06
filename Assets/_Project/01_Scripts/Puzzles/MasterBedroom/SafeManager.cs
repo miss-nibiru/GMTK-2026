@@ -25,7 +25,6 @@ public class SafeManager : MonoBehaviour
         if (rightNumbers >= numbers.Length)
         {
             safe.Interact();
-            Destroy(safe.gameObject);
         }
     }
 }
