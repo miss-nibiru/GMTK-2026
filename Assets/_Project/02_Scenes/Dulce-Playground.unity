@@ -2336,7 +2336,7 @@ GameObject:
   - component: {fileID: 237243317}
   - component: {fileID: 237243319}
   m_Layer: 5
-  m_Name: Image
+  m_Name: SafeNumber_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10931,7 +10931,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1800344738}
+      - m_Target: {fileID: 2400162796121162413}
         m_TargetAssemblyTypeName: SafeManager, Assembly-CSharp
         m_MethodName: CheckNumbers
         m_Mode: 1
@@ -15913,6 +15913,7 @@ MonoBehaviour:
   - {fileID: 2045899832}
   - {fileID: 1978812253}
   safe: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!1 &1803244425
 GameObject:
   m_ObjectHideFlags: 0
@@ -17293,7 +17294,7 @@ GameObject:
   - component: {fileID: 1978812251}
   - component: {fileID: 1978812253}
   m_Layer: 5
-  m_Name: Image (2)
+  m_Name: SafeNumber_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18065,7 +18066,7 @@ GameObject:
   - component: {fileID: 2045899830}
   - component: {fileID: 2045899832}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: SafeNumber_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19595,26 +19596,6 @@ PrefabInstance:
       propertyPath: 'numbers.Array.data[2]'
       value: 
       objectReference: {fileID: 1978812253}
-    - target: {fileID: 6810757449802299188, guid: c811f1d766bb34e79889cf78902b01f1, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6810757449802299188, guid: c811f1d766bb34e79889cf78902b01f1, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6810757449802299188, guid: c811f1d766bb34e79889cf78902b01f1, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6810757449802299188, guid: c811f1d766bb34e79889cf78902b01f1, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6810757449802299188, guid: c811f1d766bb34e79889cf78902b01f1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7237179420076307037, guid: c811f1d766bb34e79889cf78902b01f1, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7
@@ -19666,42 +19647,23 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7388904824544158702, guid: c811f1d766bb34e79889cf78902b01f1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 7426829767548989397, guid: c811f1d766bb34e79889cf78902b01f1, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2400162796121162407}
   m_SourcePrefab: {fileID: 100100000, guid: c811f1d766bb34e79889cf78902b01f1, type: 3}
 --- !u!4 &2400162796121162405 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7237179420076307037, guid: c811f1d766bb34e79889cf78902b01f1, type: 3}
   m_PrefabInstance: {fileID: 2400162796121162404}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2400162796121162406 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7426829767548989397, guid: c811f1d766bb34e79889cf78902b01f1, type: 3}
+--- !u!114 &2400162796121162413 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5604101324429709809, guid: c811f1d766bb34e79889cf78902b01f1, type: 3}
   m_PrefabInstance: {fileID: 2400162796121162404}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &2400162796121162407
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2400162796121162406}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d02b1264d643c4b8a8ee0b513cd1469f, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3825f6efe169d9e4481e3a6d407ed8ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SafeManager
 --- !u!1001 &5967287128510822738
 PrefabInstance:
   m_ObjectHideFlags: 0
