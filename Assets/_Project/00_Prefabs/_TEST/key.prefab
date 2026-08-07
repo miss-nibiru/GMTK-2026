@@ -110,7 +110,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.008532534, y: 0.0012094453, z: 0.018884115}
+  m_Size: {x: 0.02, y: 0.02, z: 0.025}
   m_Center: {x: 0.00006196089, y: 0, z: 0.0022261026}
 --- !u!1 &3490171056346598938
 GameObject:
@@ -158,4 +158,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GetKey
   puzzleIndexNum: 0
-  pickUpToggle: 0
+  pickUpToggle: 1

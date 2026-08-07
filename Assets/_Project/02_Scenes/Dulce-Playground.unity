@@ -1613,8 +1613,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameTimeManager
   startHour: 9
-  endHour: 16
-  irlDayMinutes: 5
+  endHour: 21
+  irlDayMinutes: 3
 --- !u!114 &181481254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19668,6 +19668,18 @@ PrefabInstance:
       propertyPath: puzzleManager
       value: 
       objectReference: {fileID: 1800344735}
+    - target: {fileID: 300673697151435201, guid: f1b69647d4d524fe1ae209934db8613e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.042
+      objectReference: {fileID: 0}
+    - target: {fileID: 300673697151435201, guid: f1b69647d4d524fe1ae209934db8613e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.668
+      objectReference: {fileID: 0}
+    - target: {fileID: 300673697151435201, guid: f1b69647d4d524fe1ae209934db8613e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.103
+      objectReference: {fileID: 0}
     - target: {fileID: 549254965466272012, guid: f1b69647d4d524fe1ae209934db8613e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.28
