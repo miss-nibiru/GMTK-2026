@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI printBox;
 
     private const string CorrectAnswer = "SANTIAGO";
-    private const string EndSceneName = "03_EndScreen";
+    private const string EndSceneName = "03_WinScene";
 
     private void Awake()
     {

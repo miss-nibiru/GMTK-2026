@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/_Project/02_Scenes/Dulce-Playground.unity
     guid: eb10d5a6ce8b541b697ead85fa092bc0
   - enabled: 1
-    path: Assets/_Project/02_Scenes/_FinalScenes/03_EndScreen.unity
+    path: Assets/_Project/02_Scenes/_FinalScenes/03_WinScene.unity
     guid: d99ea906a8dee4542965042a935ff042
   m_configObjects:
     com.unity.dt.app-ui: {fileID: 11400000, guid: 1b1c20d82303e4b5781c3ef50ac1449f, type: 2}
