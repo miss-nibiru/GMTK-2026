@@ -17,12 +17,16 @@ public class EvidenceMenuController : MonoBehaviour
     [SerializeField] private GameObject caseFileOpened;
     [SerializeField] private GameObject caseButtonClose;
     
+    [SerializeField] private GameObject accusationDevice;
+    [SerializeField] private PlayerThoughtsUI playerThoughts;
+    
     [SerializeField] private MonoBehaviour[] gameplayControls;
 
     private bool _isOpen;
     private bool _isCaseFileOpen;
     private bool _isStartupCaseFile;
     private bool _isEvidenceDetailsOpen;
+    private bool _isAccusationOpen;
 
     public bool IsOpen =>
         _isOpen || _isEvidenceDetailsOpen;
@@ -43,8 +47,7 @@ public class EvidenceMenuController : MonoBehaviour
 
     private void Update()
     {
-        if (_isEvidenceDetailsOpen)
-            return;
+        if (_isEvidenceDetailsOpen || _isAccusationOpen) return;
         
         if (Keyboard.current == null ||
             !Keyboard.current.tabKey.wasPressedThisFrame) 
@@ -88,6 +91,9 @@ public class EvidenceMenuController : MonoBehaviour
     {
         _isOpen = true;
         _isCaseFileOpen = true;
+        
+        _isAccusationOpen = false;
+        accusationDevice.SetActive(false);
 
         caseFileOpened.SetActive(true);
         caseButtonClose.SetActive(true);
@@ -114,19 +120,48 @@ public class EvidenceMenuController : MonoBehaviour
 
         _isOpen = false;
         _isCaseFileOpen = false;
+        _isAccusationOpen = false;
+        accusationDevice.SetActive(false);
+        caseFileOpened.SetActive(false);
+        caseButtonClose.SetActive(false);
+        caseFileClosed.SetActive(false);
+        evidenceUI.SetActive(false);
+        accusationDevice.SetActive(false);
+
+        SetMenuOpened(false);
+    }
+    
+    public void TryOpenAccusationDevice()
+    {
+        PlaythroughState state =
+            PlaythroughState.GetOrCreate();
+
+        if (state.DiscoveredEvidenceIds.Count == 0)
+        {
+            playerThoughts.ShowThought("I DON'T KNOW ENOUGH ABOUT THE CASE.");
+            return;
+        }
+
+        _isOpen = true;
+        _isCaseFileOpen = false;
+        _isAccusationOpen = true;
 
         caseFileOpened.SetActive(false);
         caseButtonClose.SetActive(false);
         caseFileClosed.SetActive(false);
         evidenceUI.SetActive(false);
 
-        SetMenuOpened(false);
+        accusationDevice.SetActive(true);
+
+        SetMenuOpened(true);
     }
 
     private void SetEvidenceOpen(bool shouldOpen)
     {
         _isOpen = shouldOpen;
         _isCaseFileOpen = false;
+        _isAccusationOpen = false;
+        accusationDevice.SetActive(false);
 
         evidenceUI.SetActive(shouldOpen);
         caseFileClosed.SetActive(shouldOpen);
@@ -167,7 +202,9 @@ public class EvidenceMenuController : MonoBehaviour
         _isCaseFileOpen = false;
         _isStartupCaseFile = false;
         _isEvidenceDetailsOpen = false;
-
+        _isAccusationOpen = false;
+        
+        accusationDevice.SetActive(false);
         evidenceUI.SetActive(false);
         caseFileClosed.SetActive(false);
         caseFileOpened.SetActive(false);
