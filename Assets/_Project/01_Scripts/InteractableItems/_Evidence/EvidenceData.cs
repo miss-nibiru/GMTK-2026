@@ -35,6 +35,7 @@ public class EvidenceData : ScriptableObject
     [Header("First Discovery")]
     [SerializeField, TextArea(2, 6)] private string detectiveLine;
     [SerializeField] private AudioClip detectiveAudio;
+    [SerializeField] private bool thoughtOnly;
 
     public string EvidenceId => evidenceId;
     public string DisplayName => displayName;
@@ -58,6 +59,7 @@ public class EvidenceData : ScriptableObject
             : 1;
 
     public string DetectiveLine => detectiveLine;
+    public bool ThoughtOnly => thoughtOnly;
     public AudioClip DetectiveAudio => detectiveAudio;
     public string GetPageHeading(int pageIndex)
     {

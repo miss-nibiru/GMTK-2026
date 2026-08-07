@@ -24,8 +24,13 @@ public class EvidenceInteractable : BaseInteractable
 
         EvidenceData evidence = _evidenceDiscoverable.EvidenceData;
 
-        if (evidence == null ||
-            string.IsNullOrWhiteSpace(evidence.EvidenceId))
+        if (!evidence)
+        {
+            Debug.LogWarning($"Evidence is not configured on '{gameObject.name}'.", gameObject);
+            return;
+        }
+
+        if (!evidence.ThoughtOnly && string.IsNullOrWhiteSpace(evidence.EvidenceId))
         {
             Debug.LogWarning($"Evidence is not configured on '{gameObject.name}'.", gameObject);
             return;

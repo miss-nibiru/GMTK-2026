@@ -1,5 +1,6 @@
 using System.Collections;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerThoughtsUI : MonoBehaviour
@@ -7,6 +8,7 @@ public class PlayerThoughtsUI : MonoBehaviour
     [SerializeField] private CanvasGroup canvasGroup;
     [SerializeField] private TMP_Text thoughtText;
     [SerializeField] private AudioSource voiceSource;
+    [SerializeField] private EvidenceTracker evidenceTracker;
     
     [Header("Repeated Discovery")]
     [SerializeField, TextArea(2, 4)]
@@ -20,12 +22,22 @@ public class PlayerThoughtsUI : MonoBehaviour
 
     private void Awake()
     {
+        evidenceTracker = EvidenceTracker.GetOrCreate();
+        if (evidenceTracker)
+        {
+            evidenceTracker.ThoughtOnlyReported += HandleThoughtOnlyReported;
+        }
+        
         canvasGroup.alpha = 0f;
         canvasGroup.interactable = false;
         canvasGroup.blocksRaycasts = false;
         
     }
-
+    
+    private void HandleThoughtOnlyReported(EvidenceData evidence)
+    {
+        ShowThought(evidence);
+    }
     public void ShowThought(EvidenceData evidence)
     {
         if (evidence == null || string.IsNullOrWhiteSpace(evidence.DetectiveLine))

@@ -5,25 +5,37 @@ public class OpenDoor : BaseInteractable
     private static readonly int Opening = Animator.StringToHash("opening");
     [SerializeField] private Animator anim;
     [SerializeField] private bool needsKey;
+    [SerializeField] private EvidenceData lockedDoor;
 
     [SerializeField] private PlayerPuzzleController puzzleControl;
     
-    public override void Interact() 
+    public override void Interact()
     {
         var heldItem = puzzleControl.CurrentlyHeldItem;
 
         if (needsKey)
         {
+            GetKey heldKey = null;
+
+            if (heldItem != null) heldKey = heldItem.GetComponent<GetKey>();
             
-            if (!heldItem) return;
-            var heldKey = heldItem.GetComponent<GetKey>();
-            if (!heldKey) return;
+
+            if (heldKey == null)
+            {
+                if (lockedDoor != null)
+                {
+                    EvidenceTracker tracker = EvidenceTracker.GetOrCreate();
+                    if (tracker != null) tracker.DiscoverEvidence(lockedDoor);
+                    
+                }
+
+                return;
+            }
+
             needsKey = false;
             puzzleControl.ConsumeHeldItem();
-            
         }
-        
+
         anim.SetBool(Opening, !anim.GetBool(Opening));
-        
     }
 }

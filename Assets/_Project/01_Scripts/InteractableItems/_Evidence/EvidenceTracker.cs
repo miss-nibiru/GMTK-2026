@@ -39,9 +39,10 @@ public class EvidenceTracker : MonoBehaviour
     // Existing UI can continue listening to this
     // It fires only for new evidence
     public event Action<EvidenceData> EvidenceDiscovered;
-    
+    public event Action<EvidenceData> ThoughtOnlyReported;
     // It fires for both first and repeated discoveries
     public event Action<EvidenceDiscoveryReport> DiscoveryReported;
+    
 
     [RuntimeInitializeOnLoadMethod(
         RuntimeInitializeLoadType.BeforeSceneLoad)]
@@ -87,30 +88,24 @@ public class EvidenceTracker : MonoBehaviour
 
     public bool DiscoverEvidence(EvidenceData evidence)
     {
-        if (evidence == null)
+        if (!evidence) return false;
+        
+        if (evidence.ThoughtOnly)
         {
-            Debug.LogWarning("Cannot discover missing EvidenceData.");
+            ThoughtOnlyReported?.Invoke(evidence);
             return false;
         }
 
-        if (string.IsNullOrWhiteSpace(evidence.EvidenceId))
-        {
-            Debug.LogWarning($"Evidence '{evidence.name}' does not have an Evidence ID.", evidence);
-            return false;
-        }
+        if (string.IsNullOrWhiteSpace(evidence.EvidenceId)) return false;
 
         RegisterEvidence(evidence);
 
-        bool isFirstDiscovery =
-            _playthroughState.TryDiscoverEvidence(evidence.EvidenceId);
+        bool isFirstDiscovery = _playthroughState.TryDiscoverEvidence(evidence.EvidenceId);
 
         RebuildDiscoveredEvidence();
 
-        if (isFirstDiscovery)
-            EvidenceDiscovered?.Invoke(evidence);
-
-        DiscoveryReported?.Invoke(
-            new EvidenceDiscoveryReport(evidence, isFirstDiscovery));
+        if (isFirstDiscovery) EvidenceDiscovered?.Invoke(evidence);
+        DiscoveryReported?.Invoke(new EvidenceDiscoveryReport(evidence, isFirstDiscovery));
 
         Debug.Log(
             isFirstDiscovery
