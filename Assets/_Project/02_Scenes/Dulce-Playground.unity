@@ -1592,7 +1592,6 @@ GameObject:
   m_Component:
   - component: {fileID: 181481255}
   - component: {fileID: 181481253}
-  - component: {fileID: 181481254}
   m_Layer: 0
   m_Name: TimeSystem
   m_TagString: Untagged
@@ -1614,23 +1613,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameTimeManager
   startHour: 9
   endHour: 21
-  irlDayMinutes: 3
---- !u!114 &181481254
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 181481252}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 312aa4afb6c3244fcb4fd25fad14177c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DayEndBeep
-  timeManager: {fileID: 181481253}
-  dayEndThought: {fileID: 236205236}
-  thoughtDuration: 2.5
-  hourglassGlow: {fileID: 0}
+  irlDayMinutes: 2
 --- !u!4 &181481255
 Transform:
   m_ObjectHideFlags: 0

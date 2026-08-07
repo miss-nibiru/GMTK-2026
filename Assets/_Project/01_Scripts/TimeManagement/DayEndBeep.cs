@@ -11,7 +11,6 @@ using UnityEngine;
 public class DayEndBeep : MonoBehaviour
 {
     [SerializeField] private GameTimeManager timeManager;
-    [SerializeField] private GameObject dayEndThought;
     [SerializeField] private float thoughtDuration;
     
     [SerializeField] private GameObject hourglassGlow;
@@ -36,18 +35,6 @@ public class DayEndBeep : MonoBehaviour
     {
         if (hourglassGlow != null) hourglassGlow.SetActive(true);
         
-
-        if (dayEndThought != null)
-        {
-            StopAllCoroutines();
-            StartCoroutine(ShowThoughtTemporarily());
-        }
     }
-
-    private IEnumerator ShowThoughtTemporarily()
-    {
-        dayEndThought.SetActive(true);
-        yield return new WaitForSecondsRealtime(thoughtDuration);
-        dayEndThought.SetActive(false);
-    }
+    
 }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// this tracks the time in the game -- thinking from 9am to 4pm, workday
@@ -73,6 +74,7 @@ public class GameTimeManager : MonoBehaviour
 
             NotifyTimeChanged();
             DayEnded?.Invoke();
+            SceneManager.LoadScene("04_GameOverScene");
             return;
         }
 
