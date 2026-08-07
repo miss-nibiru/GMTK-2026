@@ -15,7 +15,6 @@ public class PlayerInteractionUI : MonoBehaviour
     private void Update()
     {
         FindInteractable();
-        
         interactionPrompt.SetActive(foundInteractable);
     }
 
@@ -34,7 +33,9 @@ public class PlayerInteractionUI : MonoBehaviour
                 interactionLayers,
                 QueryTriggerInteraction.Collide))
         {
-            foundInteractable = true;
+            BaseInteractable interactable = hit.collider.GetComponent<BaseInteractable>();
+            foundInteractable = interactable != null && interactable.CanInteract();
+            
         }
     }
 }

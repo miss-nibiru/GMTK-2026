@@ -6,4 +6,11 @@ public class BaseInteractable : MonoBehaviour, IInteractable
     {
         
     }
+
+    public virtual bool CanInteract()
+    {
+        return true;
+    }
+    
+    
 }

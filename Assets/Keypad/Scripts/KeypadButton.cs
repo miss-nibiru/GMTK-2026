@@ -16,16 +16,19 @@ namespace NavKeypad
         [Header("Component References")]
         [SerializeField] private Keypad keypad;
 
-        private bool moving;
-
+        private bool _moving;
+        public bool CanInteract()
+        {
+            return true;
+        }
         public void Interact()
         {
             PressButton();
         }
-
+        
         public void PressButton()
         {
-            if (moving || keypad == null)
+            if (_moving || keypad == null)
             {
                 return;
             }
@@ -36,7 +39,7 @@ namespace NavKeypad
 
         private IEnumerator MoveSmooth()
         {
-            moving = true;
+            _moving = true;
 
             Vector3 startPos = transform.localPosition;
             Vector3 pressedPos = startPos + new Vector3(0f, 0f, moveDist);
@@ -66,7 +69,7 @@ namespace NavKeypad
             }
 
             transform.localPosition = startPos;
-            moving = false;
+            _moving = false;
         }
     }
 }

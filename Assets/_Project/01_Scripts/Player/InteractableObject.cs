@@ -9,4 +9,10 @@ public class InteractableObject : MonoBehaviour, IInteractable
     {
         Debug.Log($"Interacted with {objectName}", this);
     }
+    
+    public bool CanInteract()
+    {
+        return true;
+    }
+    
 }
