@@ -503,7 +503,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MenuSceneController
   gameplaySceneName: Dulce-Playground
   mainMenuSceneName: 01_MainScreen
-  endGameSceneName: 03_EndScreen
+  endGameSceneName: 03_WinScene
 --- !u!4 &233123029
 Transform:
   m_ObjectHideFlags: 0
