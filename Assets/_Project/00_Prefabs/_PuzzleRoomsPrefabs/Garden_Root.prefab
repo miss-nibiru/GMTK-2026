@@ -3050,10 +3050,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6408454140275428874, guid: 19f852b5b2fbf4129b4239d74267effb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3793754937693710896}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5094416807824750767, guid: 19f852b5b2fbf4129b4239d74267effb, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4147715535032919242}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19f852b5b2fbf4129b4239d74267effb, type: 3}
 --- !u!4 &1312541144267368233 stripped
 Transform:
@@ -3065,25 +3062,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6408454140275428874, guid: 19f852b5b2fbf4129b4239d74267effb, type: 3}
   m_PrefabInstance: {fileID: 4408529626075084706}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &8907345242514116365 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5094416807824750767, guid: 19f852b5b2fbf4129b4239d74267effb, type: 3}
-  m_PrefabInstance: {fileID: 4408529626075084706}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &4147715535032919242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8907345242514116365}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdd19655fc3759a4baf64a0ca63f5c10, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DigUpBody
-  puzzleControl: {fileID: 0}
-  body: {fileID: 591233626202345042}
 --- !u!1001 &4755934481108578282
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4669,11 +4647,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25dbe4c2dfb704537ac68f2ef924b732, type: 3}
---- !u!1 &591233626202345042 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6182236120827989145, guid: 25dbe4c2dfb704537ac68f2ef924b732, type: 3}
-  m_PrefabInstance: {fileID: 6773357929937765067}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7266773924261847644 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4118270574402658455, guid: 25dbe4c2dfb704537ac68f2ef924b732, type: 3}

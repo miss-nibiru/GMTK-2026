@@ -18,11 +18,15 @@ MonoBehaviour:
   evidenceImage: {fileID: 21300000, guid: 0a687c91f1a914cfaaa3db4664737c82, type: 3}
   pages:
   - heading: Residents of BloopCity
-    body: "Scheduled Energy Interruption. Due to maintenance of the city\u2019s electrical
-      plant, power service will be interrupted frequently during the week of May
-      15 to May 20.\n\nEstimated Outage Start: 5:00 PM\n\nWe apologize for any inconvenience.\n\nBlooperino
-      Electric Services"
+    body: 'Scheduled Energy Interruption. Power service will be interrupted frequently
+      during the week of May 15 to May 20. Estimated Outage Start: 5:00 PM
+
+
+      We
+      apologize for any inconvenience.
+
+      Blooperino Electric Services'
   description: A notice from the city's electrical company. There is a scheduled
     power outage affecting several neighbourhoods for several days
-  detectiveLine: Good to know
+  detectiveLine: Scheduled power outage? Good to know.
   detectiveAudio: {fileID: 0}

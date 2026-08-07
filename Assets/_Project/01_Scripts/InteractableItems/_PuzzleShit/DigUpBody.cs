@@ -1,12 +1,13 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class DigUpBody : BaseInteractable
 {
     [SerializeField] private PlayerPuzzleController puzzleControl;
     private readonly Vector3 _positionIncrease = new Vector3(0, 0.1f, 0);
     [SerializeField] private GameObject body;
+    
+    private bool _isDigging;
 
     public override bool CanInteract()
     {
@@ -17,22 +18,21 @@ public class DigUpBody : BaseInteractable
 
     public override void Interact()
     {
+        if (_isDigging) return;
         if (!puzzleControl.CurrentlyHeldItem) return;
-        
         if (!puzzleControl.CurrentlyHeldItem.GetComponent<UseShovel>()) return;
-        
+
+        _isDigging = true;
         Digging();
     }
 
     private void Digging()
     {
-        if (body.transform.position.y < 0)
+        if (body.transform.position.y < -0.55f) 
         {
             StartCoroutine(DigTimer());
             return;
         }
-        
-        StartCoroutine(EndPause());
     }
 
     private IEnumerator DigTimer()
@@ -41,10 +41,5 @@ public class DigUpBody : BaseInteractable
         body.transform.position += _positionIncrease;
         Digging();
     }
-
-    private static IEnumerator EndPause()
-    {
-        yield return new WaitForSeconds(2);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
+    
 }
