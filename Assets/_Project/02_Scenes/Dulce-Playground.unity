@@ -1613,7 +1613,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameTimeManager
   startHour: 9
   endHour: 21
-  irlDayMinutes: 2
+  irlDayMinutes: 5
 --- !u!4 &181481255
 Transform:
   m_ObjectHideFlags: 0
