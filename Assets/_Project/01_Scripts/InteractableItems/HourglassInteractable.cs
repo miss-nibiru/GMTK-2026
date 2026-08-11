@@ -27,17 +27,9 @@ public sealed class HourglassInteractable : BaseInteractable
     {
         Debug.Log("hi");
         if (_isRewinding) return;
-        if (TimeLoopManager.Instance == null)
-        {
-            Debug.LogError(
-                "Hourglass cannot rewind because TimeLoopManager is missing.",
-                this
-            );
-
-            return;
-        }
-
+        if (TimeLoopManager.Instance == null) return;
         StartCoroutine(RewindRoutine());
+        
     }
 
     private IEnumerator RewindRoutine()
