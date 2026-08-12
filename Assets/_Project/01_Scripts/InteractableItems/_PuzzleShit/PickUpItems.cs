@@ -35,7 +35,11 @@ public class PickUpItems : BaseInteractable
         }
 
         if (_puzzleController.HoldItem(gameObject))
+        {
             pickUpToggle = true;
+            AudioManager.Instance?.PlayPickup();
+        }
+        
     }
     
 }

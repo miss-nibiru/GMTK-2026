@@ -42,6 +42,7 @@ public class UseOven : BaseInteractable
         thawedCarVisual.SetActive(true);
         
         _hasThawed = true;
+        AudioManager.Instance?.PlayOvenDing();
         
     }
 

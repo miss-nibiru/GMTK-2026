@@ -36,6 +36,11 @@ public class OpenDoor : BaseInteractable
             puzzleControl.ConsumeHeldItem();
         }
 
-        anim.SetBool(Opening, !anim.GetBool(Opening));
+        bool isOpening = !anim.GetBool(Opening);
+        anim.SetBool(Opening, isOpening);
+
+        if (isOpening)
+            AudioManager.Instance?.PlayOpenDoor();
+        
     }
 }

@@ -89,6 +89,7 @@ public class EvidenceMenuController : MonoBehaviour
 
     private void ShowOpenedCaseFile()
     {
+        
         _isOpen = true;
         _isCaseFileOpen = true;
         
@@ -129,6 +130,8 @@ public class EvidenceMenuController : MonoBehaviour
         accusationDevice.SetActive(false);
 
         SetMenuOpened(false);
+        
+        AudioManager.Instance?.PlayCloseCaseFile();
     }
     
     public void TryOpenAccusationDevice()

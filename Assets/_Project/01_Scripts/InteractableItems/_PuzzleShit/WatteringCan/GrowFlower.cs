@@ -4,9 +4,9 @@ using UnityEngine;
 public class GrowFlower : BaseInteractable
 {
     [SerializeField] private PlayerPuzzleController puzzleControl;
-    private Vector3 positionIncrease = new Vector3(0, 0.1f, 0);
-    private GameObject flower;
-
+    private readonly Vector3 _positionIncrease = new Vector3(0, 0.1f, 0);
+    private GameObject _flower;
+    private bool _wateringStarted;
     private WateringCanInteractions can;
     
     public override void Interact()
@@ -18,20 +18,26 @@ public class GrowFlower : BaseInteractable
         can = puzzleControl.CurrentlyHeldItem.GetComponent<WateringCanInteractions>();
         if (can.wsm.currentState != can.wsm.fullState) return;
         
-        flower = gameObject.transform.GetChild(1).gameObject;
+        _flower = transform.GetChild(1).gameObject;
+
+        if (_wateringStarted || _flower.transform.position.y >= -0.7f)
+            return;
+
+        _wateringStarted = true;
+        AudioManager.Instance?.PlayWater();
         Growing();
     }
 
     private void Growing()
     {
-        if (flower.transform.position.y < -0.7)
+        if (_flower.transform.position.y < -0.7)
             StartCoroutine(growTimer());
     }
 
     private IEnumerator growTimer()
     {
         yield return new WaitForSeconds(0.1f);
-        flower.transform.position += positionIncrease;
+        _flower.transform.position += _positionIncrease;
         Growing();
     }
 }

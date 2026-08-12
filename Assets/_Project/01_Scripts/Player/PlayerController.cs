@@ -16,6 +16,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float accelerationTime;
     [SerializeField] private float decelerationTime;
     [SerializeField] private float gravity;
+   
+    [SerializeField] private float walkStepInterval = 0.5f;
+    [SerializeField] private float sprintStepInterval = 0.32f;
+
+    private float _footstepTimer;
     
     [Header("Animation")]
     [SerializeField] private Animator playerAnimator;
@@ -58,6 +63,25 @@ public class PlayerController : MonoBehaviour
         float smoothingTime = targetInput.sqrMagnitude > 0f ? accelerationTime : decelerationTime;
         _currentInput = Vector2.SmoothDamp(_currentInput, targetInput, ref _inputSmoothingVelocity, smoothingTime);
         bool isSprinting = sprintAction.action.IsPressed();
+        
+        bool isMoving =
+            targetInput.sqrMagnitude > 0.01f &&
+            _characterController.isGrounded;
+
+        if (isMoving)
+        {
+            _footstepTimer -= Time.deltaTime;
+
+            if (_footstepTimer <= 0f)
+            {
+                AudioManager.Instance?.PlayFootstep();
+                _footstepTimer = isSprinting ? sprintStepInterval : walkStepInterval;
+            }
+        }
+        
+        else
+            _footstepTimer = 0f;
+        
         float currentSpeed = isSprinting ? sprintSpeed : walkSpeed;
         
         float animationSpeed = _currentInput.magnitude * currentSpeed/ sprintSpeed;

@@ -9,10 +9,12 @@ public class FillWateringCan : BaseInteractable
     public override void Interact()
     {
         if (!puzzleControl.CurrentlyHeldItem) return;
-        
         if (!puzzleControl.CurrentlyHeldItem.GetComponent<WateringCanInteractions>()) return;
 
         _can = puzzleControl.CurrentlyHeldItem.GetComponent<WateringCanInteractions>();
         _can.wsm.SwitchStates(_can.wsm.fullState);
+        
+        AudioManager.Instance?.PlayWater();
+        
     }
 }

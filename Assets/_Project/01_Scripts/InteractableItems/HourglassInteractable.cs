@@ -35,6 +35,7 @@ public sealed class HourglassInteractable : BaseInteractable
     private IEnumerator RewindRoutine()
     {
         _isRewinding = true;
+        AudioManager.Instance?.PlayRewindTime();
         GameTimeManager.Instance?.PauseTime(TimePauseReason);
 
         if (audioSource != null && rewindSound != null)
