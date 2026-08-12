@@ -1,92 +1,38 @@
-using System.Collections.Generic;
 using UnityEngine;
 
-[DisallowMultipleComponent]
+
+[RequireComponent(typeof(Renderer))]
 public class InteractableGlow : MonoBehaviour
 {
     
-    [ColorUsage(true, true)]
-    [SerializeField] private Color glowColor = new Color(1f, 0.65f, 0.15f);
-    [SerializeField] private float minimumIntensity;
-    [SerializeField] private float maximumIntensity;
-    [SerializeField] private float pulseSpeed;
-    [SerializeField] private Renderer[] targetRenderers;
+    [SerializeField] private float minimumWidth = 0.015f;
+    [SerializeField] private float maximumWidth = 0.03f;
+    [SerializeField] private float pulseSpeed = 1.5f;
 
-    private readonly List<Material> _materials = new();
-    private readonly List<Color> _originalEmissionColors = new();
-    private IInteractable _interactable;
+    private Renderer _outlineRenderer;
+    private MaterialPropertyBlock _propertyBlock;
 
-    private static readonly int EmissionColor = Shader.PropertyToID("_EmissionColor");
+    private static readonly int OutlineWidth =
+        Shader.PropertyToID("_OutlineWidth");
 
     private void Awake()
     {
-        _interactable = GetComponent<IInteractable>();
-
-        if (targetRenderers == null || targetRenderers.Length == 0)
-            targetRenderers = GetComponentsInChildren<Renderer>(true);
-
-        CacheMaterials();
+        _outlineRenderer = GetComponent<Renderer>();
+        _propertyBlock = new MaterialPropertyBlock();
     }
 
     private void Update()
     {
-        bool shouldGlow = _interactable != null && _interactable.CanInteract();
+        float pulse = (Mathf.Sin(Time.time * pulseSpeed) + 1f) * 0.5f;
 
-        if (!shouldGlow)
-        {
-            RestoreOriginalEmission();
-            return;
-        }
+        float width = Mathf.Lerp(
+            minimumWidth,
+            maximumWidth,
+            pulse);
 
-        float pulse = Mathf.PingPong(Time.time * pulseSpeed, maximumIntensity - minimumIntensity);
-        float intensity = minimumIntensity + pulse;
-
-        Color currentGlow = glowColor * Mathf.LinearToGammaSpace(intensity);
-
-        foreach (Material material in _materials)
-        {
-            if (material != null && material.HasProperty(EmissionColor))
-                material.SetColor(EmissionColor, currentGlow);
-        }
+        _outlineRenderer.GetPropertyBlock(_propertyBlock);
+        _propertyBlock.SetFloat(OutlineWidth, width);
+        _outlineRenderer.SetPropertyBlock(_propertyBlock);
     }
-
-    private void CacheMaterials()
-    {
-        _materials.Clear();
-        _originalEmissionColors.Clear();
-
-        foreach (Renderer targetRenderer in targetRenderers)
-        {
-            if (targetRenderer == null)
-                continue;
-
-            foreach (Material material in targetRenderer.materials)
-            {
-                if (!material.HasProperty(EmissionColor))
-                    continue;
-
-                material.EnableKeyword("_EMISSION");
-
-                _materials.Add(material);
-                _originalEmissionColors.Add(
-                    material.GetColor(EmissionColor));
-            }
-        }
-    }
-
-    private void RestoreOriginalEmission()
-    {
-        for (int i = 0; i < _materials.Count; i++)
-        {
-            if (_materials[i] != null)
-                _materials[i].SetColor(
-                    EmissionColor,
-                    _originalEmissionColors[i]);
-        }
-    }
-
-    private void OnDisable()
-    {
-        RestoreOriginalEmission();
-    }
+    
 }
