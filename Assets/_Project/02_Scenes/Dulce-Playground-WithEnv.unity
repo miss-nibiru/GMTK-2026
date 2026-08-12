@@ -1106,6 +1106,7 @@ MonoBehaviour:
   minimumIntensity: 0.02
   maximumIntensity: 0.25
   pulseSpeed: 1.5
+  glowDistance: 4
 --- !u!1 &128728276
 GameObject:
   m_ObjectHideFlags: 0
@@ -4698,6 +4699,7 @@ MonoBehaviour:
   minimumIntensity: 0.02
   maximumIntensity: 0.25
   pulseSpeed: 1.5
+  glowDistance: 4
 --- !u!1 &460407281
 GameObject:
   m_ObjectHideFlags: 0
@@ -5343,6 +5345,7 @@ MonoBehaviour:
   minimumIntensity: 0.02
   maximumIntensity: 0.25
   pulseSpeed: 1.5
+  glowDistance: 4
 --- !u!1001 &526248723
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6965,6 +6968,7 @@ MonoBehaviour:
   minimumIntensity: 0.02
   maximumIntensity: 0.25
   pulseSpeed: 1.5
+  glowDistance: 4
 --- !u!1001 &730308800
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7327,6 +7331,7 @@ MonoBehaviour:
   minimumIntensity: 0.02
   maximumIntensity: 0.25
   pulseSpeed: 1.5
+  glowDistance: 4
 --- !u!1 &779979622
 GameObject:
   m_ObjectHideFlags: 0
@@ -8234,14 +8239,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 1709469546096666685, guid: 19026fc89f3d6dc4cbb00597df80ae9e, type: 3}
-    - {fileID: 5538124347545629673, guid: 19026fc89f3d6dc4cbb00597df80ae9e, type: 3}
-    - {fileID: 993206082261591342, guid: 19026fc89f3d6dc4cbb00597df80ae9e, type: 3}
-    - {fileID: 8148262256295030621, guid: 19026fc89f3d6dc4cbb00597df80ae9e, type: 3}
     - {fileID: 6913213259087204593, guid: 19026fc89f3d6dc4cbb00597df80ae9e, type: 3}
     - {fileID: 2534480020339710594, guid: 19026fc89f3d6dc4cbb00597df80ae9e, type: 3}
-    - {fileID: 8990123302722593239, guid: 19026fc89f3d6dc4cbb00597df80ae9e, type: 3}
-    - {fileID: 8927423382449060, guid: 19026fc89f3d6dc4cbb00597df80ae9e, type: 3}
     - {fileID: 3150320684967614097, guid: 19026fc89f3d6dc4cbb00597df80ae9e, type: 3}
     - {fileID: 8311753083156824272, guid: 19026fc89f3d6dc4cbb00597df80ae9e, type: 3}
     - {fileID: 3180376038267481718, guid: 19026fc89f3d6dc4cbb00597df80ae9e, type: 3}
@@ -8658,6 +8657,23 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.66, y: 0.25, z: 0.78}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1001855216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001855212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 466d99c9c4d0b4f06a2f370ea163a432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractableGlow
+  glowColor: {r: 1, g: 0.75, b: 0.2, a: 1}
+  minimumIntensity: 0.02
+  maximumIntensity: 0.25
+  pulseSpeed: 1.5
+  glowDistance: 3
 --- !u!1001 &1004456219
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9589,6 +9605,7 @@ MonoBehaviour:
   minimumIntensity: 0.02
   maximumIntensity: 0.25
   pulseSpeed: 1.5
+  glowDistance: 4
 --- !u!1 &1135457531
 GameObject:
   m_ObjectHideFlags: 0
@@ -10190,6 +10207,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2023538818}
   - {fileID: 181481255}
   - {fileID: 2054683198}
   - {fileID: 2036089406}
@@ -11431,6 +11449,7 @@ MonoBehaviour:
   minimumIntensity: 0.05
   maximumIntensity: 0.3
   pulseSpeed: 1.5
+  glowDistance: 4
 --- !u!1001 &1373027458
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12269,6 +12288,7 @@ MonoBehaviour:
   minimumIntensity: 0.02
   maximumIntensity: 0.25
   pulseSpeed: 1.5
+  glowDistance: 4
 --- !u!1001 &1484858917
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12805,6 +12825,7 @@ MonoBehaviour:
   minimumIntensity: 0.02
   maximumIntensity: 0.25
   pulseSpeed: 1.5
+  glowDistance: 4
 --- !u!1 &1571740778
 GameObject:
   m_ObjectHideFlags: 0
@@ -14873,6 +14894,7 @@ MonoBehaviour:
   minimumIntensity: 0.02
   maximumIntensity: 0.25
   pulseSpeed: 1.5
+  glowDistance: 4
 --- !u!1 &1769059855
 GameObject:
   m_ObjectHideFlags: 0
@@ -17242,6 +17264,7 @@ MonoBehaviour:
   minimumIntensity: 0.05
   maximumIntensity: 0.3
   pulseSpeed: 1.5
+  glowDistance: 4
 --- !u!114 &1969196976 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8706825880253155212, guid: 54d7a16f39f1a4b5093a2a6eedea1ba1, type: 3}
@@ -19975,6 +19998,61 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3646955811663495058, guid: 7a9544e86786c47a0b4bad31b20688ac, type: 3}
   m_PrefabInstance: {fileID: 2016217443}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2023538817
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2023538818}
+  - component: {fileID: 2023538819}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2023538818
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2023538817}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.25775, y: -1.66, z: -2.30009}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1201150564}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2023538819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2023538817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 705ccf9579b0d4f7aa7631412259529d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
+  musicSource: {fileID: 0}
+  sfxSource: {fileID: 0}
+  music: {fileID: 0}
+  water: {fileID: 0}
+  pickup: {fileID: 0}
+  rewindTime: {fileID: 0}
+  openCaseFile: {fileID: 0}
+  closeCaseFile: {fileID: 0}
+  footstep: {fileID: 0}
+  openDoor: {fileID: 0}
+  ovenDing: {fileID: 0}
 --- !u!1001 &2025286775
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21640,6 +21718,7 @@ MonoBehaviour:
   minimumIntensity: 0.02
   maximumIntensity: 0.25
   pulseSpeed: 1.5
+  glowDistance: 4
 --- !u!23 &311355734719107005
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -22472,6 +22551,7 @@ MonoBehaviour:
   minimumIntensity: 0.15
   maximumIntensity: 1.2
   pulseSpeed: 2
+  glowDistance: 4
 --- !u!23 &2389079171987044710
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -24326,6 +24406,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5491294285057426545, guid: b71e3f34e190248a99c32594296d1a54, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1968871940}
+    - targetCorrespondingSourceObject: {fileID: 1609008257417722404, guid: b71e3f34e190248a99c32594296d1a54, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1001855216}
     - targetCorrespondingSourceObject: {fileID: 1609008257417722404, guid: b71e3f34e190248a99c32594296d1a54, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1001855214}

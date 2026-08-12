@@ -3,9 +3,8 @@ using UnityEngine;
 public class FillWateringCan : BaseInteractable
 {
     [SerializeField] private PlayerPuzzleController puzzleControl;
-    [SerializeField] private AudioSource audioSource;
 
-    private WateringCanInteractions can;
+    private WateringCanInteractions _can;
     
     public override void Interact()
     {
@@ -13,8 +12,7 @@ public class FillWateringCan : BaseInteractable
         
         if (!puzzleControl.CurrentlyHeldItem.GetComponent<WateringCanInteractions>()) return;
 
-        can = puzzleControl.CurrentlyHeldItem.GetComponent<WateringCanInteractions>();
-        can.wsm.SwitchStates(can.wsm.fullState);
-        audioSource.Play();
+        _can = puzzleControl.CurrentlyHeldItem.GetComponent<WateringCanInteractions>();
+        _can.wsm.SwitchStates(_can.wsm.fullState);
     }
 }
