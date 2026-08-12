@@ -1622,7 +1622,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DayEndBeep
   timeManager: {fileID: 181481253}
-  dayEndThought: {fileID: 236205236}
   thoughtDuration: 2.5
   hourglassGlow: {fileID: 0}
 --- !u!4 &181481255
@@ -2461,7 +2460,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c714121b2dd319644840d05ba7a8ca81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SafeInput
-  safeManager: {fileID: 1800344738}
   numbers: {fileID: 1978812253}
   currentNum: {fileID: 1629088941}
   adder: 1
@@ -3231,7 +3229,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c714121b2dd319644840d05ba7a8ca81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SafeInput
-  safeManager: {fileID: 1800344738}
   numbers: {fileID: 237243319}
   currentNum: {fileID: 938138954}
   adder: 1
@@ -6337,6 +6334,7 @@ MonoBehaviour:
   canvasGroup: {fileID: 671782539}
   thoughtText: {fileID: 2040112141}
   voiceSource: {fileID: 0}
+  evidenceTracker: {fileID: 0}
   repeatedDiscoveryLine: I've already examined this. Nothing new here
   fadeDuration: 0.25
   displayDuration: 2.5
@@ -9572,17 +9570,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2603867070316936501, guid: 8fb8d4a9552f548a2be17003e031e56b, type: 3}
   m_PrefabInstance: {fileID: 885015463}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &926540572 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7124420478068499614, guid: c811f1d766bb34e79889cf78902b01f1, type: 3}
-  m_PrefabInstance: {fileID: 2400162796121162404}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d7ed8413e459e74a93f2e1d9eb0e2ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::OpenSafe
 --- !u!1001 &930363166
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10168,8 +10155,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 995248b6afb3e49f0bd1e92b432e14af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Seanzo.PostProcess.Player::Seanzo.PostProcess.Player.EffectBank
-  effects:
-  - {fileID: 11400000, guid: c35a0741438324084bbaa177304d4314, type: 2}
 --- !u!114 &1036590838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15363,7 +15348,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c714121b2dd319644840d05ba7a8ca81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SafeInput
-  safeManager: {fileID: 1800344738}
   numbers: {fileID: 2045899832}
   currentNum: {fileID: 1553020952}
   adder: 1
@@ -15826,7 +15810,8 @@ MonoBehaviour:
   - {fileID: 237243319}
   - {fileID: 2045899832}
   - {fileID: 1978812253}
-  safe: {fileID: 926540572}
+  safe: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!1 &1803244425
 GameObject:
   m_ObjectHideFlags: 0
@@ -16806,7 +16791,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c714121b2dd319644840d05ba7a8ca81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SafeInput
-  safeManager: {fileID: 1800344738}
   numbers: {fileID: 237243319}
   currentNum: {fileID: 938138954}
   adder: -1
@@ -17648,7 +17632,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c714121b2dd319644840d05ba7a8ca81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SafeInput
-  safeManager: {fileID: 1800344738}
   numbers: {fileID: 2045899832}
   currentNum: {fileID: 1553020952}
   adder: -1
@@ -17794,6 +17777,8 @@ MonoBehaviour:
   caseFileClosed: {fileID: 460407281}
   caseFileOpened: {fileID: 1224014681}
   caseButtonClose: {fileID: 386205876}
+  accusationDevice: {fileID: 0}
+  playerThoughts: {fileID: 0}
   gameplayControls:
   - {fileID: 1969196978}
   - {fileID: 1442461829}
@@ -18883,7 +18868,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c714121b2dd319644840d05ba7a8ca81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SafeInput
-  safeManager: {fileID: 1800344738}
   numbers: {fileID: 1978812253}
   currentNum: {fileID: 1629088941}
   adder: -1
@@ -19806,7 +19790,7 @@ PrefabInstance:
     - {fileID: 6270622188793955735, guid: c811f1d766bb34e79889cf78902b01f1, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2726517452015733882, guid: c811f1d766bb34e79889cf78902b01f1, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 7388904824544158702, guid: c811f1d766bb34e79889cf78902b01f1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: c811f1d766bb34e79889cf78902b01f1, type: 3}
@@ -20754,6 +20738,21 @@ PrefabInstance:
       addedObject: {fileID: 2085323850}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5492759343247936136, guid: b71e3f34e190248a99c32594296d1a54, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 2787651082972839938, guid: b71e3f34e190248a99c32594296d1a54, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 6419417741554451249, guid: b71e3f34e190248a99c32594296d1a54, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 632573828575492536, guid: b71e3f34e190248a99c32594296d1a54, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 4709018567033396319, guid: b71e3f34e190248a99c32594296d1a54, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 9199456349963948, guid: b71e3f34e190248a99c32594296d1a54, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: b71e3f34e190248a99c32594296d1a54, type: 3}
