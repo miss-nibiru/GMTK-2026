@@ -36,6 +36,9 @@ public class PlayerInteractionInput : MonoBehaviour
         BaseInteractable interactable =
             hit.collider.GetComponentInParent<BaseInteractable>();
 
+        EvidenceInteractable evidenceInteractable =
+            hit.collider.GetComponentInParent<EvidenceInteractable>();
+
         if (interactable == null)
         {
             CurrentObject = null;
@@ -44,5 +47,9 @@ public class PlayerInteractionInput : MonoBehaviour
 
         CurrentObject = interactable.gameObject;
         interactable.Interact();
+        
+        if (evidenceInteractable != null && evidenceInteractable != interactable) 
+            evidenceInteractable.Interact();
+        
     }
 }

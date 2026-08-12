@@ -1,32 +1,34 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
-/// <summary>
-/// everytime the time loops, the player needs to feel that is normal but disoriented at first
-/// All subsequent times the character needs to react as it was normal or expected
-/// </summary>
+
 public class LoopReactionUI : MonoBehaviour
 {
-    [SerializeField] private GameObject reactionThought;
+    [SerializeField] private CanvasGroup thoughtsCanvasGroup;
     [SerializeField] private TMP_Text reactionText;
-    [SerializeField] private float displayDuration;
+    [SerializeField] private float displayDuration = 2.5f;
 
     [Header("Messages")]
-    [SerializeField] private string firstRewindMessage;
-    [SerializeField] private string laterRewindMessage;
+    [SerializeField] private string firstRewindMessage = "What just happened?";
+    [SerializeField] private string laterRewindMessage = "Here we go again...";
 
     private IEnumerator Start()
     {
-        
-        reactionThought.SetActive(false);
+        int loopCount = TimeLoopManager.Instance != null
+            ? TimeLoopManager.Instance.LoopCount
+            : 0;
 
-        if (TimeLoopManager.Instance == null || TimeLoopManager.Instance.LoopCount <= 0)
+        if (loopCount <= 0)
             yield break;
 
-        reactionText.text = TimeLoopManager.Instance.LoopCount == 1 ? firstRewindMessage : laterRewindMessage;
-        reactionThought.SetActive(true);
+        reactionText.text = loopCount == 1
+            ? firstRewindMessage
+            : laterRewindMessage;
+
+        thoughtsCanvasGroup.alpha = 1f;
+
         yield return new WaitForSecondsRealtime(displayDuration);
-        reactionThought.SetActive(false);
-        
+
+        thoughtsCanvasGroup.alpha = 0f;
     }
 }

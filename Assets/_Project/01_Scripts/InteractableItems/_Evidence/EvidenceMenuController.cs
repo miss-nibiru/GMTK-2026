@@ -103,6 +103,9 @@ public class EvidenceMenuController : MonoBehaviour
         evidenceUI.SetActive(false);
 
         SetMenuOpened(true);
+        
+        AudioManager.Instance?.PlayOpenCaseFile();
+        
     }
 
     public void CloseCaseFile()

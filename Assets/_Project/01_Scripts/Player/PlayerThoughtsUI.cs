@@ -65,7 +65,6 @@ public class PlayerThoughtsUI : MonoBehaviour
         _displayRoutine = StartCoroutine(
             DisplayRoutine(voiceClip));
     }
-    
 
     private void HandleDiscoveryReported(
         EvidenceDiscoveryReport report)
@@ -126,4 +125,13 @@ public class PlayerThoughtsUI : MonoBehaviour
 
         canvasGroup.alpha = end;
     }
+    
+    private void OnDestroy()
+    {
+        if (evidenceTracker != null)
+        {
+            evidenceTracker.ThoughtOnlyReported -= HandleThoughtOnlyReported;
+        }
+    }
+    
 }

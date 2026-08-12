@@ -25,11 +25,9 @@ public sealed class HourglassInteractable : BaseInteractable
 
     public override void Interact()
     {
-        Debug.Log("hi");
         if (_isRewinding) return;
         if (TimeLoopManager.Instance == null) return;
         StartCoroutine(RewindRoutine());
-        
     }
 
     private IEnumerator RewindRoutine()
