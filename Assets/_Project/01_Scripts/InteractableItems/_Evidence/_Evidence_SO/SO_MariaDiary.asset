@@ -17,53 +17,43 @@ MonoBehaviour:
   interactionDisplayName: Diary
   evidenceImage: {fileID: 21300000, guid: 0a687c91f1a914cfaaa3db4664737c82, type: 3}
   pages:
-  - heading: Apreel 1
-    body: 'Dear dairee
-
-
-      Mark pushd me in the mud today. He sed my dol was
-      dum so then I hid his red train in the fridge. He cryd and dad got mad...'
-  - heading: Apreel 5
-    body: 'Der diaree
-
-
-      mom really likes Flowers theres always flowers around
-      and it smells relly nice. mommy say unky likes them too. Unky stayed for dinner'
-  - heading: Ayprul 9
-    body: 'Dear dairy
-
-
-      Unky frank came again when daddy was not hom. mommy
-      said to go to our room to play because the gowrn ups will talk but i think
-      unky yell'
-  - heading: Ayprul 12
-    body: 'Diarree
-
-
-      I drew white flwrs for my drawing class and miss camille
-      sed that it was a very Pretty Flower. mommy put the Flower on the fridge and
-      then mark cryed'
-  - heading: Ayprul 31
-    body: 'Weeee!!! Kids partee
-
-
-      Dino piza is my favourite pizza ever. Unky
-      Franky came with us and played with us and jumped with us but he got really
-      tired. He telling mommy to go home but we stayed hehe we won!'
-  - heading: May 9
-    body: 'Deer diary
-
-
-      I am sad today and i dont wanna type anything i want
-      to play with my bear'
-  - heading: May 16
-    body: 'Dear diaree
-
-
-      Im in my room now becos mommy said mark and i should
-      play in the room when unky is here but i wanted the Flowers he brought so im
-      angry i dont have the Flowers'
+  - heading: May 13
+    body: "Dear Diary\nHehehe, he\u2019ll never bother me with that stupid train
+      ever again! I hid it somewhere where he\u2019ll never find it! Mom's just been
+      ordering food anyway, so she won't find it. I'm a freaking genius!!"
+  - heading: May 14
+    body: "Dear Diary\nIt\u2019s finally here! My birthday!! I\u2019ve been waiting
+      for so long! I\u2019m finally gonna get all my presents, and Dad promised he\u2019d
+      take us out for dinner, and let me pick! I think we\u2019re gonna get pizza,
+      but I\u2019m not sure. Tomorrow is gonna be so great!!"
+  - heading: May 15
+    body: "Dear Diary\nToday was so AWFUL!!! Dad lied to me again, and Mom didn\u2019t
+      even make me dinner! None of my friends showed up, and it\u2019s all their
+      fault! Why do we have to live in the woods?! I hate this stupid house, and
+      this stupid family!"
+  - heading: May 17
+    body: "Dear Diary\nUncle Franc has been coming over more, and it sucks! He\u2019s
+      nothing like Uncle Al! Uncle Al likes to play with us, and he always brings
+      gifts! Uncle Franc just sits around and talks to Mom all day. If we try to
+      talk he shouts at us. Mom doesn\u2019t even do anything! She just sits there
+      all quiet like she can\u2019t help. I hate him!"
+  - heading: May 18
+    body: "Dear Diary\nToday I saw Mom playing with the safe. I don\u2019t know what
+      she\u2019s doing anymore. She just sits around all day now. I haven\u2019t
+      even seen her agenda anywhere. She\u2019s usually carrying it all around the
+      house. Something\u2019s going on, and no one will tell me anything!"
+  - heading: May 19
+    body: "Deer Diary\nI hate this! Julian won\u2019t stop crying for Mom! It\u2019s
+      annoying! I\u2019ve got homework, and I can\u2019t focus! Why does everyone
+      in this family hate me?"
+  - heading: May 20
+    body: "Dear Diary\nI don\u2019t know what\u2019s happening. Uncle Franc is back
+      and he\u2019s off with Mom again. But they\u2019re in the bedroom, and locked
+      the door. Julian\u2019s been crying more than usual. I guess they kicked him
+      out? I tried talking to her again, but no one\u2019s answering. I know they\u2019re
+      in there. I can hear something through the wall."
   description: A small diary. Belongs to Maria Rivera. There's lots of stories, doodles
     and such
   detectiveLine: I should keep this in mind...
   detectiveAudio: {fileID: 0}
+  thoughtOnly: 0
