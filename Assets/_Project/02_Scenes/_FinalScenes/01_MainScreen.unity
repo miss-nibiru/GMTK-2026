@@ -227,7 +227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83b428ca566f241419fabc9980dd09a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MenuSceneController
-  gameplaySceneName: Dulce-Playground
+  gameplaySceneName: 02_Gameplay
   mainMenuSceneName: 01_MainScreen
   endGameSceneName: 03_EndScreen
 --- !u!4 &233123029

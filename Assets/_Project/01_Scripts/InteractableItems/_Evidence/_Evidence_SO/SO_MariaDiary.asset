@@ -24,19 +24,23 @@ MonoBehaviour:
   - heading: May 14
     body: "Dear Diary\nIt\u2019s finally here! My birthday!! I\u2019ve been waiting
       for so long! I\u2019m finally gonna get all my presents, and Dad promised he\u2019d
-      take us out for dinner, and let me pick! I think we\u2019re gonna get pizza,
-      but I\u2019m not sure. Tomorrow is gonna be so great!!"
+      take us out for dinner,"
+  - heading: May 14
+    body: "and let me pick! I think we\u2019re gonna get pizza, but I\u2019m not
+      sure. Tomorrow is gonna be so great!!"
   - heading: May 15
     body: "Dear Diary\nToday was so AWFUL!!! Dad lied to me again, and Mom didn\u2019t
-      even make me dinner! None of my friends showed up, and it\u2019s all their
-      fault! Why do we have to live in the woods?! I hate this stupid house, and
-      this stupid family!"
+      even make me dinner!"
+  - heading: May 15
+    body: "None of my friends showed up, and it\u2019s all their fault! Why do we
+      have to live in the woods?! I hate this stupid house, and this stupid family!"
   - heading: May 17
     body: "Dear Diary\nUncle Franc has been coming over more, and it sucks! He\u2019s
       nothing like Uncle Al! Uncle Al likes to play with us, and he always brings
-      gifts! Uncle Franc just sits around and talks to Mom all day. If we try to
-      talk he shouts at us. Mom doesn\u2019t even do anything! She just sits there
-      all quiet like she can\u2019t help. I hate him!"
+      gifts! Uncle Franc just sits around and talks to Mom all day."
+  - heading: May 17
+    body: "If we try to talk he shouts at us. Mom doesn\u2019t even do anything!
+      She just sits there all quiet like she can\u2019t help. I hate him!"
   - heading: May 18
     body: "Dear Diary\nToday I saw Mom playing with the safe. I don\u2019t know what
       she\u2019s doing anymore. She just sits around all day now. I haven\u2019t
@@ -49,9 +53,10 @@ MonoBehaviour:
   - heading: May 20
     body: "Dear Diary\nI don\u2019t know what\u2019s happening. Uncle Franc is back
       and he\u2019s off with Mom again. But they\u2019re in the bedroom, and locked
-      the door. Julian\u2019s been crying more than usual. I guess they kicked him
-      out? I tried talking to her again, but no one\u2019s answering. I know they\u2019re
-      in there. I can hear something through the wall."
+      the door. Julian\u2019s been crying more than usual...."
+  - heading: May 20
+    body: "I guess they kicked him out? I tried talking to her again, but no one\u2019s
+      answering. I know they\u2019re in there. I can hear something through the wall."
   description: A small diary. Belongs to Maria Rivera. There's lots of stories, doodles
     and such
   detectiveLine: I should keep this in mind...
