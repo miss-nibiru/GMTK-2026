@@ -7944,6 +7944,7 @@ GameObject:
   - component: {fileID: 828662932}
   - component: {fileID: 828662931}
   - component: {fileID: 828662933}
+  - component: {fileID: 828662934}
   m_Layer: 5
   m_Name: AccusationDevice_Keyboard
   m_TagString: Untagged
@@ -8028,6 +8029,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   textBox: {fileID: 2139509808}
   printBox: {fileID: 1662182452}
+--- !u!114 &828662934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 828662929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb8569ebe37a74f8095607a632bcf558, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ShowCursor
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -11973,6 +11986,7 @@ GameObject:
   - component: {fileID: 1224014682}
   - component: {fileID: 1224014684}
   - component: {fileID: 1224014683}
+  - component: {fileID: 1224014685}
   m_Layer: 5
   m_Name: CaseFile
   m_TagString: Untagged
@@ -12038,6 +12052,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1224014681}
   m_CullTransparentMesh: 1
+--- !u!114 &1224014685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1224014681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb8569ebe37a74f8095607a632bcf558, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ShowCursor
 --- !u!1 &1224450009 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1300213244194003828, guid: 1ec041a4fe9e14ac6977a3439732adea, type: 3}
