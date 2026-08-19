@@ -36,10 +36,7 @@ MonoBehaviour:
       Drop-off
       Santiago at Airport 7:00 PM'
   - heading: April 31
-    body: 'Pick up Francisco 11:00 am
-
-      Kid''s day party at dino pizza 12:00
-      pm'
+    body: Pick up Francisco 11:00 am for Dentist appointment
   - heading: May 5
     body: 'Pickup Santiago Airport 1:00 am
 
@@ -47,18 +44,23 @@ MonoBehaviour:
       presentation ready
 
       Work on social posts'
-  - heading: May 15 - Anniversary!!
+  - heading: May 6 - Anniversary!!
+    body: 'Buy red wine, Risotto, pork roulade (check recipe)
+
+      Pick up cake
+      2:00 PM
+
+      Santiago home 4:00 PM
+
+      Cancel Maria''s party - blackout
+      starts May 15'
+  - heading: May 15 - Maria's Birthday
     body: 'City blackout 5:00 pm
 
       (cook before then!)
 
-      Buy red wine,
-      Risotto, pork roulade (check recipe)
-
-      Pick up cake 2:00 PM
-
-      Santiago
-      home 4:00 PM'
+      Pickup Maria''s
+      cake'
   description: Looks like a personal planner... Most entries are reminders, appointments,
     and family errands...
   detectiveLine: Looks like she kept everything organized

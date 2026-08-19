@@ -32,31 +32,27 @@ MonoBehaviour:
     body: "Dear Diary\nToday was so AWFUL!!! Dad lied to me again, and Mom didn\u2019t
       even make me dinner!"
   - heading: May 15
-    body: "None of my friends showed up, and it\u2019s all their fault! Why do we
-      have to live in the woods?! I hate this stupid house, and this stupid family!"
+    body: I hate this stupid house, and this stupid family! Why do we have to have
+      a blackout ON MY BDAY!!
   - heading: May 17
     body: "Dear Diary\nUncle Franc has been coming over more, and it sucks! He\u2019s
       nothing like Uncle Al! Uncle Al likes to play with us, and he always brings
-      gifts! Uncle Franc just sits around and talks to Mom all day."
+      gifts! Uncle Franc just sits around and talks to Mom all day... and he has
+      a creepy smile. It kinda shines..."
   - heading: May 17
     body: "If we try to talk he shouts at us. Mom doesn\u2019t even do anything!
       She just sits there all quiet like she can\u2019t help. I hate him!"
   - heading: May 18
-    body: "Dear Diary\nToday I saw Mom playing with the safe. I don\u2019t know what
-      she\u2019s doing anymore. She just sits around all day now. I haven\u2019t
-      even seen her agenda anywhere. She\u2019s usually carrying it all around the
-      house. Something\u2019s going on, and no one will tell me anything!"
-  - heading: May 19
     body: "Deer Diary\nI hate this! Julian won\u2019t stop crying for Mom! It\u2019s
       annoying! I\u2019ve got homework, and I can\u2019t focus! Why does everyone
       in this family hate me?"
-  - heading: May 20
+  - heading: May 19
     body: "Dear Diary\nI don\u2019t know what\u2019s happening. Uncle Franc is back
       and he\u2019s off with Mom again. But they\u2019re in the bedroom, and locked
       the door. Julian\u2019s been crying more than usual...."
-  - heading: May 20
-    body: "I guess they kicked him out? I tried talking to her again, but no one\u2019s
-      answering. I know they\u2019re in there. I can hear something through the wall."
+  - heading: May 19
+    body: "I guess they kicked him out? I tried knocking, but no one\u2019s answering.
+      I know they\u2019re in there. I can hear something through the wall."
   description: A small diary. Belongs to Maria Rivera. There's lots of stories, doodles
     and such
   detectiveLine: I should keep this in mind...

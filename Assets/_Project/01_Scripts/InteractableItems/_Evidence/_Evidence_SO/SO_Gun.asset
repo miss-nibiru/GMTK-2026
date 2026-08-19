@@ -17,7 +17,8 @@ MonoBehaviour:
   interactionDisplayName: gun
   evidenceImage: {fileID: 21300000, guid: fddb91bd7f23e4700814b8179fbf77e7, type: 3}
   pages: []
-  description: This is a non-registered berretta 9mm. It has a keychain attached
-    to it. A flower?
-  detectiveLine: Hm... was this used at all?
+  description: This is a non-registered berretta 9mm. It has a flower keychain attached
+    to it. This was fired recently.
+  detectiveLine: Who would have had access to the safe?
   detectiveAudio: {fileID: 0}
+  thoughtOnly: 0

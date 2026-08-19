@@ -607,7 +607,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: ScatteredPaper_Root
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7724830059847803903, guid: 5ae1eb3c897df4ab28597986ebd5dfea, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

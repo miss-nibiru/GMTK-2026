@@ -9,7 +9,7 @@ public class EvidenceInteractable : BaseInteractable
     [SerializeField] private bool hideObjectAfterDiscovery;
 
     private EvidenceDiscoverable _evidenceDiscoverable;
-    
+    private bool _interactionEnabled = true;
 
     private void Awake()
     {
@@ -17,8 +17,21 @@ public class EvidenceInteractable : BaseInteractable
             GetComponent<EvidenceDiscoverable>();
     }
 
+    public void SetInteractionEnabled(bool enabled)
+    {
+        _interactionEnabled = enabled;
+    }
+
+    public override bool CanInteract()
+    {
+        return _interactionEnabled;
+    }
+
     public override void Interact()
     {
+        if (!CanInteract())
+            return;
+
         if (_evidenceDiscoverable == null)
             return;
 
@@ -26,16 +39,23 @@ public class EvidenceInteractable : BaseInteractable
 
         if (!evidence)
         {
-            Debug.LogWarning($"Evidence is not configured on '{gameObject.name}'.", gameObject);
+            Debug.LogWarning(
+                $"Evidence is not configured on '{gameObject.name}'.",
+                gameObject);
+
             return;
         }
 
-        if (!evidence.ThoughtOnly && string.IsNullOrWhiteSpace(evidence.EvidenceId))
+        if (!evidence.ThoughtOnly &&
+            string.IsNullOrWhiteSpace(evidence.EvidenceId))
         {
-            Debug.LogWarning($"Evidence is not configured on '{gameObject.name}'.", gameObject);
+            Debug.LogWarning(
+                $"Evidence is not configured on '{gameObject.name}'.",
+                gameObject);
+
             return;
         }
-        
+
         _evidenceDiscoverable.ReportDiscovery();
 
         ApplyDiscoveredState();
@@ -43,6 +63,7 @@ public class EvidenceInteractable : BaseInteractable
 
     private void ApplyDiscoveredState()
     {
-        if (hideObjectAfterDiscovery) gameObject.SetActive(false);
+        if (hideObjectAfterDiscovery)
+            gameObject.SetActive(false);
     }
 }
