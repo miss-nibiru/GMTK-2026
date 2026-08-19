@@ -17,9 +17,9 @@ MonoBehaviour:
   interactionDisplayName: 
   evidenceImage: {fileID: 21300000, guid: 23e19ed971fe86448a72e21e639098a2, type: 3}
   pages:
-  - heading: The Picture
-    body: It's a childrens drawing of two people in a cartoon fight.
-  description: It's a childrens drawing of two people in a cartoon fight.
-  detectiveLine: I should keep this in mind
+  - heading: A weird drawing...
+    body: It's a childrens drawing of two people in a cartoon fight
+  description: It's a childrens drawing of two people in a cartoon fight
+  detectiveLine: People fought here a lot?
   detectiveAudio: {fileID: 0}
   thoughtOnly: 0

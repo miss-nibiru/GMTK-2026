@@ -17,9 +17,9 @@ MonoBehaviour:
   interactionDisplayName: 
   evidenceImage: {fileID: 21300000, guid: 66ece38c35873594c8652910bf5204be, type: 3}
   pages:
-  - heading: The Picture
-    body: It's a childrens drawing of the devil with their mother.
-  description: It's a childrens drawing of the devil with their mother.
-  detectiveLine: I should keep this in mind
+  - heading: A kid's drawing
+    body: A children's drawing of a demon...? It also says "mommy"
+  description: A children's drawing of a demon...? It also says "mommy"
+  detectiveLine: Who is this?
   detectiveAudio: {fileID: 0}
   thoughtOnly: 0

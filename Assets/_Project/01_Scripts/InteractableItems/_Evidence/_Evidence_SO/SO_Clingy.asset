@@ -17,9 +17,9 @@ MonoBehaviour:
   interactionDisplayName: 
   evidenceImage: {fileID: 21300000, guid: 12c9762f90db4454388ac5b0c68ff1a5, type: 3}
   pages:
-  - heading: The Picture
-    body: It's a childrens drawing of a kid crying for their mom.
-  description: It's a childrens drawing of two people in a cartoon fight.
-  detectiveLine: I should keep this in mind
+  - heading: A kids drawing
+    body: It's a childrens drawing of a kid crying for their mom
+  description: It's a childrens drawing of a kid crying for their mom
+  detectiveLine: Seems this kid is very needy...
   detectiveAudio: {fileID: 0}
   thoughtOnly: 0

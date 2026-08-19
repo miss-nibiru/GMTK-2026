@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29d1fddd189524fb8adc5a32ce42aab2, type: 3}
   m_Name: SO_WifeAgenda
   m_EditorClassIdentifier: Assembly-CSharp::EvidenceData
-  evidenceId: olivia_agenda
+  evidenceId: agenda
   displayName: An agenda
   interactionDisplayName: 
   evidenceImage: {fileID: 21300000, guid: 0a687c91f1a914cfaaa3db4664737c82, type: 3}
@@ -63,3 +63,4 @@ MonoBehaviour:
     and family errands...
   detectiveLine: Looks like she kept everything organized
   detectiveAudio: {fileID: 0}
+  thoughtOnly: 0

@@ -36,6 +36,6 @@ MonoBehaviour:
   - heading: Note 6
     body: IT WORKS! THE HOURGLASS WORKS!
   description: A corkboard covered with sticky notes.
-  detectiveLine: I should probably keep this in mind...
+  detectiveLine: Hourglass...?
   detectiveAudio: {fileID: 0}
   thoughtOnly: 0
