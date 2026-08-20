@@ -1,22 +1,28 @@
 public class PlayerPuzzleStateMachine
 {
-    public IPlayerPuzzleStates currentState;
+    public IPlayerPuzzleStates CurrentState;
 
-    public PpsPickUp pickUpState;
-    public PPSTurningKnobs sinkState;
-    public PPSOpenSafe safeState;
+    public PpsPickUp PickUpState;
+    public PPSTurningKnobs SinkState;
+    public PPSOpenSafe SafeState;
     
     public PlayerPuzzleStateMachine(PlayerPuzzleController puzzleController)
     {
-        pickUpState = puzzleController.gameObject.GetComponent<PpsPickUp>();
-        sinkState = puzzleController.gameObject.GetComponent<PPSTurningKnobs>();
-        safeState = puzzleController.gameObject.GetComponent<PPSOpenSafe>();
+        PickUpState = puzzleController.gameObject.GetComponent<PpsPickUp>();
+        SinkState = puzzleController.gameObject.GetComponent<PPSTurningKnobs>();
+        SafeState = puzzleController.gameObject.GetComponent<PPSOpenSafe>();
     }
 
     public void SwitchStates(IPlayerPuzzleStates state)
     {
-        currentState?.Exit();
-        currentState = state;
-        currentState.Enter();
+        CurrentState?.Exit();
+        CurrentState = state;
+        CurrentState.Enter();
+    }
+
+    public void SetInitialState(PpsPickUp ppsmPickUpState)
+    {
+        CurrentState = ppsmPickUpState;
+        CurrentState.Enter();
     }
 }

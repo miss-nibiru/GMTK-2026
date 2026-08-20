@@ -11,10 +11,10 @@ public class EnterSink : BaseInteractable
         switch (_interactToggle)
         {
             case false:
-                puzzleController.Ppsm.SwitchStates(puzzleController.Ppsm.sinkState);
+                puzzleController.Ppsm.SwitchStates(puzzleController.Ppsm.SinkState);
                 break;
             case true:
-                puzzleController.Ppsm.SwitchStates(puzzleController.Ppsm.pickUpState);
+                puzzleController.Ppsm.SwitchStates(puzzleController.Ppsm.PickUpState);
                 break;
         }
         _interactToggle = !_interactToggle;

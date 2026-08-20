@@ -8,12 +8,13 @@ public class PlayerPuzzleController : MonoBehaviour
     private void Start()
     {
         Ppsm = new PlayerPuzzleStateMachine(this);
-        Ppsm.SwitchStates(Ppsm.pickUpState);
+        Ppsm.SetInitialState(Ppsm.PickUpState);
+        //Ppsm.SwitchStates(Ppsm.pickUpState);
     }
 
     private void Update()
     {
-        Ppsm.currentState?.Execute();
+        Ppsm.CurrentState?.Execute();
     }
 
     public bool HoldItem(GameObject item)

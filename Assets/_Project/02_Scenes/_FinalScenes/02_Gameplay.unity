@@ -9578,32 +9578,6 @@ MonoBehaviour:
   maximumIntensity: 0.25
   pulseSpeed: 1.5
   glowDistance: 3
---- !u!114 &1001855218
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1001855212}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cceed0c085484ce2972c1398cb82d94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EvidenceInteractable
-  hideObjectAfterDiscovery: 0
---- !u!114 &1001855219
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1001855212}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c42f28e5001c4cec99b29bdc0d9a000, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EvidenceDiscoverable
-  evidenceData: {fileID: 11400000, guid: 3ac83d2ddea47434488ff4e216665fe4, type: 2}
 --- !u!1001 &1004456219
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27055,12 +27029,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1609008257417722404, guid: b71e3f34e190248a99c32594296d1a54, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1001855214}
-    - targetCorrespondingSourceObject: {fileID: 1609008257417722404, guid: b71e3f34e190248a99c32594296d1a54, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1001855219}
-    - targetCorrespondingSourceObject: {fileID: 1609008257417722404, guid: b71e3f34e190248a99c32594296d1a54, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1001855218}
     - targetCorrespondingSourceObject: {fileID: 5492759343247936136, guid: b71e3f34e190248a99c32594296d1a54, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}

@@ -1,7 +1,7 @@
 using UnityEngine;
 
 /// <summary>
-/// Updated so theres a switch of items more clearly.  so like if the old thing that is held exists, restore the colliders when its put down
+/// Updated so there's a switch of items more clearly.  so like if the old thing that is held exists, restore the colliders when its put down
 /// If exist, attach to holdposition and here reset the values and disable colliders so it doesnt dance around
 /// </summary>
 public class PpsPickUp : MonoBehaviour, IPlayerPuzzleStates

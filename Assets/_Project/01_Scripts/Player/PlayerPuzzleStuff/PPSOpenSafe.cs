@@ -7,6 +7,7 @@ public class PPSOpenSafe : MonoBehaviour, IPlayerPuzzleStates
     public void Enter()
     {
         Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         safeScreen.SetActive(true);
     }
 
@@ -18,5 +19,7 @@ public class PPSOpenSafe : MonoBehaviour, IPlayerPuzzleStates
     public void Exit()
     {
         safeScreen.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 }
