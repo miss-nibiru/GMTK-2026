@@ -7,7 +7,6 @@ public class PlayerInteractionInput : MonoBehaviour
     [SerializeField] private InputActionReference interactAction;
     [SerializeField] private Camera playerCamera;
     [SerializeField] private float interactionDistance = 3f;
-    [SerializeField] private float interactionRadius = 1f;
     [SerializeField] private LayerMask interactionLayers = ~0;
 
     public GameObject CurrentObject { get; private set; }
@@ -19,9 +18,8 @@ public class PlayerInteractionInput : MonoBehaviour
     {
         if (!interactAction.action.WasPressedThisFrame()) return;
         Ray ray = playerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f));
-        if (!Physics.SphereCast(
+        if (!Physics.Raycast(
                 ray,
-                interactionRadius,
                 out RaycastHit hit,
                 interactionDistance,
                 interactionLayers,
