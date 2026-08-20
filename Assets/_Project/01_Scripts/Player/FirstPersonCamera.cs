@@ -15,17 +15,11 @@ public class FirstPersonCamera : MonoBehaviour
     private void OnEnable()
     {
         lookAction.action.Enable();
-
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
     }
 
     private void OnDisable()
     {
         lookAction.action.Disable();
-
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
     }
 
     private void Update()

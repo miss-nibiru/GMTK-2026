@@ -31,6 +31,15 @@ public class EvidenceMenuController : MonoBehaviour
     public bool IsOpen =>
         _isOpen || _isEvidenceDetailsOpen;
 
+    private void Awake()
+    {
+        PlaythroughState state = PlaythroughState.GetOrCreate();
+
+        if (!state.CaseFileViewed)
+        {
+            SetMenuOpened(true);
+        }
+    }
     private void Start()
     {
         PlaythroughState state =
